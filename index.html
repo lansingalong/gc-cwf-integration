@@ -3296,9 +3296,40 @@
     }
     document.getElementById('outcomeModal').classList.add('open');
   };
-  window.completeActivity = function() {
+  window.captureAndProceed = function() {
     document.getElementById('captureOutcomeModal').classList.remove('open');
-    closeHRAReview();
+    completeActivity();
+    // Navigate to care plan
+    memberView.style.display = '';
+    homeDash.style.display = 'none';
+    var hraPage = document.getElementById('hraReviewPage');
+    if (hraPage) hraPage.style.display = 'none';
+    document.querySelectorAll('.gc-left-item').forEach(function(li) { li.classList.remove('active'); });
+    var cpNav = document.querySelector('.gc-left-item[data-left="care-plan"]');
+    if (cpNav) cpNav.classList.add('active');
+    document.querySelectorAll('.left-panel').forEach(function(p) { p.style.display = 'none'; p.classList.remove('active'); });
+    var cpPanel = document.getElementById('panel-care-plan');
+    if (cpPanel) { cpPanel.style.display = ''; cpPanel.classList.add('active'); }
+  };
+
+  window.captureAndAddActivity = function() {
+    document.getElementById('captureOutcomeModal').classList.remove('open');
+    completeActivity();
+    // Navigate to care plan in background then open Add Activity
+    memberView.style.display = '';
+    homeDash.style.display = 'none';
+    var hraPage = document.getElementById('hraReviewPage');
+    if (hraPage) hraPage.style.display = 'none';
+    document.querySelectorAll('.gc-left-item').forEach(function(li) { li.classList.remove('active'); });
+    var cpNav = document.querySelector('.gc-left-item[data-left="care-plan"]');
+    if (cpNav) cpNav.classList.add('active');
+    document.querySelectorAll('.left-panel').forEach(function(p) { p.style.display = 'none'; p.classList.remove('active'); });
+    var cpPanel = document.getElementById('panel-care-plan');
+    if (cpPanel) { cpPanel.style.display = ''; cpPanel.classList.add('active'); }
+    openAddActivity();
+  };
+
+  window.completeActivity = function() {
 
     var now = new Date();
     var mm = String(now.getMonth()+1).padStart(2,'0');
@@ -3310,28 +3341,62 @@
     var dateStr = mm+'/'+dd+'/'+yyyy;
     var createdStr = mm+'/'+dd+'/'+yyyy+' '+hh+':'+mi+':'+ss;
 
-    // Add completed row to Script Activity
+    // Update existing Pending rows in Script Activity to Completed
     var scriptTbody = document.getElementById('scriptActivityTbody');
     if (scriptTbody) {
-      var tr = document.createElement('tr');
-      tr.style.background = '#E8F5E9';
-      tr.dataset.dynamic = 'true';
-      tr.innerHTML = '<td><input type="checkbox" /></td>' +
-        '<td><a href="#" style="color:var(--link);font-size:11px;">Health Risk Assessment</a></td>' +
-        '<td>' + createdStr + '</td>' +
-        '<td>Lansing Cai : All Access Admin</td>' +
-        '<td style="color:#2E7D32;font-weight:700;">Completed</td>' +
-        '<td>' + createdStr + '</td>' +
-        '<td>N/A</td>' +
-        '<td>N/A</td>' +
-        '<td>21.72</td>' +
-        '<td>Health Risk Assessment</td>' +
-        '<td style="color:#2E7D32;font-weight:700;">Successful: Assessment Complete</td>' +
-        '<td>00:30:00</td>' +
-        '<td>Wellframe</td>' +
-        '<td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td>';
-      scriptTbody.insertBefore(tr, scriptTbody.firstChild);
-      setTimeout(function() { tr.style.transition = 'background 2s'; tr.style.background = ''; }, 200);
+      var rows = scriptTbody.querySelectorAll('tr');
+      var foundPending = false;
+      rows.forEach(function(row) {
+        var cells = row.querySelectorAll('td');
+        if (cells.length > 4) {
+          var statusCell = cells[4];
+          if (statusCell && statusCell.textContent.trim() === 'Pending') {
+            // Update status to Completed
+            statusCell.style.color = '#2E7D32';
+            statusCell.style.fontWeight = '700';
+            statusCell.textContent = 'Completed';
+            // Update completion date
+            if (cells[5]) cells[5].textContent = createdStr;
+            // Update activity outcome
+            if (cells[10]) {
+              cells[10].style.color = '#2E7D32';
+              cells[10].style.fontWeight = '700';
+              cells[10].innerHTML = 'Successful: Assessment Complete';
+            }
+            // Update duration
+            if (cells[11]) cells[11].textContent = '00:30:00';
+            // Update score
+            if (cells[8]) cells[8].textContent = '21.72';
+            // Flash green
+            row.style.background = '#E8F5E9';
+            setTimeout(function() { row.style.transition = 'background 2s'; row.style.background = ''; }, 200);
+            foundPending = true;
+          }
+        }
+      });
+
+      // If no pending row was found, add a new completed row
+      if (!foundPending) {
+        var tr = document.createElement('tr');
+        tr.style.background = '#E8F5E9';
+        tr.dataset.dynamic = 'true';
+        tr.innerHTML = '<td><input type="checkbox" /></td>' +
+          '<td><a href="#" style="color:var(--link);font-size:11px;">Health Risk Assessment</a></td>' +
+          '<td>' + createdStr + '</td>' +
+          '<td>Lansing Cai : All Access Admin</td>' +
+          '<td style="color:#2E7D32;font-weight:700;">Completed</td>' +
+          '<td>' + createdStr + '</td>' +
+          '<td>N/A</td>' +
+          '<td>N/A</td>' +
+          '<td>21.72</td>' +
+          '<td>Health Risk Assessment</td>' +
+          '<td style="color:#2E7D32;font-weight:700;">Successful: Assessment Complete</td>' +
+          '<td>00:30:00</td>' +
+          '<td>Wellframe</td>' +
+          '<td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td>';
+        scriptTbody.insertBefore(tr, scriptTbody.firstChild);
+        setTimeout(function() { tr.style.transition = 'background 2s'; tr.style.background = ''; }, 200);
+      }
     }
 
     // Add completed row to General Activity
@@ -3953,6 +4018,21 @@
         </div>
       </div>
 
+      <!-- Choose Documentation & Rationale -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px 40px;margin-bottom:20px;">
+        <div>
+          <label style="font-size:13px;font-weight:700;color:var(--text-primary);display:block;margin-bottom:8px;"><span style="color:#C62828;">*</span> Choose Documentation</label>
+          <div style="display:flex;flex-direction:column;gap:6px;">
+            <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;"><input type="checkbox" style="accent-color:var(--teal);width:16px;height:16px;" /> Option 1</label>
+            <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;"><input type="checkbox" style="accent-color:var(--teal);width:16px;height:16px;" /> Option 2</label>
+          </div>
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:700;color:var(--text-primary);display:block;margin-bottom:8px;"><span style="color:#C62828;">*</span> Rationale</label>
+          <textarea style="border:1px solid #ccc;border-radius:3px;padding:8px;font-size:13px;font-family:var(--font);background:#fff;outline:none;min-height:90px;resize:vertical;width:100%;"></textarea>
+        </div>
+      </div>
+
       <!-- Outcome Notes -->
       <div style="margin-bottom:16px;">
         <label style="font-size:13px;color:var(--text-primary);font-weight:600;display:block;margin-bottom:4px;">Outcome Notes</label>
@@ -3962,15 +4042,23 @@
       <!-- Review Care Plan checkbox -->
       <div style="margin-bottom:8px;">
         <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;">
-          <input type="checkbox" checked style="accent-color:#E68A00;width:18px;height:18px;" />
-          <span style="color:var(--teal);font-weight:600;">Review Care Plan</span>
+          <input type="checkbox" checked style="accent-color:#0E98BE;width:18px;height:18px;" />
+          <span style="font-weight:600;">Review Care Plan</span>
+        </label>
+      </div>
+
+      <!-- Send to Member for review checkbox -->
+      <div style="margin-bottom:8px;">
+        <label style="display:flex;align-items:center;gap:8px;font-size:13px;cursor:pointer;">
+          <input type="checkbox" checked style="accent-color:#888;width:18px;height:18px;" />
+          <span style="font-weight:400;">Send to Member for review</span>
         </label>
       </div>
 
     </div>
     <div class="gc-modal-footer" style="gap:12px;background:#fff;border-top:1px solid #ddd;">
-      <button onclick="completeActivity();" style="background:#315E7B;color:#fff;border:none;border-radius:3px;padding:0 24px;height:42px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;display:flex;align-items:center;gap:6px;"><span class="material-icons" style="font-size:16px;">save</span> Save and Proceed</button>
-      <button onclick="saveAndAddActivity();" style="background:#315E7B;color:#fff;border:none;border-radius:3px;padding:0 24px;height:42px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;display:flex;align-items:center;gap:6px;"><span class="material-icons" style="font-size:16px;">save</span> Save and Add Activity</button>
+      <button onclick="captureAndProceed();" style="background:#315E7B;color:#fff;border:none;border-radius:3px;padding:0 24px;height:42px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;display:flex;align-items:center;gap:6px;"><span class="material-icons" style="font-size:16px;">save</span> Save and Proceed</button>
+      <button onclick="captureAndAddActivity();" style="background:#315E7B;color:#fff;border:none;border-radius:3px;padding:0 24px;height:42px;font-size:14px;font-weight:700;font-family:var(--font);cursor:pointer;display:flex;align-items:center;gap:6px;"><span class="material-icons" style="font-size:16px;">save</span> Save and Add Activity</button>
     </div>
   </div>
 </div>
