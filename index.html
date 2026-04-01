@@ -2632,7 +2632,7 @@
                   <th>Visible to Member</th>
                   <th>Actions</th>
                 </tr></thead>
-                <tbody id="scriptActivityTbody" onclick="(function(e){var b=e.target.closest('button,a');if(b&&b.textContent.trim()==='Health Risk Assessment'){e.preventDefault();openScriptResponseModal();}})(event)">
+                <tbody id="scriptActivityTbody" onclick="(function(e){var b=e.target.closest('button,a');if(b&&b.textContent.trim()===(window._gcSelectedActivity||'Health Risk Assessment')){e.preventDefault();openScriptResponseModal();}})(event)">
                   <tr><td><input type="checkbox" /></td><td><a href="#" style="color:var(--link);font-size:11px;">Adding a script</a></td><td>03/12/2025 06:46:33 AM</td><td>Sridevi Palepu : All Access Admin</td><td>Pending</td><td>N/A</td><td>N/A</td><td>N/A</td><td>0</td><td>Assessments.</td><td><a href="#" style="color:var(--link);">Add</a></td><td>00:00:00</td><td></td><td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td></tr>
                   <tr><td><input type="checkbox" /></td><td><a href="#" style="color:var(--link);font-size:11px;">Adding a script</a></td><td>03/08/2025 06:11:24 AM</td><td>Sridevi Palepu : All Access Admin</td><td>Cancelled</td><td>03/08/2025 06:19:05 AM</td><td>N/A</td><td>N/A</td><td>0</td><td>Assessments.</td><td><a href="#" style="color:var(--link);">Add</a></td><td>00:00:00</td><td></td><td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td></tr>
                   <tr><td><input type="checkbox" /></td><td><a href="#" style="color:var(--link);font-size:11px;">QQ Individual Budget</a></td><td>03/14/2024 12:24:59 AM</td><td>Sridevi Palepu : All Access Admin</td><td>Pending</td><td>N/A</td><td>N/A</td><td>N/A</td><td>0</td><td>Follow Up.</td><td><a href="#" style="color:var(--link);">Add</a></td><td>00:00:00</td><td></td><td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td></tr>
@@ -2907,8 +2907,8 @@
                   <th style="width:80px;">Actions</th>
                 </tr></thead>
                 <tbody id="outstandingTbody">
-                  <tr><td><input type="checkbox" /></td><td>Follow Up.</td><td></td><td>High</td><td>03/27/2026</td><td>N/A</td><td>07:59</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">03/27/2026 08:00:00</td><td></td><td><span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:#315E7B;cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span></td></tr>
-                  <tr><td><input type="checkbox" /></td><td>Assessments - Initial Outreach</td><td></td><td>Medium</td><td>03/20/2026</td><td>N/A</td><td>08:30</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">03/20/2026 07:04:07</td><td></td><td><span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:#315E7B;cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span></td></tr>
+                  <tr><td><input type="checkbox" /></td><td>Follow Up.</td><td></td><td>High</td><td>03/27/2026</td><td>N/A</td><td>07:59</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">03/27/2026 08:00:00</td><td></td><td style="white-space:nowrap;"><span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:#315E7B;cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span></td></tr>
+                  <tr><td><input type="checkbox" /></td><td>Assessments - Initial Outreach</td><td></td><td>Medium</td><td>03/20/2026</td><td>N/A</td><td>08:30</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">03/20/2026 07:04:07</td><td></td><td style="white-space:nowrap;"><span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:#315E7B;cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span></td></tr>
                 </tbody>
               </table>
             </div>
@@ -3494,7 +3494,7 @@ function openScriptResponseModal() {
     rowsHtml +=
       '<tr style="background:#fff;">' +
       '<td style="padding:5px 9px;border:1px solid #e0e0e0;width:24px;"></td>' +
-      '<td style="padding:5px 9px;border:1px solid #e0e0e0;">Health Risk Assessment</td>' +
+      '<td style="padding:5px 9px;border:1px solid #e0e0e0;">'+(window._gcSelectedActivity||'Health Risk Assessment')+'</td>' +
       '<td style="padding:5px 9px;border:1px solid #e0e0e0;">'+(r.q||'')+'</td>' +
       '<td style="padding:5px 9px;border:1px solid #e0e0e0;">'+(r.option||'')+'</td>' +
       '<td style="padding:5px 9px;border:1px solid #e0e0e0;">'+(r.sub||'')+'</td>' +
@@ -3531,7 +3531,7 @@ function openScriptResponseModal() {
         '<div><strong>SUBSCRIBER_SSN :</strong> '+(m.ssn||'N/A')+'</div>' +
         '<div><strong>Member\'s DOB :</strong> '+dobFmt+'</div>' +
         '<div><strong>Member Name :</strong> '+m.name+'</div>' +
-        '<div><strong>Script Name :</strong> Health Risk Assessment</div>' +
+        '<div><strong>Script Name :</strong> '+(window._gcSelectedActivity||'Health Risk Assessment')+'</div>' +
         '<div><strong>Completed By :</strong> '+completedBy+'</div>' +
         '<div><strong>Completed On :</strong> '+ts+'</div>' +
         '<div><strong>Eligibility :</strong> N/A</div>' +
@@ -3617,7 +3617,7 @@ function openScriptResponseModal() {
         '<td>' + item.notesVal + '</td>' +
         '<td style="font-size:10px;">' + item.createdStr + '</td>' +
         '<td>' + (item.isAssessment ? '<span class="material-icons" style="font-size:16px;color:#388e3c;">check</span>' : '') + '</td>' +
-        '<td><span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:#315E7B;cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span></td>';
+        '<td style="white-space:nowrap;"><span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:#315E7B;cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span></td>';
       tbody.insertBefore(tr, tbody.firstChild);
       setTimeout(function() { tr.style.transition = 'background 1.5s'; tr.style.background = ''; }, 100);
     });
@@ -3815,6 +3815,7 @@ function openScriptResponseModal() {
     });
     var commentArea = document.querySelector('#addActivityModal textarea');
     if (commentArea) notesVal = commentArea.value || 'N/A';
+    window._gcSelectedActivity = activityTypeVal;
 
     var now = new Date();
     var mm = String(now.getMonth()+1).padStart(2,'0');
@@ -4006,7 +4007,7 @@ function openScriptResponseModal() {
   function _sr(script,date,by,status,complete,program,score,actType,outcome,dur){return '<tr><td><input type="checkbox"/></td><td><a href="#" style="color:var(--link);font-size:11px;">'+script+'</a></td><td>'+date+'</td><td>'+by+'</td><td>'+status+'</td><td>'+complete+'</td><td>N/A</td><td>'+program+'</td><td>'+score+'</td><td>'+actType+'</td><td><a href="#" style="color:var(--link);">'+outcome+'</a></td><td>'+dur+'</td><td></td><td>'+_SDOC+'</td></tr>';}
   function _gr(date,by,type,outcome){return '<tr><td>'+date+'</td><td>'+by+'</td><td>N/A</td><td>N/A</td><td>'+type+'</td><td>N/A</td><td>N/A</td><td><a href="#" style="color:var(--link);">'+outcome+'</a></td><td>'+_VIS+'</td><td>'+_DEL+'</td></tr>';}
   function _gs(sched,by,type){return '<tr><td>N/A</td><td>N/A</td><td>'+sched+'</td><td>'+by+'</td><td>'+type+'</td><td>N/A</td><td>N/A</td><td><a href="#" style="color:var(--link);">Scheduled</a></td><td>'+_VIS+'</td><td>'+_DEL+'</td></tr>';}
-  function _or(type,priority,followUp,callTime,created){return '<tr><td><input type="checkbox"/></td><td>'+type+'</td><td></td><td>'+priority+'</td><td>'+followUp+'</td><td>N/A</td><td>'+callTime+'</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">'+created+'</td><td></td><td>'+_ACT+'</td></tr>';}
+  function _or(type,priority,followUp,callTime,created){return '<tr><td><input type="checkbox"/></td><td>'+type+'</td><td></td><td>'+priority+'</td><td>'+followUp+'</td><td>N/A</td><td>'+callTime+'</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">'+created+'</td><td></td><td style="white-space:nowrap;">'+_ACT+'</td></tr>';}
   function _ar(badgeCls,status,desc,source,date){return '<tr><td><input type="checkbox"/></td><td><span class="gc-badge '+badgeCls+'">'+status+'</span></td><td>'+desc+'</td><td>'+source+'</td><td>'+date+'</td></tr>';}
 
   var memberTabData = {
@@ -4534,12 +4535,9 @@ function openScriptResponseModal() {
     if (asTab) { asTab.classList.add('active'); asTab.style.color = 'var(--teal)'; asTab.style.borderBottomColor = 'var(--teal)'; }
     var asPanel = document.getElementById('artab-activity-summary');
     if (asPanel) { asPanel.style.display = ''; asPanel.classList.add('active'); }
-    // Always insert the completed HRA row at the top of Script Activity
-    // (this function is only called from the View Only calendar option)
+    // Insert the completed HRA row only if one doesn't already exist
     var scriptTbody = document.getElementById('scriptActivityTbody');
-    if (scriptTbody) {
-      // Remove any prior view-only row to avoid duplicates
-      scriptTbody.querySelectorAll('tr[data-flow="assessment-review"]').forEach(function(r) { r.remove(); });
+    if (scriptTbody && !scriptTbody.querySelector('tr[data-flow="assessment-review"]')) {
       var now = new Date();
       var pad = function(n) { return String(n).padStart(2, '0'); };
       var ts = (now.getMonth()+1) + '/' + pad(now.getDate()) + '/' + now.getFullYear() + ' ' +
@@ -4552,7 +4550,7 @@ function openScriptResponseModal() {
         function(td) {
           var btn = document.createElement('button');
           btn.type = 'button';
-          btn.textContent = 'Health Risk Assessment';
+          btn.textContent = window._gcSelectedActivity || 'Health Risk Assessment';
           btn.style.cssText = 'background:none;border:none;padding:0;color:var(--link);font-size:11px;cursor:pointer;font-family:inherit;text-decoration:underline;white-space:nowrap;text-align:left;';
           btn.setAttribute('onclick', 'openScriptResponseModal()');
           td.appendChild(btn);
@@ -4669,14 +4667,16 @@ function openScriptResponseModal() {
     var dateStr = mm+'/'+dd+'/'+yyyy;
     var createdStr = mm+'/'+dd+'/'+yyyy+' '+hh+':'+mi+':'+ss;
 
-    // Insert completed HRA row at top of Script Activity table
+    // Insert completed activity row only if one doesn't already exist
+    var _actName = window._gcSelectedActivity || 'Health Risk Assessment';
     var scriptTbody = document.getElementById('scriptActivityTbody');
-    if (scriptTbody) {
+    if (scriptTbody && !scriptTbody.querySelector('tr[data-flow="assessment-review"]')) {
       var hraRow = document.createElement('tr');
       hraRow.dataset.dynamic = 'true';
+      hraRow.dataset.flow = 'assessment-review';
       hraRow.innerHTML =
         '<td><input type="checkbox" /></td>' +
-        '<td><button type="button" onclick="openScriptResponseModal();" style="background:none;border:none;padding:0;color:var(--link);font-size:11px;cursor:pointer;font-family:inherit;text-decoration:underline;white-space:nowrap;text-align:left;">Health Risk Assessment</button></td>' +
+        '<td><button type="button" onclick="openScriptResponseModal();" style="background:none;border:none;padding:0;color:var(--link);font-size:11px;cursor:pointer;font-family:inherit;text-decoration:underline;white-space:nowrap;text-align:left;">' + _actName + '</button></td>' +
         '<td>' + createdStr + '</td>' +
         '<td>Beatrice Kanya : All Access Admin</td>' +
         '<td>Completed</td>' +
@@ -4693,11 +4693,11 @@ function openScriptResponseModal() {
       setTimeout(function() { hraRow.style.transition = 'background 2s'; hraRow.style.background = ''; }, 200);
     }
 
-    // Remove any HRA rows from Outstanding Activities
+    // Remove any matching activity rows from Outstanding Activities
     var outTbody = document.getElementById('outstandingTbody');
     if (outTbody) {
       outTbody.querySelectorAll('tr').forEach(function(row) {
-        if (row.textContent.indexOf('Health Risk Assessment') !== -1) row.remove();
+        if (row.textContent.indexOf(_actName) !== -1) row.remove();
       });
     }
 
@@ -4711,7 +4711,7 @@ function openScriptResponseModal() {
         '<td>Beatrice Kanya : All Access Admin</td>' +
         '<td>N/A</td>' +
         '<td>N/A</td>' +
-        '<td>Health Risk Assessment</td>' +
+        '<td>' + _actName + '</td>' +
         '<td>N/A</td>' +
         '<td>N/A</td>' +
         '<td>Successful: Assessment Complete</td>' +
@@ -4730,7 +4730,7 @@ function openScriptResponseModal() {
     var dashAlerts = document.getElementById('dashAlertsTbody');
     if (dashAlerts) {
       dashAlerts.querySelectorAll('tr[data-dynamic="true"]').forEach(function(row) {
-        if (row.textContent.indexOf('Health Risk Assessment') !== -1) {
+        if (row.textContent.indexOf(_actName) !== -1) {
           row.remove();
         }
       });
@@ -4785,7 +4785,7 @@ function openScriptResponseModal() {
   // Event delegation: open modal when clicking any HRA script link in the activity tables
   document.addEventListener('click', function(e) {
     var el = (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') ? e.target : (e.target.closest('a') || e.target.closest('button'));
-    if (el && el.textContent.trim() === 'Health Risk Assessment' && el.closest('#scriptActivityTbody')) {
+    if (el && el.textContent.trim() === (window._gcSelectedActivity || 'Health Risk Assessment') && el.closest('#scriptActivityTbody')) {
       if (e.target.tagName === 'A') e.preventDefault();
       openScriptResponseModal();
     }
@@ -4796,7 +4796,7 @@ function openScriptResponseModal() {
   if (scriptTbodyInit) {
     scriptTbodyInit.addEventListener('click', function(e) {
       var el = e.target;
-      if (el && (el.tagName === 'BUTTON' || el.tagName === 'A') && el.textContent.trim() === 'Health Risk Assessment') {
+      if (el && (el.tagName === 'BUTTON' || el.tagName === 'A') && el.textContent.trim() === (window._gcSelectedActivity || 'Health Risk Assessment')) {
         e.preventDefault();
         window.openScriptResponseModal();
       }
