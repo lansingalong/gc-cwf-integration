@@ -4845,6 +4845,8 @@ function openScriptResponseModal() {
     }
     var textarea = document.getElementById('sukiNoteText');
     if (textarea) textarea.value = noteText || '';
+    var consentCheck = document.getElementById('sukiConsentCheck');
+    if (consentCheck) consentCheck.checked = false;
     document.getElementById('addNoteModal').classList.add('open');
   };
 
@@ -4852,7 +4854,8 @@ function openScriptResponseModal() {
     var noteType = document.getElementById('sukiNoteType').value;
     var noteText = document.getElementById('sukiNoteText').value.trim();
     var dateVal  = document.getElementById('sukiNoteDate').value;
-    if (!noteText) return;
+    var consent = document.getElementById('sukiConsentCheck').checked;
+    if (!noteText || !consent) return;
     var row = '<tr>' +
       '<td><input type="checkbox" /></td>' +
       '<td>' + noteType + ' <span style="display:inline-block;font-size:10px;font-weight:700;color:var(--teal);background:var(--teal-light,rgba(49,94,123,0.1));border:1px solid var(--teal);border-radius:3px;padding:1px 5px;vertical-align:middle;letter-spacing:0.02em;">AI Note</span></td>' +
@@ -5269,9 +5272,12 @@ function openScriptResponseModal() {
         <label>Member</label>
         <div id="sukiNoteMember" style="font-size:13px;color:var(--text-secondary);padding:2px 0;"></div>
       </div>
-      <div class="gc-modal-field">
-        <label>Created By</label>
-        <input class="gc-modal-input" type="text" value="Beatrice Kanya : All Access Admin" readonly />
+      <div class="gc-modal-field" style="gap:8px;">
+        <label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;font-weight:400;">
+          <input type="checkbox" id="sukiConsentCheck" style="margin-top:2px;width:15px;height:15px;accent-color:var(--teal);flex-shrink:0;" />
+          <span style="font-weight:600;color:var(--text-primary);">Consent was provided</span>
+        </label>
+        <p style="margin:4px 0 0 23px;font-size:12px;color:var(--text-secondary);line-height:1.55;">Consent must be obtained before recording; otherwise, notes cannot be saved in GuidingCare. If consent hasn't been obtained, you may copy the notes and add them manually.</p>
       </div>
       <div class="gc-modal-field">
         <label>Note <span class="req">*</span></label>
