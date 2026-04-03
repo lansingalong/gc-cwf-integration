@@ -5243,14 +5243,21 @@ function openScriptResponseModal() {
     <div class="gc-modal-body">
       <div style="display:flex;gap:16px;flex-wrap:wrap;">
         <div class="gc-modal-field" style="flex:1;min-width:180px;">
-          <label>Note Type <span class="req">*</span></label>
+          <label>Health Note Type <span class="req">*</span></label>
           <select class="gc-modal-select" id="sukiNoteType">
             <option>Select</option>
-            <option selected>Activity</option>
-            <option>Clinical Note</option>
-            <option>Care Coordination Note</option>
-            <option>Telephonic Outreach Note</option>
+            <option>Behavioral Clinical History</option>
+            <option>Disaster Planning</option>
+            <option>Durable Medication Equipment (DME)</option>
             <option>General</option>
+            <option>General Note</option>
+            <option>Grievance</option>
+            <option>HCBS Note</option>
+            <option>Member Note</option>
+            <option>OHCW: Change of Residence</option>
+            <option>Provider Note</option>
+            <option>Rejection</option>
+            <option>Safety Precaution and Test</option>
           </select>
         </div>
         <div class="gc-modal-field" style="flex:1;min-width:180px;">
@@ -5272,7 +5279,7 @@ function openScriptResponseModal() {
       </div>
     </div>
     <div class="gc-modal-footer">
-      <button class="gc-btn gc-btn-primary" onclick="saveSukiNote()">Save</button>
+      <button class="gc-btn gc-btn-primary" onclick="saveSukiNote()">Save Notes</button>
       <button class="gc-btn gc-btn-secondary" onclick="document.getElementById('addNoteModal').classList.remove('open')">Cancel</button>
     </div>
   </div>
