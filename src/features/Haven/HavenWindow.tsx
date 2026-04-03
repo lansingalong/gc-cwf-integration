@@ -52,7 +52,7 @@ export function HavenWindow({
   pcp = 'Ambetter',
   onSend,
   defaultRight = 24,
-  defaultBottom = 100,
+  defaultBottom = 118,
   defaultWidth = 500,
   defaultHeight = 657,
   mockMemberId = 'AH0000007',
