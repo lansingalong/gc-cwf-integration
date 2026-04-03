@@ -331,6 +331,7 @@ export function HavenWindow({
     {sukiOpen && !isHome && (
       <SukiWindow
         onClose={() => setSukiOpen(false)}
+        onNoteSent={() => { setSukiOpen(false); setWinState('closed') }}
         memberName={memberName}
         memberId={memberId}
         phone={phone}

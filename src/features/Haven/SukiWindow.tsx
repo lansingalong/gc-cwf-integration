@@ -28,6 +28,7 @@ const YELLOW_BARS  = new Set([2,6,10,14,18,22,26])
 
 interface SukiWindowProps {
   onClose: () => void
+  onNoteSent?: () => void
   memberName: string
   memberId: string
   phone: string
@@ -41,7 +42,7 @@ interface SukiWindowProps {
 
 type View = 'notes' | 'detail' | 'summary'
 
-export function SukiWindow({ onClose, memberName, memberId, phone, pcp, age, gender, dob, havenLeft, havenTop }: SukiWindowProps) {
+export function SukiWindow({ onClose, onNoteSent, memberName, memberId, phone, pcp, age, gender, dob, havenLeft, havenTop }: SukiWindowProps) {
   const [view, setView]                   = useState<View>('notes')
   const [ambientActive, setAmbientActive] = useState(false)
   const [elapsed, setElapsed]             = useState(0)
@@ -74,6 +75,7 @@ export function SukiWindow({ onClose, memberName, memberId, phone, pcp, age, gen
     }
     // Also write localStorage as fallback for cross-tab (GitHub Pages)
     localStorage.setItem('suki-note-ready', SUMMARY_TEXT)
+    onNoteSent?.()
     onClose()
   }
 
