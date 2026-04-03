@@ -523,6 +523,77 @@ export function getFollowUpQuery(input: string): string {
   return FOLLOW_UP_MAP.find(m => matches(q, m.terms))?.query ?? DEFAULT_FOLLOW_UP.query
 }
 
+/* ─── General-purpose fallback ──────────────────────────────────────────────
+   Handles anything that doesn't match a topic keyword: greetings, pleasantries,
+   member summaries, call prep, PCP info, next steps, and open-ended questions.
+─────────────────────────────────────────────────────────────────────────── */
+
+function getGeneralFallback(q: string, first: string, isLisa: boolean): string {
+  // ── Greetings ──
+  if (/^(hi|hey|hello|good morning|good afternoon|good evening|howdy|sup|yo)\b/.test(q)) {
+    return `Hi there! I'm Haven, your AI care management assistant. I'm currently viewing ${first}'s record.\n\nYou can ask me about ${first}'s medications, diagnoses, recent labs, care gaps, care plan, visits, programs, assessments, SDOH, immunizations, behavioral health, eligibility, or contact preferences.\n\nWhat would you like to know?`
+  }
+
+  // ── Thanks / affirmations ──
+  if (/^(thanks|thank you|thank u|thx|ty|great|perfect|got it|sounds good|ok|okay|cool|awesome|noted|understood|makes sense|that helps|helpful)[\s!.]*$/.test(q)) {
+    return `You're welcome! Let me know if there's anything else you'd like to know about ${first}.`
+  }
+
+  // ── What can you do / help ──
+  if (matches(q, ['what can you', 'what do you do', 'how can you help', 'what do you know', 'capabilities', 'what are you', 'who are you', 'tell me what you can', 'help me', 'help with', 'what can i ask', 'what should i ask', 'show me what'])) {
+    return `I'm Haven — an AI assistant with access to ${first}'s clinical record in GuidingCare. Here's what I can help with:\n\n• Medications & allergies\n• Active diagnoses & problem list\n• Recent labs & vitals\n• Care gaps & HEDIS measures\n• Care plan goals & interventions\n• Visit & appointment history\n• Program enrollment & eligibility\n• Assessments & screenings\n• Social determinants of health (SDOH)\n• Immunizations\n• Behavioral health\n• Contact preferences\n• Eligibility & insurance coverage\n• Member demographics & details\n• Risk level & health indicators\n\nJust ask naturally — for example: "What meds is ${first} on?" or "Any open care gaps?"`
+  }
+
+  // ── Overview / summary / snapshot ──
+  if (matches(q, ['overview', 'summary', 'snapshot', 'give me a rundown', 'quick summary', 'brief', 'at a glance', 'big picture', 'overall', 'tell me about', 'what do we know about', 'catch me up', 'fill me in'])) {
+    return isLisa
+      ? `Lisa Thompson — member overview:\n\n• Age: 57 · Gender: Female · DOB: 06/14/1966\n• Risk level: High (Tier 4)\n• Primary diagnoses: Congestive Heart Failure, COPD, Type 2 Diabetes, CKD Stage 3, Generalized Anxiety Disorder\n• Recent hospitalization: Inpatient 12/2023 — CHF exacerbation (3-day stay)\n• A1C: 8.2% ⚠️ · BNP: 420 pg/mL ⚠️ · O₂ Sat: 94% ⚠️\n• Open care gaps: 4 (including flu vaccine and diabetic eye exam)\n• Active care plan: 3 goals (CHF, diabetes, COPD management)\n• Programs: DSNP Care Coordination (active), CHF Disease Management (active)\n• Last contact: 03/10/2024\n\nHigh-priority member. Primary focus: CHF readmission prevention, daily weight monitoring, medication adherence.`
+      : `Henry Tom Garcia — member overview:\n\n• Age: 24 · Gender: Male · DOB: 03/01/1989\n• Risk level: Moderate-High (Tier 3)\n• Primary diagnoses: Type 2 Diabetes, Essential Hypertension, Hyperlipidemia, Asthma, CKD Stage G2, Obesity\n• A1C: 7.8% ⚠️ (trending up) · BP: 138/88 ⚠️\n• Open care gaps: Multiple (retinal exam, HbA1c follow-up, preventive screenings)\n• Active care plan: Goals around glycemic control, BP management, and medication adherence\n• Programs: DSME enrolled, DPP eligible (not enrolled)\n• Last contact: 02/20/2024\n\nPrimary focus: medication adherence, dietary habits, and closing open HEDIS gaps.`
+  }
+
+  // ── Call prep / talking points ──
+  if (matches(q, ['call prep', 'prepare for', 'talking points', 'what should i cover', 'agenda', 'prepare me', 'prep for', 'before i call', 'about to call', 'getting ready to', 'what to discuss', 'what to go over', 'what to talk about'])) {
+    return isLisa
+      ? `Call prep for Lisa Thompson:\n\n1. Check in on daily weight — any gain of 2+ lbs in a day or 5 lbs in a week needs immediate escalation\n2. Fluid intake adherence — is she following the 1.5L/day restriction?\n3. Medication adherence — Furosemide, Metoprolol, Carvedilol, Insulin\n4. COPD symptoms — shortness of breath, increased rescue inhaler use\n5. Open care gap: Flu vaccine — recommend scheduling today\n6. PHQ-9 / GAD-7 — due for re-screen (last score 9 — moderate)\n7. Confirm PCP follow-up appointment (Dr. Martinez)\n8. Social isolation check-in — does she need community program resources?\n\nLast successful contact: 03/10/2024.`
+      : `Call prep for Henry Tom Garcia:\n\n1. Medication adherence — Metformin, Lisinopril, Atorvastatin (discuss any side effects)\n2. A1C follow-up — last 7.8%, trending up — has he made dietary changes?\n3. Blood pressure — home readings, any dizziness or headaches\n4. Open care gaps — retinal exam overdue, preventive screenings\n5. Transportation barrier — confirm he has a ride to upcoming PCP visit (03/25/2024)\n6. DPP enrollment — eligible but not enrolled, good opportunity to mention\n7. PHQ-9 — annual re-screen due\n\nMissed call attempt: 03/10/2024 (morning — no answer). Try within the preferred afternoon window.`
+  }
+
+  // ── PCP / doctor / provider ──
+  if (matches(q, ['pcp', 'primary care', 'doctor', 'physician', 'provider', 'who is his doctor', 'who is her doctor', "who's his doctor", "who's her doctor", 'attending', 'who treats', 'who is treating', 'who manages his', 'who manages her'])) {
+    return isLisa
+      ? `Lisa's primary care provider:\n\n• PCP: Dr. Maria Martinez, MD — Internal Medicine\n• Clinic: Riverside Primary Care Associates\n• Phone: (951) 555-0182\n• Last PCP visit: 03/10/2024\n• Next scheduled: TBD — follow-up recommended within 30 days per CHF protocol\n\nSpecialist team:\n• Cardiologist: Dr. James Patel, MD (last visit 01/2024)\n• Pulmonologist: Dr. Susan Nguyen, MD (last visit 11/2023)\n• Endocrinologist: Referral pending`
+      : `Henry's primary care provider:\n\n• PCP: Dr. Amanda Torres, MD — Family Medicine\n• Clinic: Valley Health Family Practice\n• Phone: (909) 555-0147\n• Last PCP visit: 01/18/2024\n• Next scheduled: 03/25/2024\n\nSpecialist involvement:\n• No active specialist referrals on file\n• Nephrology consult recommended given CKD Stage G2 (eGFR 74)`
+  }
+
+  // ── Next steps / recommendations / what should I do ──
+  if (matches(q, ['next step', 'next steps', 'what should i do', 'what do i do', 'recommend', 'recommendation', 'suggestions', 'action item', 'action items', 'follow up', 'follow-up', 'to do', 'todo', 'what now', 'what next', 'priority', 'priorities', 'most important', 'focus on', 'top issue'])) {
+    return isLisa
+      ? `Recommended next steps for Lisa Thompson:\n\n1. ⚠️ CHF monitoring — confirm daily weight log, escalate if +2 lbs/day\n2. Schedule flu vaccine — open care gap, high-risk member\n3. Administer PHQ-9 / GAD-7 at next contact\n4. Coordinate PCP follow-up within 30 days (post-hospitalization protocol)\n5. Review Furosemide adherence — potassium and creatinine monitoring\n6. Explore senior social programs to address isolation\n7. Dietitian referral — A1C 8.2%, dietary modification needed`
+      : `Recommended next steps for Henry Tom Garcia:\n\n1. ⚠️ A1C follow-up — trending up to 7.8%, review medication adherence and diet\n2. BP management — 138/88, reinforce home monitoring, confirm Lisinopril adherence\n3. Close retinal exam care gap — schedule with ophthalmology\n4. Discuss DPP enrollment — eligible and not enrolled, strong candidate\n5. Confirm PCP appointment 03/25/2024 — address transportation barrier\n6. Annual PHQ-9 re-screen due at next touchpoint\n7. Nephrology consult — consider given CKD Stage G2 trajectory`
+  }
+
+  // ── Last contact / outreach history ──
+  if (matches(q, ['last contact', 'last call', 'last time we spoke', 'last time we talked', 'last outreach', 'outreach history', 'when did we last', 'last interaction', 'previous contact', 'last note'])) {
+    return isLisa
+      ? `Lisa's most recent contact history:\n\n• Last successful contact: 03/10/2024 — phone call (morning)\n  Summary: Vital check, medication review, care plan goals reviewed\n• Prior contact: 02/14/2024 — phone call\n  Summary: PHQ-9 administered (score 9), flu vaccine discussed\n• Prior contact: 01/15/2024 — post-discharge follow-up call (CHF hospitalization 12/2023)\n\nContact preference: morning calls preferred. Slight hearing difficulty — speak clearly.`
+      : `Henry's most recent contact history:\n\n• Last successful contact: 02/20/2024 — phone call (afternoon)\n  Summary: Medication check-in, A1C results reviewed, DPP program discussed\n• Missed attempt: 03/10/2024 — no answer (morning)\n• Prior contact: 01/25/2024 — phone call\n  Summary: Upcoming PCP visit confirmed, transportation barrier noted\n\nContact preference: afternoon calls preferred. Best number: (909) 851-3064.`
+  }
+
+  // ── How is the member doing (general wellbeing) ──
+  if (matches(q, ['how is he doing', 'how is she doing', 'how are they doing', 'how is henry doing', 'how is lisa doing', 'how is the member doing', 'how is he', 'how is she', 'member status', 'status update', 'current status', 'health status'])) {
+    return isLisa
+      ? `Lisa Thompson — current status summary:\n\n• Overall: High complexity, closely monitored\n• CHF: Elevated BNP (420 pg/mL), weight up 3 lbs — early decompensation risk\n• COPD: O₂ saturation 94%, below goal (≥96%) — monitor for exacerbation\n• Diabetes: A1C 8.2%, above goal — dietary and adherence issues\n• Mental health: Generalized Anxiety Disorder, PHQ-9 score 9 (moderate) — re-screen due\n• Social: Widowed, lives alone — social isolation is an active concern\n\nMember is stable but high-risk. CHF readmission prevention is the primary care management priority.`
+      : `Henry Tom Garcia — current status summary:\n\n• Overall: Moderate-High complexity, chronic disease management focus\n• Diabetes: A1C 7.8% (above goal, trending up since Aug 2023) — medication adherence concern\n• Hypertension: BP 138/88 — mildly elevated, home monitoring recommended\n• CKD: Stage G2 (eGFR 74) — stable, monitor annually\n• Mental health: PHQ-9 overdue — last score within normal range\n• SDOH: Food insecurity and transportation barriers documented\n\nMember is engaged at last contact. Key focus: glycemic control and closing preventive care gaps.`
+  }
+
+  // ── Anything else — context-aware open-ended fallback ──
+  return `I'm not sure I have specific data for that, but here's what I can share about ${first} that might help:\n\n${
+    isLisa
+      ? '• Risk level: High (Tier 4) — CHF, COPD, Type 2 Diabetes, CKD Stage 3\n• Most urgent: CHF readmission risk, A1C 8.2%, O₂ saturation below goal\n• Open care gaps: 4 (flu vaccine is highest priority)\n• Last contact: 03/10/2024'
+      : '• Risk level: Moderate-High (Tier 3) — Diabetes, Hypertension, CKD Stage G2\n• Most urgent: A1C trending up (7.8%), BP above target (138/88)\n• Open care gaps: Retinal exam and preventive screenings overdue\n• Last contact: 02/20/2024'
+  }\n\nCould you rephrase your question, or would you like me to pull up a specific section — like labs, care plan, or care gaps?`
+}
+
 /* ─── Guardrails ─────────────────────────────────────────────────────────── */
 
 function suggest(s1: string, s2: string): string {
@@ -948,7 +1019,7 @@ function getLisaReply(q: string, first: string): string {
   if (matches(q, CONTACT_TERMS)) return getLisaContactReply(first)
   if (matches(q, DIAGNOSIS_TERMS)) return getLisaDxReply(first)
   if (matches(q, MEMBER_DETAIL_TERMS)) return getLisaMemberDetailReply(first)
-  return `I'm here to help with ${first}'s clinical information. Here are some things you can ask:\n\n• Medication list or allergies\n• Active diagnoses or problem list\n• Recent labs or vitals\n• Care gaps or HEDIS measures\n• Care plan goals and interventions\n• Visits or appointments\n• Programs enrolled or eligible\n• Assessments or screenings\n• Social determinants of health\n• Immunizations or behavioral health\n• Contact preferences or eligibility`
+  return getGeneralFallback(q, first, true)
 }
 
 /* ─── Main export ───────────────────────────────────────────────────────────── */
@@ -1013,6 +1084,6 @@ export function getMockReply(input: string, memberName: string, memberId = 'AH00
   // Member details / demographics
   if (matches(q, MEMBER_DETAIL_TERMS)) return getMemberDetailReply(first)
 
-  // Fallback
-  return `I'm here to help with ${first}'s clinical information. Here are some things you can ask:\n\n• Medication list or allergies\n• Active diagnoses or problem list\n• Recent labs or vitals\n• Care gaps or HEDIS measures\n• Care plan goals and interventions\n• Visits or appointments\n• Programs enrolled or eligible\n• Assessments or screenings\n• Social determinants of health\n• Immunizations or behavioral health\n• Contact preferences or eligibility`
+  // Fallback — general-purpose responder
+  return getGeneralFallback(q, first, false)
 }
