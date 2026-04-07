@@ -453,7 +453,7 @@
             <div class="gc-tool-menu-item">My Activity Notification Summary</div>
             <div class="gc-tool-menu-item">Bulk Referral</div>
             <div class="gc-tool-menu-item">Pending Activities</div>
-            <div class="gc-tool-menu-item">Care Activity Log</div>
+            <div class="gc-tool-menu-item" onclick="showCareActivityLog()">Care Activity Log</div>
             <div class="gc-tool-menu-item">Referral Request Summary</div>
             <div class="gc-tool-menu-item">Full Dashboard</div>
             <div class="gc-tool-menu-item">Worklog Manager</div>
@@ -3874,20 +3874,36 @@ window._gcAllAssessmentQA = {
   });
 
   // Show dashboard / hide member view (or toggle)
-  function showDashboard() {
-    homeDash.style.display = '';
+  function hideAllPages() {
+    homeDash.style.display = 'none';
     memberView.style.display = 'none';
     var hraPage = document.getElementById('hraReviewPage');
     if (hraPage) hraPage.style.display = 'none';
-    // When user sees the home dashboard (and the alerts), flush pending outstanding activities
+    var calPage = document.getElementById('careActivityLogPage');
+    if (calPage) calPage.style.display = 'none';
+  }
+
+  function showDashboard() {
+    hideAllPages();
+    homeDash.style.display = '';
     flushPendingOutstanding();
   }
 
   function showMemberView() {
-    homeDash.style.display = 'none';
+    hideAllPages();
     memberView.style.display = '';
-    var hraPage = document.getElementById('hraReviewPage');
-    if (hraPage) hraPage.style.display = 'none';
+  }
+
+  function showCareActivityLog() {
+    hideAllPages();
+    var calPage = document.getElementById('careActivityLogPage');
+    if (calPage) calPage.style.display = '';
+    document.querySelectorAll('.gc-tool-menu').forEach(function(m) { m.classList.remove('open'); });
+  }
+
+  function calExpandAll(e) {
+    e.preventDefault();
+    document.querySelectorAll('#careActivityLogPage .gc-accordion').forEach(function(a) { a.classList.add('open'); });
   }
 
   // Home shortcut toggles between dashboard and member view
@@ -5689,6 +5705,244 @@ window._gcAllAssessmentQA = {
   </div>
 </div>
 
+
+<!-- ══════════════ CARE ACTIVITY LOG PAGE ══════════════ -->
+<div id="careActivityLogPage" style="display:none;background:var(--surface-light);min-height:calc(100vh - 90px);">
+
+  <!-- Member banner -->
+  <div style="background:#fff;width:100%;border-bottom:1px solid var(--border);">
+    <div class="gc-member-banner">
+      <div style="position:relative;display:inline-flex;flex-shrink:0;"><span class="material-icons" style="font-size:26px;color:#315E7B;">notifications</span><span style="position:absolute;top:-4px;right:-6px;min-width:18px;height:18px;background:#C62828;color:white;border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:700;padding:0 3px;">2</span></div>
+      <span class="gc-banner-check" style="flex-shrink:0;"><span class="material-icons" style="font-size:22px;color:#2E7D32;">check_circle</span></span>
+      <img src="assets/Group 1657.png" alt="Wellframe" style="width:24px;height:24px;flex-shrink:0;display:inline-block;">
+      <span class="gc-banner-name">Jackson Thomas</span>
+      <span class="gc-banner-dob"><strong style="font-size:12px;letter-spacing:0.3px;">DOB</strong> 03/15/1958 67 yr(s)</span>
+      <span class="gc-banner-expand" style="margin-left:16px;flex-shrink:0;"><span class="material-icons" style="font-size:18px;color:var(--teal);">open_in_full</span></span>
+    </div>
+  </div>
+
+  <!-- Page body -->
+  <div style="padding:14px 20px;max-width:1600px;margin:0 auto;">
+
+    <!-- Expand All -->
+    <div style="margin-bottom:10px;">
+      <a href="#" style="color:var(--link);font-size:12px;text-decoration:none;" onclick="calExpandAll(event)">&#9650; Expand All</a>
+    </div>
+
+    <!-- Today's Care Activity Log accordion (open by default) -->
+    <div class="gc-accordion open" id="calTodayAccordion">
+      <div class="gc-accordion-header" onclick="this.closest('.gc-accordion').classList.toggle('open')">
+        <span class="material-icons">chevron_right</span>
+        Today's Care Activity Log
+      </div>
+      <div class="gc-accordion-body" style="padding:12px 14px;">
+
+        <!-- Search filters -->
+        <div style="display:flex;align-items:flex-end;flex-wrap:wrap;gap:10px;margin-bottom:12px;background:var(--surface-light);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 12px;">
+          <div>
+            <div style="font-size:11px;color:var(--text-secondary);margin-bottom:3px;">Module</div>
+            <select class="gc-input" style="height:30px;font-size:12px;padding:0 6px;width:60px;"><option>CM</option><option>HM</option><option>UM</option></select>
+          </div>
+          <div>
+            <div style="font-size:11px;color:var(--text-secondary);margin-bottom:3px;">Care Staff</div>
+            <input class="gc-input" style="height:30px;font-size:12px;padding:0 8px;width:200px;" value="Beatrice Kanya : All Access Admin" readonly>
+          </div>
+          <div>
+            <div style="font-size:11px;color:var(--text-secondary);margin-bottom:3px;">New ID</div>
+            <input class="gc-input" style="height:30px;font-size:12px;padding:0 8px;width:110px;" placeholder="">
+          </div>
+          <div>
+            <div style="font-size:11px;color:var(--text-secondary);margin-bottom:3px;">Member Name</div>
+            <input class="gc-input" style="height:30px;font-size:12px;padding:0 8px;width:130px;" placeholder="">
+          </div>
+          <div>
+            <div style="font-size:11px;color:var(--text-secondary);margin-bottom:3px;">From Date <span style="color:var(--text-muted);">MM/DD/YYYY</span></div>
+            <input type="date" class="gc-input" style="height:30px;font-size:12px;padding:0 6px;width:140px;">
+          </div>
+          <div>
+            <div style="font-size:11px;color:var(--text-secondary);margin-bottom:3px;">To Date <span style="color:var(--text-muted);">MM/DD/YYYY</span></div>
+            <input type="date" class="gc-input" style="height:30px;font-size:12px;padding:0 6px;width:140px;">
+          </div>
+          <button class="gc-btn gc-btn-primary" style="height:30px;"><span class="material-icons" style="font-size:14px;">search</span> Search</button>
+          <a href="#" style="color:var(--link);font-size:12px;text-decoration:none;line-height:30px;">&#10005; Clear</a>
+        </div>
+
+        <!-- Action buttons -->
+        <div style="display:flex;gap:6px;margin-bottom:10px;">
+          <button class="gc-btn gc-btn-tertiary"><span class="material-icons" style="font-size:13px;">event_repeat</span> Reschedule</button>
+          <button class="gc-btn gc-btn-tertiary"><span class="material-icons" style="font-size:13px;">visibility</span> View</button>
+          <button class="gc-btn gc-btn-tertiary"><span class="material-icons" style="font-size:13px;">edit</span> Edit</button>
+          <button class="gc-btn gc-btn-tertiary"><span class="material-icons" style="font-size:13px;">delete</span> Delete</button>
+        </div>
+
+        <!-- Table -->
+        <div style="overflow-x:auto;">
+          <table class="gc-table" style="width:100%;font-size:11px;">
+            <thead>
+              <tr>
+                <th style="width:30px;"><input type="checkbox"></th>
+                <th>Eligibility</th>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>New ID</th>
+                <th>Activity Type</th>
+                <th>MP</th>
+                <th>Follow up Date &amp; Time</th>
+                <th>Due Date</th>
+                <th>Assigned By</th>
+                <th>Reassigned By</th>
+                <th>Provider Name</th>
+                <th>Priority</th>
+                <th>Payor</th>
+                <th>Program Name</th>
+                <th>Script/Type</th>
+                <th>Perform Activity</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><span class="gc-badge gc-badge-teal">Active</span></td>
+                <td><a href="#" class="gc-kv-link">Thomas</a></td>
+                <td>Jackson</td>
+                <td>MBR-2024-0847</td>
+                <td>Assessment- HRA</td>
+                <td></td>
+                <td style="color:#C62828;font-weight:600;">04/07/2026 12:35</td>
+                <td>N/A</td>
+                <td>Beatrice Kanya</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>High</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>Health Risk Assessment</td>
+                <td style="text-align:center;"><span class="material-icons" style="font-size:18px;color:var(--teal);cursor:pointer;">thumb_up</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><span class="gc-badge gc-badge-teal">Active</span></td>
+                <td><a href="#" class="gc-kv-link">Rivera</a></td>
+                <td>Maria</td>
+                <td>GC00002</td>
+                <td>Comprehensive Assessment Review</td>
+                <td></td>
+                <td style="color:#C62828;font-weight:600;">04/01/2026 09:00</td>
+                <td>N/A</td>
+                <td>Beatrice Kanya</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>High</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>Wellframe (Campaign)</td>
+                <td style="text-align:center;"><span class="material-icons" style="font-size:18px;color:var(--teal);cursor:pointer;">thumb_up</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><span class="gc-badge gc-badge-teal">Active</span></td>
+                <td><a href="#" class="gc-kv-link">Jackson</a></td>
+                <td>Thomas</td>
+                <td>GC00001</td>
+                <td>Follow Up</td>
+                <td></td>
+                <td style="color:#C62828;font-weight:600;">03/27/2026 07:59</td>
+                <td>N/A</td>
+                <td>Beatrice Kanya</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>High</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td style="text-align:center;"><span class="material-icons" style="font-size:18px;color:var(--teal);cursor:pointer;">thumb_up</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><span class="gc-badge gc-badge-teal">Active</span></td>
+                <td><a href="#" class="gc-kv-link">Rivera</a></td>
+                <td>Maria</td>
+                <td>GC00002</td>
+                <td>Assessments - Initial Outreach</td>
+                <td></td>
+                <td style="color:#C62828;font-weight:600;">03/20/2026 08:30</td>
+                <td>N/A</td>
+                <td>Beatrice Kanya</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>Medium</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td style="text-align:center;"><span class="material-icons" style="font-size:18px;color:var(--teal);cursor:pointer;">thumb_up</span></td>
+              </tr>
+              <tr>
+                <td><input type="checkbox"></td>
+                <td><span class="gc-badge gc-badge-teal">Active</span></td>
+                <td><a href="#" class="gc-kv-link">Jackson</a></td>
+                <td>Thomas</td>
+                <td>GC00001</td>
+                <td>CHF Weight Monitoring Check-In</td>
+                <td></td>
+                <td style="color:#C62828;font-weight:600;">03/25/2026 09:00</td>
+                <td>N/A</td>
+                <td>Beatrice Kanya</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>High</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td>N/A</td>
+                <td style="text-align:center;"><span class="material-icons" style="font-size:18px;color:var(--teal);cursor:pointer;">thumb_up</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Pagination -->
+        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;">
+          <div style="display:flex;align-items:center;gap:4px;">
+            <button class="gc-pager-btn" disabled>&#171;</button>
+            <button class="gc-pager-btn" disabled>&#8249;</button>
+            <button class="gc-pager-btn" style="background:var(--teal);color:#fff;border-color:var(--teal);">1</button>
+            <button class="gc-pager-btn" disabled>&#8250;</button>
+            <button class="gc-pager-btn" disabled>&#187;</button>
+            <select class="gc-input" style="height:26px;font-size:11px;padding:0 4px;width:50px;margin-left:6px;"><option>10</option><option>25</option><option>50</option></select>
+            <span style="font-size:11px;color:var(--text-secondary);">items per page</span>
+          </div>
+          <div style="display:flex;align-items:center;gap:6px;">
+            <span style="font-size:11px;color:var(--text-secondary);">1 - 5 of 5 items</span>
+            <span class="material-icons" style="font-size:14px;color:var(--text-muted);cursor:pointer;">refresh</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Collapsed sections -->
+    <div class="gc-accordion" id="calOpenAuth">
+      <div class="gc-accordion-header" onclick="this.closest('.gc-accordion').classList.toggle('open')"><span class="material-icons">chevron_right</span>Open Authorizations</div>
+      <div class="gc-accordion-body"><p style="font-size:12px;color:var(--text-muted);margin:0;">No open authorizations.</p></div>
+    </div>
+    <div class="gc-accordion" id="calOpenComplaints">
+      <div class="gc-accordion-header" onclick="this.closest('.gc-accordion').classList.toggle('open')"><span class="material-icons">chevron_right</span>Open Complaints</div>
+      <div class="gc-accordion-body"><p style="font-size:12px;color:var(--text-muted);margin:0;">No open complaints.</p></div>
+    </div>
+    <div class="gc-accordion" id="calReqReceived">
+      <div class="gc-accordion-header" onclick="this.closest('.gc-accordion').classList.toggle('open')"><span class="material-icons">chevron_right</span>Requests Received</div>
+      <div class="gc-accordion-body"><p style="font-size:12px;color:var(--text-muted);margin:0;">No requests received.</p></div>
+    </div>
+    <div class="gc-accordion" id="calReqRejected">
+      <div class="gc-accordion-header" onclick="this.closest('.gc-accordion').classList.toggle('open')"><span class="material-icons">chevron_right</span>Requests Rejected</div>
+      <div class="gc-accordion-body"><p style="font-size:12px;color:var(--text-muted);margin:0;">No rejected requests.</p></div>
+    </div>
+    <div class="gc-accordion" id="calOtherStaff">
+      <div class="gc-accordion-header" onclick="this.closest('.gc-accordion').classList.toggle('open')"><span class="material-icons">chevron_right</span>Activities Performed by Other Care Staff</div>
+      <div class="gc-accordion-body"><p style="font-size:12px;color:var(--text-muted);margin:0;">No activities by other care staff.</p></div>
+    </div>
+
+  </div>
+</div>
 
 <!-- ══════════════ FOOTER ══════════════ -->
 <div class="gc-footer" id="app-footer">
