@@ -534,10 +534,10 @@
               <td style="padding:4px 8px;">Maria</td>
               <td style="padding:4px 8px;">MBR-2024-8516</td>
               <td style="padding:4px 8px;">08/22/1975</td>
-              <td style="padding:4px 8px;">Medium</td>
-              <td style="padding:4px 8px;">04/05/2026</td>
+              <td style="padding:4px 8px;">--</td>
+              <td style="padding:4px 8px;">--</td>
               <td style="padding:4px 8px;">03/01/2025</td>
-              <td style="padding:4px 8px;">Cardiac Rehab</td>
+              <td style="padding:4px 8px;">Health Risk Assessment</td>
             </tr>
             <tr>
               <td style="padding:4px 8px;"><span class="material-icons" style="font-size:14px;color:var(--teal);">check_circle</span></td>
@@ -669,34 +669,10 @@
           </thead>
           <tbody id="dashAlertsTbody">
             <tr>
-              <td style="padding:4px 8px;">HEALTH_INDICATOR</td>
-              <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">1</a></td>
-              <td style="padding:4px 8px;">HEALTH_INDICATOR</td>
-              <td style="padding:4px 8px;">N/A</td>
-            </tr>
-            <tr>
-              <td style="padding:4px 8px;">Missed medication check-in</td>
-              <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">1</a></td>
-              <td style="padding:4px 8px;">Wellframe</td>
-              <td style="padding:4px 8px;">03/24/2026</td>
-            </tr>
-            <tr>
               <td style="padding:4px 8px;">ER visit reported</td>
               <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">1</a></td>
               <td style="padding:4px 8px;">Claims</td>
               <td style="padding:4px 8px;">03/23/2026</td>
-            </tr>
-            <tr>
-              <td style="padding:4px 8px;">Assessment overdue</td>
-              <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">2</a></td>
-              <td style="padding:4px 8px;">Care Plan</td>
-              <td style="padding:4px 8px;">03/22/2026</td>
-            </tr>
-            <tr>
-              <td style="padding:4px 8px;">High A1C lab result</td>
-              <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">1</a></td>
-              <td style="padding:4px 8px;">Lab Results</td>
-              <td style="padding:4px 8px;">03/20/2026</td>
             </tr>
           </tbody>
         </table>
@@ -777,15 +753,6 @@
               <td style="padding:4px 8px;"><input type="checkbox"></td>
               <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">Adam Eve</a></td>
               <td style="padding:4px 8px;">07/25/2025</td>
-              <td style="padding:4px 8px;">Vidya Pitta</td>
-              <td style="padding:4px 8px;">Beatrice Kanya</td>
-              <td style="padding:4px 8px;">Pending</td>
-              <td style="padding:4px 8px;"></td>
-            </tr>
-            <tr>
-              <td style="padding:4px 8px;"><input type="checkbox"></td>
-              <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">Robert Chen</a></td>
-              <td style="padding:4px 8px;">03/18/2026</td>
               <td style="padding:4px 8px;">Jennifer Reyes</td>
               <td style="padding:4px 8px;">Beatrice Kanya</td>
               <td style="padding:4px 8px;">Pending</td>
@@ -820,9 +787,9 @@
 <!-- ══════════════ MEMBER BANNER ══════════════ -->
 <div style="background:#fff;width:100%;">
 <div class="gc-member-banner">
-  <div style="position:relative;display:inline-flex;flex-shrink:0;"><span class="material-icons" style="font-size:26px;color:#315E7B;">notifications</span><span style="position:absolute;top:-4px;right:-6px;min-width:18px;height:18px;background:#C62828;color:white;border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:700;padding:0 3px;">2</span></div>
+  <div style="position:relative;display:inline-flex;flex-shrink:0;"><span class="material-icons" style="font-size:26px;color:#315E7B;">notifications</span><span id="bannerAlertBadge" style="position:absolute;top:-4px;right:-6px;min-width:18px;height:18px;background:#C62828;color:white;border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:700;padding:0 3px;">2</span></div>
   <span class="gc-banner-check" style="flex-shrink:0;"><span class="material-icons" style="font-size:22px;color:#2E7D32;">check_circle</span></span>
-  <img src="assets/Group 1657.png" alt="Wellframe" style="width:24px;height:24px;flex-shrink:0;display:inline-block;" title="Wellframe">
+  <img id="bannerLogo" src="assets/Group 1657.png" alt="Wellframe" style="width:24px;height:24px;flex-shrink:0;display:inline-block;" title="Wellframe">
   <span class="gc-banner-name">John Everhart-AH47391826</span>
   <span class="gc-banner-dob"><strong style="font-size:12px;letter-spacing:0.3px;">DOB</strong> 05/14/1942 83 yr(s)</span>
   <span class="gc-banner-expand" style="margin-left:16px;flex-shrink:0;"><span class="material-icons" style="font-size:18px;color:var(--teal);">open_in_full</span></span>
@@ -2906,7 +2873,7 @@
                 <thead><tr>
                   <th style="width:28px;"><input type="checkbox" /></th>
                   <th>Activity Type</th>
-                  <th>Digital Channel</th>
+                  <th>Contact Method</th>
                   <th>Priority</th>
                   <th>Follow up Date</th>
                   <th>Due Date</th>
@@ -3481,9 +3448,22 @@ function openScriptResponseModal(assessmentName) {
 
   var key = (window._gcGetKey ? window._gcGetKey() : null) || 'jackson-thomas';
   var md = window._gcMemberData || {};
-  var qa = (window._gcAllAssessmentQA && window._gcAllAssessmentQA[scriptName])
-    ? window._gcAllAssessmentQA[scriptName]
-    : (window._gcHraQA && window._gcHraQA.length > 0) ? window._gcHraQA : FALLBACK_QA;
+
+  // Check for partial QA saved by member (save-and-close flow)
+  var qa;
+  try {
+    var rawPartial = localStorage.getItem('assessment-partial-qa');
+    var partialData = rawPartial ? JSON.parse(rawPartial) : null;
+    if (partialData && partialData.assessmentType === scriptName && Array.isArray(partialData.qa) && partialData.qa.length > 0) {
+      qa = partialData.qa;
+    }
+  } catch(_) {}
+  if (!qa) {
+    qa = (window._gcAllAssessmentQA && window._gcAllAssessmentQA[scriptName])
+      ? window._gcAllAssessmentQA[scriptName]
+      : (window._gcHraQA && window._gcHraQA.length > 0) ? window._gcHraQA : FALLBACK_QA;
+  }
+
   var m = md[key] || md['jackson-thomas'] || FALLBACK_MEMBER;
 
   var now = new Date();
@@ -3519,7 +3499,7 @@ function openScriptResponseModal(assessmentName) {
       '<td style="padding:5px 9px;border:1px solid #e0e0e0;">'+(r.sub||'')+'</td>' +
       '<td style="padding:5px 9px;border:1px solid #e0e0e0;text-align:right;">'+(r.score>0?r.score.toFixed(2):'0')+'</td>' +
       '<td style="padding:5px 9px;border:1px solid #e0e0e0;">N/A</td>' +
-      '<td style="padding:5px 9px;border:1px solid #e0e0e0;">'+completedBy+'</td>' +
+      '<td style="padding:5px 9px;border:1px solid #e0e0e0;">'+(m.name||'')+'</td>' +
       '<td style="padding:5px 9px;border:1px solid #e0e0e0;">'+ts+'</td>' +
       '</tr>';
   });
@@ -3577,7 +3557,7 @@ function openScriptResponseModal(assessmentName) {
             '<th '+TH+'>Sub Option</th>' +
             '<th '+TH+'>Script Score</th>' +
             '<th '+TH+'>Care Notes</th>' +
-            '<th '+TH+'>Staff Name</th>' +
+            '<th '+TH+'>Answered by</th>' +
             '<th '+TH+'>Date Entered</th>' +
           '</tr></thead>' +
           '<tbody>'+rowsHtml+'</tbody>' +
@@ -3778,7 +3758,7 @@ window._gcAllAssessmentQA = {
     tbody.querySelectorAll('tr[data-dynamic="true"]').forEach(function(r) { r.remove(); });
     // Re-render one row per localStorage item for this member
     var items = JSON.parse(localStorage.getItem('wf_member_checklist') || '[]');
-    var memberItems = items.filter(function(it) { return it.memberKey === currentMemberKey && it.status !== 'Completed'; });
+    var memberItems = items.filter(function(it) { return it.memberKey === currentMemberKey && it.status !== 'Completed' && it.status !== 'In Progress'; });
     memberItems.forEach(function(item) {
       var parts = (item.date || '').split(' ');
       var rowDate = parts[0] || '';
@@ -3815,10 +3795,11 @@ window._gcAllAssessmentQA = {
     if (genTbody) genTbody.querySelectorAll('tr[data-member-completed="true"]').forEach(function(r) { r.remove(); });
     if (scriptTbody) scriptTbody.querySelectorAll('tr[data-member-completed="true"]').forEach(function(r) { r.remove(); });
     var items = JSON.parse(localStorage.getItem('wf_member_checklist') || '[]');
-    var completed = items.filter(function(it) { return it.memberKey === currentMemberKey && it.status === 'Completed'; });
+    var completed = items.filter(function(it) { return it.memberKey === currentMemberKey && it.memberKey !== 'maria-rivera' && (it.status === 'Completed' || it.status === 'In Progress'); });
     completed.forEach(function(item) {
+      var isInProgress = item.status === 'In Progress';
       var memberName = (memberData[currentMemberKey] || {}).name || 'Member';
-      var completedDate = item.completedAt || 'N/A';
+      var completedDate = item.completedAt || item.savedAt || 'N/A';
 
       // ── General Activity row ──
       if (genTbody) {
@@ -3844,13 +3825,13 @@ window._gcAllAssessmentQA = {
       if (scriptTbody) {
         var str = document.createElement('tr');
         str.dataset.memberCompleted = 'true';
-        str.style.background = '#E8F5E9';
+        if (!isInProgress) str.style.background = '#E8F5E9';
         str.innerHTML =
           '<td><input type="checkbox" /></td>' +
           '<td><a href="#" onclick="event.preventDefault();openScriptResponseModal(this.textContent);" style="color:var(--link);font-size:11px;">' + item.assessment + '</a></td>' +
           '<td>' + completedDate + '</td>' +
           '<td>Beatrice Kanya : All Access Admin</td>' +
-          '<td>Completed</td>' +
+          '<td>' + (isInProgress ? 'In Progress' : 'Completed') + '</td>' +
           '<td>' + completedDate + '</td>' +
           '<td>N/A</td>' +
           '<td>N/A</td>' +
@@ -3860,7 +3841,7 @@ window._gcAllAssessmentQA = {
           '<td>00:00:00</td>' +
           '<td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td>';
         scriptTbody.insertBefore(str, scriptTbody.firstChild);
-        setTimeout(function(row) { row.style.transition = 'background 1.5s'; row.style.background = ''; }.bind(null, str), 100);
+        if (!isInProgress) setTimeout(function(row) { row.style.transition = 'background 1.5s'; row.style.background = ''; }.bind(null, str), 100);
       }
     });
   }
@@ -3868,6 +3849,24 @@ window._gcAllAssessmentQA = {
   // Listen for member app completing an assessment
   window.addEventListener('storage', function(e) {
     if (e.key === 'wf_member_checklist') {
+      // Route maria-rivera entries through memberTabData handlers (not DOM sync)
+      try {
+        var cwfOldItems = JSON.parse(e.oldValue || '[]');
+        var cwfNewItems = JSON.parse(e.newValue || '[]');
+        cwfNewItems.forEach(function(item) {
+          if (item.memberKey !== 'maria-rivera') return;
+          var oldItem = cwfOldItems.find(function(o) { return o.memberKey === 'maria-rivera' && o.assessment === item.assessment; });
+          var prevStatus = oldItem ? oldItem.status : null;
+          if (prevStatus !== item.status) {
+            if (item.status === 'In Progress') {
+              handleMemberAssessmentSaved(item.assessment);
+            } else if (item.status === 'Completed') {
+              handleMemberAssessmentCompleted(item.assessment);
+            }
+          }
+        });
+      } catch(_) {}
+      // Sync non-maria-rivera members via DOM approach
       syncOutstandingActivities();
       syncCompletedToActivitySummary();
       syncCareActivityLog();
@@ -3900,7 +3899,7 @@ window._gcAllAssessmentQA = {
     if (!tbody) return;
     tbody.innerHTML = '';
     var items = JSON.parse(localStorage.getItem('wf_member_checklist') || '[]');
-    var memberItems = items.filter(function(it) { return it.memberKey === currentMemberKey && it.status !== 'Completed'; });
+    var memberItems = items.filter(function(it) { return it.memberKey === currentMemberKey && it.status !== 'Completed' && it.status !== 'In Progress'; });
     var m = memberData[currentMemberKey] || {};
     var nameParts = (m.name || '').split(' ');
     var firstName = nameParts[0] || '';
@@ -4232,7 +4231,7 @@ window._gcAllAssessmentQA = {
   // Member data for switching
   var memberData = {
     'jackson-thomas': { name:'Jackson Thomas', preferred:'Jack', dob:'03/15/1958', dobLong:'March 15, 1958', age:'67', id:'MBR-2024-3742', ssn:'XXX-XX-4523', gender:'Male', genderIdentity:'Cisgender Male', sexualOrientation:'Heterosexual', pronouns:'He/Him', contactFormat:'Phone', serviceInterruption:'None', address:'1247 Glacier View Drive', city:'Anchorage', state:'AK', zip:'99501', county:'Anchorage County', country:'United States', phone:'(907) 555-0142', cell:'(907) 555-0198', altPhone:'(907) 555-0203', fax:'Not Available', prefCallTime:'Mornings (8am–12pm)', email:'jackson.thomas@email.com', altEmail:'Not Available', lang:'English', writtenLang:'English', spokenLang:'English', commImpairment:'None', pcp:'Dr. Sarah Chen', plan:'Alaska Premier Health', lob:'Medicare Advantage', primaryInsPolicy:'APH-847-2024-JT', secondaryIns:'Medicare Part B', secondaryInsPolicy:'1EG4-TE5-MK72', primaryCondition:'Type 2 Diabetes Mellitus', behavioralCondition:'Major Depressive Disorder', expectedRisk:'High (2.4)', sensitiveDx:'No', doctorAppt:'04/15/2026', doctorApptReason:'Quarterly Diabetes Check', epsdt:'No', portalAccess:'Active', race:'White', preferredRace:'White', ethnicity:'Non-Hispanic', preferredEthnicity:'Non-Hispanic', residenceStatus:'Independent', incomeStatus:'Middle Income', maritalStatus:'Married', veteranStatus:'Non-Veteran', evacuationZone:'Zone B', careManager:'Beatrice Kanya', risk:'2.4', program:'Diabetes Management', digital:'Wellframe', caregiver:{first:'Maria',last:'Thomas',relation:'Wife',type:'Primary Caregiver',start:'01/15/2020'}, careTeam:[{name:'Dr. Sarah Chen',role:'PCP',phone:'(907) 555-1001'},{name:'Jennifer Reyes, RN',role:'Care Manager',phone:'(907) 555-1002'},{name:'Dr. Michael Park',role:'Cardiologist',phone:'(907) 555-1003'}] },
-    'maria-rivera': { name:'Maria Rivera', preferred:'Maria', dob:'08/22/1975', dobLong:'August 22, 1975', age:'50', id:'MBR-2024-8516', ssn:'XXX-XX-7891', gender:'Female', genderIdentity:'Cisgender Female', sexualOrientation:'Heterosexual', pronouns:'She/Her', contactFormat:'Phone – Spanish Preferred', serviceInterruption:'None', address:'842 Cordova Street', city:'Anchorage', state:'AK', zip:'99501', county:'Anchorage County', country:'United States', phone:'(907) 555-0287', cell:'(907) 555-0344', altPhone:'(907) 555-0391', fax:'Not Available', prefCallTime:'Afternoons (12pm–5pm)', email:'maria.rivera@email.com', altEmail:'Not Available', lang:'Spanish', writtenLang:'Spanish', spokenLang:'Spanish', commImpairment:'None', pcp:'Dr. James Park', plan:'Alaska Premier Health', lob:'Medicaid', primaryInsPolicy:'APH-1203-2024-MR', secondaryIns:'Alaska Medicaid', secondaryInsPolicy:'MCD-AK-445821', primaryCondition:'Congestive Heart Failure (CHF)', behavioralCondition:'Generalized Anxiety Disorder', expectedRisk:'High (1.8)', sensitiveDx:'No', doctorAppt:'04/22/2026', doctorApptReason:'Cardiology Follow-Up', epsdt:'No', portalAccess:'Active', race:'Hispanic or Latino', preferredRace:'Hispanic or Latino', ethnicity:'Hispanic', preferredEthnicity:'Hispanic', residenceStatus:'Independent', incomeStatus:'Low Income', maritalStatus:'Married', veteranStatus:'Non-Veteran', evacuationZone:'Zone A', careManager:'Beatrice Kanya', risk:'1.8', program:'Cardiac Rehab', digital:'', caregiver:{first:'Carlos',last:'Rivera',relation:'Husband',type:'Primary Caregiver',start:'03/10/2022'}, careTeam:[{name:'Dr. James Park',role:'PCP',phone:'(907) 555-2001'},{name:'Beatrice Kanya',role:'Care Manager',phone:'(907) 555-2002'},{name:'Dr. Amy Tran',role:'Cardiologist',phone:'(907) 555-2003'}] },
+    'maria-rivera': { name:'Maria Rivera', preferred:'Maria', dob:'08/22/1975', dobLong:'August 22, 1975', age:'50', id:'MBR-2024-8516', ssn:'XXX-XX-7891', gender:'Female', genderIdentity:'Cisgender Female', sexualOrientation:'Heterosexual', pronouns:'She/Her', contactFormat:'Phone – Spanish Preferred', serviceInterruption:'None', address:'842 Cordova Street', city:'Anchorage', state:'AK', zip:'99501', county:'Anchorage County', country:'United States', phone:'(907) 555-0287', cell:'(907) 555-0344', altPhone:'(907) 555-0391', fax:'Not Available', prefCallTime:'Afternoons (12pm–5pm)', email:'maria.rivera@email.com', altEmail:'Not Available', lang:'Spanish', writtenLang:'Spanish', spokenLang:'Spanish', commImpairment:'None', pcp:'Dr. James Park', plan:'Alaska Premier Health', lob:'Medicaid', primaryInsPolicy:'APH-1203-2024-MR', secondaryIns:'Alaska Medicaid', secondaryInsPolicy:'MCD-AK-445821', primaryCondition:'Congestive Heart Failure (CHF)', behavioralCondition:'Generalized Anxiety Disorder', expectedRisk:'--', sensitiveDx:'No', doctorAppt:'--', doctorApptReason:'', epsdt:'No', portalAccess:'Active', race:'Hispanic or Latino', preferredRace:'Hispanic or Latino', ethnicity:'Hispanic', preferredEthnicity:'Hispanic', residenceStatus:'Independent', incomeStatus:'Low Income', maritalStatus:'Married', veteranStatus:'Non-Veteran', evacuationZone:'Zone A', careManager:'Beatrice Kanya', risk:'--', program:'Health Risk Assessment', digital:'', caregiver:{first:'Carlos',last:'Rivera',relation:'Husband',type:'Primary Caregiver',start:'03/10/2022'}, careTeam:[{name:'Dr. James Park',role:'PCP',phone:'(907) 555-2001'},{name:'Beatrice Kanya',role:'Care Manager',phone:'(907) 555-2002'},{name:'Dr. Amy Tran',role:'Cardiologist',phone:'(907) 555-2003'}] },
     'robert-chen': { name:'Robert Chen', preferred:'Rob', dob:'11/03/1982', dobLong:'November 3, 1982', age:'43', id:'MBR-2024-2947', ssn:'XXX-XX-3345', gender:'Male', genderIdentity:'Cisgender Male', sexualOrientation:'Heterosexual', pronouns:'He/Him', contactFormat:'Email', serviceInterruption:'None', address:'315 Northern Lights Blvd', city:'Anchorage', state:'AK', zip:'99503', county:'Anchorage County', country:'United States', phone:'(907) 555-0463', cell:'(907) 555-0512', altPhone:'Not Available', fax:'Not Available', prefCallTime:'Evenings (5pm–8pm)', email:'robert.chen@email.com', altEmail:'rchen.work@gmail.com', lang:'English', writtenLang:'English', spokenLang:'English', commImpairment:'None', pcp:'Dr. Lisa Nguyen', plan:'Alaska Care Plus', lob:'Commercial', primaryInsPolicy:'ACP-0591-2024-RC', secondaryIns:'Not Available', secondaryInsPolicy:'Not Available', primaryCondition:'Osteoporosis with History of Falls', behavioralCondition:'Not Available', expectedRisk:'Medium (0.9)', sensitiveDx:'No', doctorAppt:'05/03/2026', doctorApptReason:'Annual Physical Exam', epsdt:'No', portalAccess:'Active', race:'Asian', preferredRace:'Asian', ethnicity:'Non-Hispanic', preferredEthnicity:'Non-Hispanic', residenceStatus:'Independent', incomeStatus:'Upper-Middle Income', maritalStatus:'Single', veteranStatus:'Non-Veteran', evacuationZone:'Zone C', careManager:'Beatrice Kanya', risk:'0.9', program:'Fall Prevention', digital:'', caregiver:{first:'Linda',last:'Chen',relation:'Mother',type:'Secondary Caregiver',start:'06/01/2024'}, careTeam:[{name:'Dr. Lisa Nguyen',role:'PCP',phone:'(907) 555-3001'},{name:'Beatrice Kanya',role:'Care Manager',phone:'(907) 555-3002'}] },
     'sarah-williams': { name:'Sarah Williams', preferred:'Sarah', dob:'06/17/1990', dobLong:'June 17, 1990', age:'35', id:'MBR-2024-6183', ssn:'XXX-XX-6612', gender:'Female', genderIdentity:'Cisgender Female', sexualOrientation:'Heterosexual', pronouns:'She/Her', contactFormat:'Text Message', serviceInterruption:'None', address:'1520 E 5th Avenue', city:'Anchorage', state:'AK', zip:'99501', county:'Anchorage County', country:'United States', phone:'(907) 555-0891', cell:'(907) 555-0923', altPhone:'(907) 555-0944', fax:'Not Available', prefCallTime:'Mornings (9am–11am)', email:'sarah.williams@email.com', altEmail:'Not Available', lang:'English', writtenLang:'English', spokenLang:'English', commImpairment:'None', pcp:'Dr. Sarah Chen', plan:'Alaska Premier Health', lob:'Medicaid', primaryInsPolicy:'APH-2108-2024-SW', secondaryIns:'Alaska Medicaid', secondaryInsPolicy:'MCD-AK-773319', primaryCondition:'Gestational Diabetes Mellitus', behavioralCondition:'Perinatal Anxiety Disorder', expectedRisk:'Medium (1.5)', sensitiveDx:'No', doctorAppt:'04/10/2026', doctorApptReason:'OB Follow-Up – 32 Week Check', epsdt:'No', portalAccess:'Active', race:'White', preferredRace:'White', ethnicity:'Non-Hispanic', preferredEthnicity:'Non-Hispanic', residenceStatus:'Independent', incomeStatus:'Low Income', maritalStatus:'Married', veteranStatus:'Non-Veteran', evacuationZone:'Zone A', careManager:'Beatrice Kanya', risk:'1.5', program:'Maternal Health', digital:'Wellframe', caregiver:{first:'David',last:'Williams',relation:'Husband',type:'Primary Caregiver',start:'09/15/2024'}, careTeam:[{name:'Dr. Sarah Chen',role:'OB/GYN',phone:'(907) 555-4001'},{name:'Beatrice Kanya',role:'Care Manager',phone:'(907) 555-4002'},{name:'Dr. Rachel Kim',role:'Pediatrician',phone:'(907) 555-4003'}] },
     'james-oconnor': { name:'James O\'Connor', preferred:'Jim', dob:'02/28/1968', dobLong:'February 28, 1968', age:'58', id:'MBR-2024-9025', ssn:'XXX-XX-9087', gender:'Male', genderIdentity:'Cisgender Male', sexualOrientation:'Heterosexual', pronouns:'He/Him', contactFormat:'Phone', serviceInterruption:'None', address:'2200 Lake Otis Pkwy', city:'Anchorage', state:'AK', zip:'99508', county:'Anchorage County', country:'United States', phone:'(907) 555-0156', cell:'(907) 555-0178', altPhone:'(907) 555-0192', fax:'Not Available', prefCallTime:'Late Morning (10am–2pm)', email:'james.oconnor@email.com', altEmail:'Not Available', lang:'English', writtenLang:'English', spokenLang:'English', commImpairment:'None', pcp:'Dr. Michael Torres', plan:'Alaska Care Plus', lob:'Medicare Advantage', primaryInsPolicy:'ACP-0334-2024-JO', secondaryIns:'Medicare Part B', secondaryInsPolicy:'4H52-WR8-LP19', primaryCondition:'COPD with Chronic Bronchitis', behavioralCondition:'Bipolar I Disorder', expectedRisk:'Very High (3.1)', sensitiveDx:'Yes', doctorAppt:'04/08/2026', doctorApptReason:'Behavioral Health Check-In', epsdt:'No', portalAccess:'Not Available', race:'White', preferredRace:'White', ethnicity:'Non-Hispanic', preferredEthnicity:'Non-Hispanic', residenceStatus:'Assisted Living', incomeStatus:'Middle Income', maritalStatus:'Divorced', veteranStatus:'Veteran – U.S. Army', evacuationZone:'Zone B', careManager:'Beatrice Kanya', risk:'3.1', program:'Behavioral Health', digital:'', caregiver:{first:'Patricia',last:'O\'Connor',relation:'Ex-Wife',type:'Emergency Contact',start:'04/20/2023'}, careTeam:[{name:'Dr. Michael Torres',role:'PCP',phone:'(907) 555-5001'},{name:'Beatrice Kanya',role:'Care Manager',phone:'(907) 555-5002'},{name:'Dr. Karen Lee',role:'Psychiatrist',phone:'(907) 555-5003'}] }
@@ -4244,10 +4243,11 @@ window._gcAllAssessmentQA = {
   var _DEL = '<span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span>';
   var _SDOC = '<span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br>' + _DEL;
   function _nr(type,note,by,date){return '<tr><td><input type="checkbox"/></td><td>'+type+'</td><td>'+note+'</td><td>'+_VIS+'</td><td>N/A</td><td>N/A</td><td>'+by+'</td><td>'+date+'</td><td>N/A</td><td>N/A</td></tr>';}
-  function _sr(script,date,by,status,complete,program,score,actType,outcome,dur){return '<tr><td><input type="checkbox"/></td><td><a href="#" style="color:var(--link);font-size:11px;">'+script+'</a></td><td>'+date+'</td><td>'+by+'</td><td>'+status+'</td><td>'+complete+'</td><td>N/A</td><td>'+program+'</td><td>'+score+'</td><td>'+actType+'</td><td><a href="#" style="color:var(--link);">'+outcome+'</a></td><td>'+dur+'</td><td></td><td>'+_SDOC+'</td></tr>';}
+  function _sr(script,date,by,status,complete,program,score,actType,outcome,dur){return '<tr><td><input type="checkbox"/></td><td><a href="#" style="color:var(--link);font-size:11px;">'+script+'</a></td><td>'+date+'</td><td>'+by+'</td><td>'+status+'</td><td>'+complete+'</td><td>N/A</td><td>'+program+'</td><td>'+score+'</td><td>'+actType+'</td><td><a href="#" style="color:var(--link);">'+outcome+'</a></td><td>'+dur+'</td><td>'+_SDOC+'</td></tr>';}
+  function _sr_pending(script,date,by,program,actType){return '<tr data-pending="true"><td><input type="checkbox"/></td><td><a href="http://localhost:8081/member-assessmentscampaign/dist/" target="_blank" style="color:var(--link);font-size:11px;">'+script+'</a></td><td>'+date+'</td><td>'+by+'</td><td>In Progress</td><td>N/A</td><td>N/A</td><td>'+program+'</td><td>0</td><td>'+actType+'</td><td><a href="#" style="color:var(--link);">Add</a></td><td>N/A</td><td>'+_SDOC+'</td></tr>';}
   function _gr(date,by,type,outcome){return '<tr><td>'+date+'</td><td>'+by+'</td><td>N/A</td><td>N/A</td><td>'+type+'</td><td>N/A</td><td>N/A</td><td><a href="#" style="color:var(--link);">'+outcome+'</a></td><td>'+_VIS+'</td><td>'+_DEL+'</td></tr>';}
   function _gs(sched,by,type){return '<tr><td>N/A</td><td>N/A</td><td>'+sched+'</td><td>'+by+'</td><td>'+type+'</td><td>N/A</td><td>N/A</td><td><a href="#" style="color:var(--link);">Scheduled</a></td><td>'+_VIS+'</td><td>'+_DEL+'</td></tr>';}
-  function _or(type,priority,followUp,callTime,created){return '<tr><td><input type="checkbox"/></td><td>'+type+'</td><td></td><td>'+priority+'</td><td>'+followUp+'</td><td>N/A</td><td>'+callTime+'</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">'+created+'</td><td></td><td style="white-space:nowrap;">'+_ACT+'</td></tr>';}
+  function _or(type,priority,followUp,callTime,created){return '<tr><td><input type="checkbox"/></td><td>'+type+'</td><td></td><td>'+priority+'</td><td>'+followUp+'</td><td>N/A</td><td>'+callTime+'</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">'+created+'</td><td style="white-space:nowrap;">'+_ACT+'</td></tr>';}
   function _ar(badgeCls,status,desc,source,date){return '<tr><td><input type="checkbox"/></td><td><span class="gc-badge '+badgeCls+'">'+status+'</span></td><td>'+desc+'</td><td>'+source+'</td><td>'+date+'</td></tr>';}
 
   var memberTabData = {
@@ -4277,29 +4277,11 @@ window._gcAllAssessmentQA = {
       ]
     },
     'maria-rivera': {
-      notes: [
-        _nr('Clinical Note','Member presents with worsening bilateral ankle edema and shortness of breath on exertion over past 10 days. Weight gain of 4 lbs since last contact. Carvedilol and Furosemide doses reviewed with cardiologist Dr. Tran — Furosemide increased from 40mg to 80mg daily. Member advised on fluid restriction (1.5L/day) and daily weight monitoring. Spanish interpreter utilized throughout call. Follow-up scheduled for 04/01/2026.','Beatrice Kanya : Care Manager','03/18/2026 09:22:14 AM'),
-        _nr('Nutrition Counseling Note','Completed telephonic dietary counseling session in Spanish. Member consuming high-sodium traditional foods including tamales and canned soups. Provided culturally appropriate low-sodium alternatives and written materials in Spanish. Reinforced 2g sodium diet and importance of reading food labels. Member\'s husband Carlos reported to be supportive of dietary changes.','Ana Castillo, RD : Registered Dietitian','03/05/2026 11:40:00 AM'),
-        _nr('Care Coordination Note','Coordinated referral to cardiology for echocardiogram follow-up. Last echo (01/12/2026) showed EF of 35%, down from 42% in October. Dr. Tran\'s office scheduled for 04/22/2026. Arranged medical transport — member does not drive. Contacted Alaska Medicaid transportation benefit and confirmed approval.','James Okafor, CCM : Care Coordinator','02/28/2026 02:15:33 PM'),
-        _nr('Behavioral Health Note','Member reports increased anxiety related to CHF diagnosis and fear of hospitalization. PHQ-4 score of 7 (moderate anxiety). Provided brief psychoeducation on CHF self-management to reduce uncertainty. Referred to behavioral health navigator for CBT-based telehealth program. Member expressed interest in Spanish-language mental health support resources.','Beatrice Kanya : Care Manager','02/14/2026 10:08:55 AM')
-      ],
-      scriptActivity: [
-        _sr('CHF Symptom Monitoring Assessment','03/18/2026 09:00:00 AM','Beatrice Kanya : All Access Admin','Completed','03/18/2026 09:45:00 AM','Cardiac Rehab','18.50','Assessments','Completed','00:45:00'),
-        _sr('Medication Adherence Script','03/05/2026 11:00:00 AM','Beatrice Kanya : All Access Admin','Completed','03/05/2026 11:30:00 AM','Cardiac Rehab','12.75','Care Coordination','Completed','00:30:00'),
-        _sr('SDOH Screening — Spanish','02/14/2026 10:00:00 AM','Ana Castillo, RD : All Access Admin','Completed','02/14/2026 10:25:00 AM','Cardiac Rehab','9.25','Assessments','Completed','00:25:00')
-      ],
-      generalActivity: [
-        _gr('03/18/2026 09:22 AM','Beatrice Kanya','Telephonic Outreach','Completed'),
-        _gr('03/05/2026 11:40 AM','Ana Castillo, RD','Nutrition Counseling','Completed'),
-        _gr('02/28/2026 02:15 PM','James Okafor, CCM','Care Coordination','Completed'),
-        _gr('02/14/2026 10:08 AM','Beatrice Kanya','Behavioral Health Referral','Completed'),
-        _gs('04/01/2026','Beatrice Kanya','CHF Follow-Up Call'),
-        _gs('04/22/2026','Beatrice Kanya','Cardiology Appointment')
-      ],
+      notes: [],
+      scriptActivity: [],
+      generalActivity: [],
       outstandingActivities: [
-        _or('CHF Weight Monitoring Check-In','High','03/25/2026','09:00','03/20/2026 08:30:00'),
-        _or('Medication Adherence Follow-Up','High','04/01/2026','09:30','03/18/2026 09:22:14'),
-        _or('Cardiac Rehab Enrollment','Medium','04/10/2026','10:00','02/28/2026 02:15:33')
+        '<tr><td><input type="checkbox"/></td><td>Assessment</td><td>SMS/Email</td><td>High</td><td>04/09/2026</td><td>N/A</td><td>08:00</td><td>Health Risk Assessment</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">04/09/2026 08:00:00</td><td style="white-space:nowrap;">' + _ACT + '</td></tr>'
       ],
       memberAlerts: [
         _ar('gc-badge-danger','New','CHF Exacerbation — Weight gain 4 lbs in 7 days','Automated weight monitoring alert: Member gained 4 lbs since 03/11/2026, exceeding 3 lb threshold for CHF decompensation risk. Care manager contacted and Furosemide dose adjusted per physician order. Daily weight monitoring reinforced.','03/18/2026'),
@@ -4438,6 +4420,13 @@ window._gcAllAssessmentQA = {
     document.querySelector('.gc-banner-name').textContent = m.name;
     var dobSpan = document.querySelector('.gc-member-banner .gc-banner-dob');
     if (dobSpan) dobSpan.innerHTML = '<strong style="font-size:12px;letter-spacing:0.3px;">DOB</strong> ' + m.dob + ' ' + m.age + ' yr(s)';
+    var bannerLogo = document.getElementById('bannerLogo');
+    if (bannerLogo) bannerLogo.style.display = key === 'maria-rivera' ? 'none' : 'inline-block';
+    var alertBadge = document.getElementById('bannerAlertBadge');
+    if (alertBadge) {
+      alertBadge.textContent = key === 'maria-rivera' ? '0' : '2';
+      alertBadge.style.display = key === 'maria-rivera' ? 'none' : 'flex';
+    }
 
     // Nav label
     document.getElementById('currentMemberName').textContent = m.name;
@@ -4820,6 +4809,103 @@ window._gcAllAssessmentQA = {
     }
     document.getElementById('outcomeModal').classList.add('open');
   };
+
+  function handleMemberAssessmentCompleted(assessmentType) {
+    var now = new Date();
+    var mm = String(now.getMonth()+1).padStart(2,'0');
+    var dd = String(now.getDate()).padStart(2,'0');
+    var yyyy = now.getFullYear();
+    var hh = String(now.getHours()).padStart(2,'0');
+    var mi = String(now.getMinutes()).padStart(2,'0');
+    var ss = String(now.getSeconds()).padStart(2,'0');
+    var createdStr = mm+'/'+dd+'/'+yyyy+' '+hh+':'+mi+':'+ss;
+
+    var d = memberTabData['maria-rivera'];
+    if (!d) return;
+
+    // Remove from outstanding activities
+    d.outstandingActivities = d.outstandingActivities.filter(function(html) {
+      return html.indexOf(assessmentType) === -1;
+    });
+
+    // Replace any pending entry with the completed one
+    d.scriptActivity = d.scriptActivity.filter(function(html) {
+      return !(html.indexOf('data-pending="true"') !== -1 && html.indexOf(assessmentType) !== -1);
+    });
+
+    // Add completed entry if not already present
+    var alreadyCompleted = d.scriptActivity.some(function(html) {
+      return html.indexOf(assessmentType) !== -1 && html.indexOf('data-pending') === -1;
+    });
+    if (!alreadyCompleted) {
+      d.scriptActivity.unshift(
+        _sr(assessmentType, createdStr, 'Beatrice Kanya : All Access Admin', 'Completed', createdStr, 'Health Risk Assessment', '0', 'Assessments', 'Complete', '00:30:00')
+      );
+    }
+
+    // Re-render and navigate to Activity Summary if on Maria Rivera's profile
+    if (currentMemberKey === 'maria-rivera') {
+      populateTabs('maria-rivera');
+      goToActivitySummary();
+    }
+  }
+
+  function handleMemberAssessmentSaved(assessmentType) {
+    var now = new Date();
+    var mm = String(now.getMonth()+1).padStart(2,'0');
+    var dd = String(now.getDate()).padStart(2,'0');
+    var yyyy = now.getFullYear();
+    var hh = String(now.getHours()).padStart(2,'0');
+    var mi = String(now.getMinutes()).padStart(2,'0');
+    var ss = String(now.getSeconds()).padStart(2,'0');
+    var createdStr = mm+'/'+dd+'/'+yyyy+' '+hh+':'+mi+':'+ss;
+
+    var d = memberTabData['maria-rivera'];
+    if (!d) return;
+
+    // Remove from outstanding activities
+    d.outstandingActivities = d.outstandingActivities.filter(function(html) {
+      return html.indexOf(assessmentType) === -1;
+    });
+
+    // Add pending entry if no entry already exists for this assessment
+    var alreadyExists = d.scriptActivity.some(function(html) {
+      return html.indexOf(assessmentType) !== -1;
+    });
+    if (!alreadyExists) {
+      d.scriptActivity.unshift(
+        _sr_pending(assessmentType, createdStr, 'Beatrice Kanya : All Access Admin', 'Health Risk Assessment', 'Assessments')
+      );
+    }
+
+    // Re-render and navigate to Activity Summary if on Maria Rivera's profile
+    if (currentMemberKey === 'maria-rivera') {
+      populateTabs('maria-rivera');
+      goToActivitySummary();
+    }
+  }
+
+  // Cross-origin: receive postMessage from member app opened via window.open()
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'ASSESSMENT_COMPLETED') {
+      handleMemberAssessmentCompleted(e.data.assessmentType);
+    }
+    if (e.data && e.data.type === 'ASSESSMENT_SAVED') {
+      handleMemberAssessmentSaved(e.data.assessmentType);
+    }
+  });
+
+  // Same-origin fallback: localStorage storage event
+  window.addEventListener('storage', function(e) {
+    if (e.key === 'assessment-completed' && e.newValue) {
+      localStorage.removeItem('assessment-completed');
+      handleMemberAssessmentCompleted(e.newValue);
+    }
+    if (e.key === 'assessment-saved' && e.newValue) {
+      localStorage.removeItem('assessment-saved');
+      handleMemberAssessmentSaved(e.newValue);
+    }
+  });
   function saveOutcomeData() {
     var hh = (document.getElementById('capDurationHH').value || '00').padStart(2,'0');
     var mm = (document.getElementById('capDurationMM').value || '00').padStart(2,'0');
@@ -5014,6 +5100,21 @@ window._gcAllAssessmentQA = {
   populateProfile('jackson-thomas');
 
 })();
+
+function updateWellframeSection() {
+  var actType = document.getElementById('activityTypeSelect');
+  var script = document.getElementById('scriptSelect');
+  var section = document.getElementById('wellframeSection');
+  if (!actType || !script || !section) return;
+  var show = actType.value === 'Assessment' && script.value !== 'Select';
+  section.style.display = show ? 'block' : 'none';
+  if (!show) {
+    var cb = document.getElementById('displayForMemberToggle');
+    var note = document.getElementById('wellframeNote');
+    if (cb) cb.checked = false;
+    if (note) note.style.display = 'none';
+  }
+}
 </script>
 
 <!-- ══════════════ ADD ACTIVITY MODAL ══════════════ -->
@@ -5064,10 +5165,10 @@ window._gcAllAssessmentQA = {
         </div>
       </div>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:14px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
         <div class="gc-modal-field">
           <label><span class="req">*</span>Activity Type</label>
-          <select id="activityTypeSelect" class="gc-modal-select" onchange="(function(v){var lbl=document.getElementById('scriptLabel');var req=document.getElementById('scriptReq');if(v==='Assessment'){req.style.display='inline';lbl.style.fontWeight='700';}else{req.style.display='none';lbl.style.fontWeight='';};})(this.value)">
+          <select id="activityTypeSelect" class="gc-modal-select" onchange="updateWellframeSection()">
             <option>Select</option>
             <option>Assessment</option>
             <option>Call Member</option>
@@ -5078,8 +5179,8 @@ window._gcAllAssessmentQA = {
           </select>
         </div>
         <div class="gc-modal-field">
-          <label id="scriptLabel">Script <span id="scriptReq" class="req" style="display:none;">*</span></label>
-          <select id="scriptSelect" class="gc-modal-select">
+          <label>Script</label>
+          <select id="scriptSelect" class="gc-modal-select" onchange="updateWellframeSection()">
             <option>Select</option>
             <option>Health Risk Assessment</option>
             <option>Comprehensive Assessment</option>
@@ -5093,9 +5194,20 @@ window._gcAllAssessmentQA = {
             <option>Transitions of Care (TOC) 3 Home Visit</option>
           </select>
         </div>
+      </div>
+
+      <div id="wellframeSection" style="display:none;">
+        <label style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;cursor:pointer;user-select:none;">
+          <input type="checkbox" id="displayForMemberToggle" style="accent-color:var(--teal);width:15px;height:15px;" onchange="document.getElementById('wellframeNote').style.display=this.checked?'block':'none';" />
+          Wellframe Assessment
+        </label>
+        <div id="wellframeNote" style="display:none;font-size:12px;color:#555;background:#fff;border-left:3px solid var(--teal);padding:7px 10px;border-radius:2px;margin-top:4px;"><strong>Note:</strong> Checking this will send the assessment to the member's Wellframe account and appear on the member's checklist.</div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
         <div class="gc-modal-field">
           <label><span class="req">*</span>Contact Type</label>
-          <select class="gc-modal-select" onchange="(function(v){var cb=document.getElementById('displayForMemberToggle');var note=document.getElementById('wellframeNote');var isWf=v==='Wellframe Assessment';cb.checked=isWf;note.style.display=isWf?'block':'none';})(this.value)">
+          <select class="gc-modal-select">
             <option>Member - Phone</option>
             <option>Member - Face to Face</option>
             <option>Member - Telehealth</option>
@@ -5107,7 +5219,6 @@ window._gcAllAssessmentQA = {
             <option>Member - Referral</option>
             <option>Phone to Member</option>
             <option>Wellframe Outreach</option>
-            <option>Wellframe Assessment</option>
             <option>Caregiver - Phone</option>
             <option>Caregiver - Face to Face</option>
             <option>Caregiver - Email</option>
@@ -5124,25 +5235,18 @@ window._gcAllAssessmentQA = {
             <option>TPA - Mobile</option>
           </select>
         </div>
-      </div>
-
-      <label style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;cursor:pointer;user-select:none;">
-        <input type="checkbox" id="displayForMemberToggle" style="accent-color:var(--teal);width:15px;height:15px;" onchange="document.getElementById('wellframeNote').style.display=this.checked?'block':'none';" />
-        Wellframe Assessment
-      </label>
-      <div id="wellframeNote" style="display:none;font-size:12px;color:#555;background:#fff;border-left:3px solid var(--teal);padding:7px 10px;border-radius:2px;margin-top:4px;"><strong>Note:</strong> Checking this will send the assessment to the member's Wellframe account and appear on the member's checklist.</div>
-
-      <div class="gc-modal-field" style="max-width:240px;">
-        <label>Priority</label>
-        <select class="gc-modal-select">
-          <option>Select</option>
-          <option>1st — Urgent</option>
-          <option>2nd — High</option>
-          <option>3rd — Medium</option>
-          <option>4th — Standard</option>
-          <option>5th — Low</option>
-          <option>6th — Routine</option>
-        </select>
+        <div class="gc-modal-field">
+          <label>Priority</label>
+          <select class="gc-modal-select">
+            <option>Select</option>
+            <option>1st — Urgent</option>
+            <option>2nd — High</option>
+            <option>3rd — Medium</option>
+            <option>4th — Standard</option>
+            <option>5th — Low</option>
+            <option>6th — Routine</option>
+          </select>
+        </div>
       </div>
 
       <div style="display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:end;">
@@ -5751,7 +5855,7 @@ window._gcAllAssessmentQA = {
                 <th>First Name</th>
                 <th>New ID</th>
                 <th>Activity Type</th>
-                <th>Digital Channel</th>
+                <th>Contact Method</th>
                 <th>Follow up Date &amp; Time</th>
                 <th>Due Date</th>
                 <th>Assigned By</th>
@@ -5867,7 +5971,7 @@ window._gcAllAssessmentQA = {
           <th>Sub Option</th>
           <th>Script Score</th>
           <th>Care Notes</th>
-          <th>Staff Name</th>
+          <th>Answered by</th>
           <th>Date Entered</th>
         </tr></thead>
         <tbody id="msriTbody"></tbody>
