@@ -4860,16 +4860,37 @@ window._gcAllAssessmentQA = {
 
   var _OGI_TEMPLATES = {
     'Health Risk Assessment': {
-      opportunity: 'Potential need for health risk management',
-      goal: 'Member has a plan to address identified health risk factors over the next year',
+      opportunity: 'Member identified with multiple modifiable health risk factors following completion of Health Risk Assessment, including potential gaps in preventive care, social determinants of health needs, and chronic disease self-management barriers',
+      goal: 'Member will engage with care team to address identified health risk factors, improve chronic disease management, and reduce gaps in preventive care within the next 12 months',
       condition: 'General Health',
-      intervention: 'Review HRA results with care team and connect member to health management programs and community resources',
-      priority: 'High'
+      intervention: 'Care Manager will review HRA results with member and care team, prioritize identified risk factors, develop individualized action steps, and coordinate referrals to appropriate disease management programs, community support services, and preventive care appointments',
+      priority: 'High',
+      scriptName: 'Health Risk Assessment'
+    },
+    'Diabetes Management Assessment': {
+      opportunity: 'Member with Type 2 Diabetes presents with suboptimal glycemic control and identified barriers to self-management, including medication adherence gaps and limited access to diabetes education resources',
+      goal: 'Member will achieve improved glycemic control (A1C < 8%) and demonstrate consistent self-management behaviors within 6 months',
+      condition: 'Type 2 Diabetes Mellitus',
+      intervention: 'Care Manager will educate member on diabetes self-management strategies, coordinate referral to diabetes education program (DSMES), review medication adherence barriers, and facilitate communication between member and PCP regarding treatment plan adjustments',
+      priority: 'High',
+      scriptName: 'Diabetes Management Assessment'
     }
   };
 
-  function _buildOGICard(ogi) {
+  function _buildOGICard(ogi, idx) {
     var pri = ogi.priority || 'High';
+    var uid = 'ogi-info-' + (idx || 0);
+    var now = new Date();
+    var pad2 = function(n) { return String(n).padStart(2,'0'); };
+    var startDate = pad2(now.getMonth()+1)+'/'+pad2(now.getDate())+'/'+now.getFullYear();
+    var tgt = new Date(now); tgt.setMonth(tgt.getMonth()+6);
+    var targetDate = pad2(tgt.getMonth()+1)+'/'+pad2(tgt.getDate())+'/'+tgt.getFullYear();
+    var md = window._gcMemberData || {};
+    var key = (window._gcGetKey ? window._gcGetKey() : null) || 'maria-rivera';
+    var m = md[key] || {};
+    var createdBy = (m.careManager || 'Beatrice Kanya');
+    var scriptName = ogi.scriptName || ogi.assessmentType || 'Health Risk Assessment';
+
     return '<div style="border:1px solid var(--border-light);border-radius:var(--r-sm);margin:12px 16px;overflow:hidden;">' +
       '<div style="display:flex;align-items:stretch;padding:14px 16px;border-bottom:1px solid var(--border-light);gap:0;">' +
         '<div style="display:flex;align-items:flex-start;gap:10px;flex:0 0 38%;padding-right:20px;">' +
@@ -4897,12 +4918,49 @@ window._gcAllAssessmentQA = {
         '<div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary);margin-left:auto;">Priority <a href="#" style="color:var(--link);font-weight:600;text-decoration:none;">' + pri + '</a><span class="material-icons" style="font-size:14px;">arrow_drop_down</span></div>' +
         '<label style="display:flex;align-items:center;gap:5px;font-size:12px;cursor:pointer;border:1px solid var(--border);border-radius:var(--r-sm);padding:3px 10px;"><input type="checkbox" style="accent-color:var(--teal);" /> Sign Off</label>' +
       '</div>' +
-      '<div style="padding:4px 16px 14px 16px;">' +
+      '<div style="padding:4px 16px 12px 16px;">' +
         '<div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:4px;">Intervention</div>' +
         '<div style="font-size:12px;color:var(--text-secondary);">' + ogi.intervention + '</div>' +
       '</div>' +
-      '<div style="padding:8px 16px 12px;border-top:1px solid var(--border-light);">' +
-        '<a href="#" style="color:var(--link);display:inline-flex;align-items:center;gap:4px;font-size:12px;text-decoration:none;" onclick="event.preventDefault()"><span class="material-icons" style="font-size:15px;">help_outline</span>Additional Information</a>' +
+      '<div style="border-top:1px solid var(--border-light);">' +
+        '<div style="padding:8px 16px;">' +
+          '<a href="#" style="color:var(--link);display:inline-flex;align-items:center;gap:4px;font-size:12px;text-decoration:none;" onclick="event.preventDefault();(function(el){var d=document.getElementById(\'' + uid + '\');if(d){d.style.display=d.style.display===\'none\'?\'block\':\'none\';el.querySelector(\'span.material-icons\').textContent=d.style.display===\'none\'?\'help_outline\':\'expand_less\';}})(this)">' +
+            '<span class="material-icons" style="font-size:15px;">help_outline</span>Additional Information' +
+          '</a>' +
+        '</div>' +
+        '<div id="' + uid + '" style="display:none;padding:0 16px 16px;border-top:1px solid var(--border-light);">' +
+          '<div style="display:grid;grid-template-columns:1fr 2fr 1fr 1fr 1fr;gap:14px 12px;padding:14px 0 10px;">' +
+            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Status</div><div style="font-size:12px;color:var(--text-secondary);">New</div></div>' +
+            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Member Plan</div><div style="font-size:12px;color:var(--text-secondary);">' + ogi.intervention + '</div></div>' +
+            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Start Date</div><div style="font-size:12px;color:var(--text-secondary);">' + startDate + '</div></div>' +
+            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Target Date</div><div style="font-size:12px;color:var(--text-secondary);">' + targetDate + '</div></div>' +
+            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Sign off Date</div><div style="font-size:12px;color:var(--text-secondary);">N/A</div></div>' +
+          '</div>' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr 1fr 2fr 1fr 1fr;gap:14px 12px;padding:10px 0;border-top:1px solid var(--border-light);">' +
+            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Opportunity Resolved Date</div><div style="font-size:12px;color:var(--text-secondary);">N/A</div></div>' +
+            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Add Appointment</div><div style="font-size:12px;"><a href="#" style="color:var(--link);" onclick="event.preventDefault()">Add</a></div></div>' +
+            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Targeted To</div><div style="font-size:12px;color:var(--text-secondary);">N/A</div></div>' +
+            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Script Name</div><div style="font-size:12px;color:var(--text-secondary);">' + scriptName + '</div></div>' +
+            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Roles</div><div style="font-size:12px;color:var(--text-secondary);">All Access Admin</div></div>' +
+            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Term</div><div style="font-size:12px;"><a href="#" style="color:var(--link);" onclick="event.preventDefault()">Long</a></div></div>' +
+          '</div>' +
+          '<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;gap:14px 12px;padding:10px 0;border-top:1px solid var(--border-light);">' +
+            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Assigned Owner</div><div style="font-size:12px;color:var(--text-secondary);">N/A</div></div>' +
+            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Source</div><div style="font-size:12px;color:var(--text-secondary);">Script</div></div>' +
+            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Created On</div><div style="font-size:12px;color:var(--text-secondary);">' + startDate + '</div></div>' +
+            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Created By</div><div style="font-size:12px;color:var(--text-secondary);">' + createdBy + '</div></div>' +
+            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Updated On</div><div style="font-size:12px;color:var(--text-secondary);">N/A</div></div>' +
+            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Updated By</div><div style="font-size:12px;color:var(--text-secondary);">N/A</div></div>' +
+          '</div>' +
+          '<div style="padding:10px 0;border-top:1px solid var(--border-light);">' +
+            '<div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Guideline Source</div>' +
+            '<div style="font-size:12px;color:var(--text-secondary);">N/A</div>' +
+          '</div>' +
+          '<div style="padding:10px 0;border-top:1px solid var(--border-light);">' +
+            '<div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Payor</div>' +
+            '<div style="font-size:12px;color:var(--text-secondary);">Program Enrollment &gt;&gt; Enrollment</div>' +
+          '</div>' +
+        '</div>' +
       '</div>' +
     '</div>';
   }
