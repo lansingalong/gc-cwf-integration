@@ -4238,13 +4238,16 @@ window._gcAllAssessmentQA = {
   };
 
   // ── Per-member tab data ──
+  var _ASSESSMENT_CAMPAIGN_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
+    ? 'http://localhost:8081/member-assessmentscampaign/dist/'
+    : 'https://redesigned-bassoon-1q65y6l.pages.github.io/';
   var _ACT = '<span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:#315E7B;cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span>';
   var _VIS = '<span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">visibility</span>';
   var _DEL = '<span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span>';
   var _SDOC = '<span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br>' + _DEL;
   function _nr(type,note,by,date){return '<tr><td><input type="checkbox"/></td><td>'+type+'</td><td>'+note+'</td><td>'+_VIS+'</td><td>N/A</td><td>N/A</td><td>'+by+'</td><td>'+date+'</td><td>N/A</td><td>N/A</td></tr>';}
   function _sr(script,date,by,status,complete,program,score,actType,outcome,dur){return '<tr><td><input type="checkbox"/></td><td><a href="#" style="color:var(--link);font-size:11px;">'+script+'</a></td><td>'+date+'</td><td>'+by+'</td><td>'+status+'</td><td>'+complete+'</td><td>N/A</td><td>'+program+'</td><td>'+score+'</td><td>'+actType+'</td><td><a href="#" style="color:var(--link);">'+outcome+'</a></td><td>'+dur+'</td><td>'+_SDOC+'</td></tr>';}
-  function _sr_pending(script,date,by,program,actType){return '<tr data-pending="true"><td><input type="checkbox"/></td><td><a href="http://localhost:8081/member-assessmentscampaign/dist/" target="_blank" style="color:var(--link);font-size:11px;">'+script+'</a></td><td>'+date+'</td><td>'+by+'</td><td>In Progress</td><td>N/A</td><td>N/A</td><td>'+program+'</td><td>0</td><td>'+actType+'</td><td><a href="#" style="color:var(--link);">Add</a></td><td>N/A</td><td>'+_SDOC+'</td></tr>';}
+  function _sr_pending(script,date,by,program,actType){return '<tr data-pending="true"><td><input type="checkbox"/></td><td><a href="#" onclick="event.preventDefault();window.open(_ASSESSMENT_CAMPAIGN_URL,\'assessment-window\');" style="color:var(--link);font-size:11px;">'+script+'</a></td><td>'+date+'</td><td>'+by+'</td><td>In Progress</td><td>N/A</td><td>N/A</td><td>'+program+'</td><td>0</td><td>'+actType+'</td><td><a href="#" style="color:var(--link);">Add</a></td><td>N/A</td><td>'+_SDOC+'</td></tr>';}
   function _gr(date,by,type,outcome){return '<tr><td>'+date+'</td><td>'+by+'</td><td>N/A</td><td>N/A</td><td>'+type+'</td><td>N/A</td><td>N/A</td><td><a href="#" style="color:var(--link);">'+outcome+'</a></td><td>'+_VIS+'</td><td>'+_DEL+'</td></tr>';}
   function _gs(sched,by,type){return '<tr><td>N/A</td><td>N/A</td><td>'+sched+'</td><td>'+by+'</td><td>'+type+'</td><td>N/A</td><td>N/A</td><td><a href="#" style="color:var(--link);">Scheduled</a></td><td>'+_VIS+'</td><td>'+_DEL+'</td></tr>';}
   function _or(type,priority,followUp,callTime,created){return '<tr><td><input type="checkbox"/></td><td>'+type+'</td><td></td><td>'+priority+'</td><td>'+followUp+'</td><td>N/A</td><td>'+callTime+'</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">'+created+'</td><td style="white-space:nowrap;">'+_ACT+'</td></tr>';}
@@ -4281,7 +4284,7 @@ window._gcAllAssessmentQA = {
       scriptActivity: [],
       generalActivity: [],
       outstandingActivities: [
-        '<tr><td><input type="checkbox"/></td><td>Assessment</td><td>SMS/Email</td><td>High</td><td>04/09/2026</td><td>N/A</td><td>08:00</td><td>Health Risk Assessment</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">04/09/2026 08:00:00</td><td style="white-space:nowrap;">' + _ACT + '</td></tr>'
+        '<tr><td><input type="checkbox"/></td><td>Assessment</td><td>SMS/Email</td><td>High</td><td>04/09/2026</td><td>N/A</td><td>08:00</td><td><a href="#" onclick="event.preventDefault();window.open(_ASSESSMENT_CAMPAIGN_URL,\'assessment-window\');" style="color:var(--link);">Health Risk Assessment</a></td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">04/09/2026 08:00:00</td><td style="white-space:nowrap;">' + _ACT + '</td></tr>'
       ],
       memberAlerts: [
         _ar('gc-badge-danger','New','CHF Exacerbation — Weight gain 4 lbs in 7 days','Automated weight monitoring alert: Member gained 4 lbs since 03/11/2026, exceeding 3 lb threshold for CHF decompensation risk. Care manager contacted and Furosemide dose adjusted per physician order. Daily weight monitoring reinforced.','03/18/2026'),
