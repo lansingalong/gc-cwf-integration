@@ -3466,6 +3466,14 @@ function openScriptResponseModal(assessmentName) {
         qa = partialData.qa;
       }
     }
+    // Check completed QA (saved when member fully submits the assessment)
+    if (!qa) {
+      var rawCompleted = localStorage.getItem('assessment-completed-qa');
+      var completedData = rawCompleted ? JSON.parse(rawCompleted) : null;
+      if (completedData && completedData.assessmentType === scriptName && Array.isArray(completedData.qa) && completedData.qa.length > 0) {
+        qa = completedData.qa;
+      }
+    }
   } catch(_) {}
   if (!qa) {
     qa = (window._gcAllAssessmentQA && window._gcAllAssessmentQA[scriptName])
