@@ -3452,10 +3452,19 @@ function openScriptResponseModal(assessmentName) {
   // Check for partial QA saved by member (save-and-close flow)
   var qa;
   try {
-    var rawPartial = localStorage.getItem('assessment-partial-qa');
-    var partialData = rawPartial ? JSON.parse(rawPartial) : null;
-    if (partialData && partialData.assessmentType === scriptName && Array.isArray(partialData.qa) && partialData.qa.length > 0) {
-      qa = partialData.qa;
+    // Check member-specific key first (e.g. assessment-partial-qa-jackson-thomas)
+    var rawMemberPartial = localStorage.getItem('assessment-partial-qa-' + key);
+    var memberPartialData = rawMemberPartial ? JSON.parse(rawMemberPartial) : null;
+    if (memberPartialData && memberPartialData.assessmentType === scriptName && Array.isArray(memberPartialData.qa) && memberPartialData.qa.length > 0) {
+      qa = memberPartialData.qa;
+    }
+    // Fall back to general key (used by member-assessmentscampaign for maria-rivera)
+    if (!qa) {
+      var rawPartial = localStorage.getItem('assessment-partial-qa');
+      var partialData = rawPartial ? JSON.parse(rawPartial) : null;
+      if (partialData && partialData.assessmentType === scriptName && Array.isArray(partialData.qa) && partialData.qa.length > 0) {
+        qa = partialData.qa;
+      }
     }
   } catch(_) {}
   if (!qa) {
