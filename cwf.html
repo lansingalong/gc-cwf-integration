@@ -1884,7 +1884,7 @@
               <div style="padding:7px 12px 4px;font-size:12px;color:var(--teal);cursor:pointer;display:flex;align-items:center;gap:4px;border-bottom:3px solid #E07820;white-space:nowrap;"><span class="material-icons" style="font-size:14px;">table_chart</span> Care Plan Details</div>
             </div>
           </div>
-          <div style="background:var(--white);min-height:300px;"></div>
+          <div id="cp-overview-body" style="background:var(--white);min-height:300px;"></div>
         </div>
 
         <!-- SUB-PANEL: Care Plan Barriers -->
@@ -4787,7 +4787,86 @@ function openScriptResponseModal() {
         }
       });
     }
+
+    // Add intervention to Care Plan Overview
+    addCarePlanIntervention();
   };
+
+  var INTERVENTIONS = {
+    'jackson-thomas': {
+      text: 'Case Manager will educate member on diabetes self-management including blood glucose monitoring, medication adherence, dietary modifications, and recognition of hypoglycemic symptoms to reduce emergency visits and improve glycemic control.',
+      scriptName: 'Health Risk Assessment',
+      priority: 'High'
+    },
+    'maria-rivera': {
+      text: 'Case Manager will educate member on CHF self-management including daily weight monitoring, fluid restriction, sodium reduction, medication adherence, and early recognition of worsening symptoms requiring immediate medical attention.',
+      scriptName: 'Health Risk Assessment',
+      priority: 'High'
+    }
+  };
+
+  function addCarePlanIntervention() {
+    var body = document.getElementById('cp-overview-body');
+    if (!body || body.querySelector('[data-dynamic-intervention="true"]')) return;
+
+    var iv = INTERVENTIONS[currentMemberKey] || INTERVENTIONS['jackson-thomas'];
+    var now = new Date();
+    var pad = function(n){ return String(n).padStart(2,'0'); };
+    var startDate = pad(now.getMonth()+1)+'/'+pad(now.getDate())+'/'+now.getFullYear();
+    var target = new Date(now); target.setMonth(target.getMonth()+6);
+    var targetDate = pad(target.getMonth()+1)+'/'+pad(target.getDate())+'/'+target.getFullYear();
+
+    var html =
+      '<div data-dynamic-intervention="true" style="border:1px solid #d0d0d0;margin:12px 16px;border-radius:3px;font-size:12px;font-family:var(--font);background:#fff;">' +
+        // Top bar
+        '<div style="display:flex;align-items:center;gap:10px;padding:7px 12px;border-bottom:1px solid #e0e0e0;flex-wrap:wrap;">' +
+          '<input type="checkbox" style="accent-color:var(--teal);" /> <span style="font-size:12px;">Select</span>' +
+          '<span style="display:inline-flex;align-items:center;gap:4px;font-size:12px;color:#333;"><span style="color:#388e3c;font-size:15px;">&#10003;</span> <strong>Eligibility</strong> <span style="background:#e8f5e9;color:#388e3c;border-radius:10px;padding:1px 8px;font-size:11px;font-weight:600;">Active</span></span>' +
+          '<span style="display:inline-flex;align-items:center;gap:4px;font-size:12px;"><span style="color:#E07820;font-size:16px;">&#9873;</span> <strong>Recommended</strong></span>' +
+          '<span style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:12px;"><strong>Priority</strong> <select style="height:24px;border:1px solid #ccc;border-radius:3px;padding:0 6px;font-size:11px;font-family:var(--font);"><option>High</option><option>Medium</option><option>Low</option></select></span>' +
+          '<label style="display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;"><input type="checkbox" style="accent-color:var(--teal);" /> Sign Off</label>' +
+        '</div>' +
+        // Intervention label + text
+        '<div style="padding:8px 12px 4px;border-bottom:1px solid #e8e8e8;">' +
+          '<div style="font-weight:600;color:#333;margin-bottom:3px;">Intervention</div>' +
+          '<div style="color:#333;line-height:1.5;">' + iv.text + '</div>' +
+        '</div>' +
+        // Row 1: Status, Member Plan, Start Date, Target Date, Sign off Date
+        '<div style="display:grid;grid-template-columns:100px 1fr 110px 110px 110px;border-bottom:1px solid #e8e8e8;">' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Status</div><div style="color:#333;">New</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Member Plan</div><div style="color:#333;line-height:1.4;">' + iv.text + '</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Start Date</div><div style="color:#333;">' + startDate + '</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Target Date</div><div style="color:#333;">' + targetDate + '</div></div>' +
+          '<div style="padding:8px 12px;"><div style="color:#666;margin-bottom:2px;">Sign off Date</div><div style="color:#333;">N/A</div></div>' +
+        '</div>' +
+        // Row 2: Opportunity Resolved Date, Add Appointment, Targeted To, Script Name, Roles, Term
+        '<div style="display:grid;grid-template-columns:140px 120px 110px 1fr 140px 80px;border-bottom:1px solid #e8e8e8;">' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Opportunity Resolved Date</div><div style="color:#333;">N/A</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Add Appointment</div><div><a href="#" style="color:var(--link);">Add</a></div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Targeted To</div><div style="color:#333;">N/A</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Script Name</div><div style="color:#333;">' + iv.scriptName + '</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Roles</div><div style="color:#333;">All Access Admin</div></div>' +
+          '<div style="padding:8px 12px;"><div style="color:#666;margin-bottom:2px;">Term</div><div><a href="#" style="color:var(--link);">Long</a></div></div>' +
+        '</div>' +
+        // Row 3: Assigned Owner, Source, Created On, Created By, Updated On, Updated By
+        '<div style="display:grid;grid-template-columns:140px 120px 110px 1fr 110px 1fr;border-bottom:1px solid #e8e8e8;">' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Assigned Owner</div><div style="color:#333;">N/A</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Source</div><div style="color:#333;">Script</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Created On</div><div style="color:#333;">' + startDate + '</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Created By</div><div style="color:#333;">Beatrice Kanya</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Updated On</div><div style="color:#333;">N/A</div></div>' +
+          '<div style="padding:8px 12px;"><div style="color:#666;margin-bottom:2px;">Updated By</div><div style="color:#333;">N/A</div></div>' +
+        '</div>' +
+        // Row 4: Guideline Source, Payor
+        '<div style="display:grid;grid-template-columns:140px 1fr;">' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Guideline Source</div><div style="color:#333;">N/A</div></div>' +
+          '<div style="padding:8px 12px;"><div style="color:#666;margin-bottom:2px;">Payor</div><div style="color:#333;">Program Enrollment &gt;&gt; Enrollment</div></div>' +
+        '</div>' +
+      '</div>';
+
+    body.innerHTML = html;
+    body.style.minHeight = '';
+  }
 
   window.saveAndAddActivity = function() {
     document.getElementById('captureOutcomeModal').classList.remove('open');
