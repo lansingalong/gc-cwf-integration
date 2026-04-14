@@ -837,6 +837,9 @@
     <div class="gc-left-item" data-left="packet-log">
       <span class="gc-left-icon"><span class="material-icons">move_to_inbox</span></span><span class="gc-left-label">Packet Log</span>
     </div>
+    <div class="gc-left-item" data-left="wellframe" role="button" aria-label="Wellframe">
+      <span class="gc-left-icon"><img src="assets/Wellframe/Logomark.png" alt="" aria-hidden="true" style="width:22px;height:22px;object-fit:contain;" /></span><span class="gc-left-label">Wellframe</span>
+    </div>
   </nav>
 
   <!-- Main Content Area -->
@@ -3335,6 +3338,13 @@
       </div>
     </div>
 
+    <!-- ═══ LEFT PANEL: Wellframe ═══ -->
+    <div class="left-panel" id="panel-wellframe">
+      <div class="content-body" id="wellframe-panel-content">
+        <!-- populated by populateProfile -->
+      </div>
+    </div>
+
     <!-- ═══ LEFT PANEL: Packet Log ═══ -->
     <div class="left-panel" id="panel-packet-log">
       <div class="content-body">
@@ -4365,6 +4375,46 @@ function openScriptResponseModal() {
     // Modal member name
     var modalName = document.getElementById('modalMemberName');
     if (modalName) modalName.textContent = m.name;
+
+    // Wellframe panel
+    var wfPanel = document.getElementById('wellframe-panel-content');
+    if (wfPanel) {
+      var isEnrolled = m.digital === 'Wellframe';
+      if (isEnrolled) {
+        wfPanel.innerHTML =
+          '<div style="padding:16px 20px;border-bottom:1px solid var(--border-light);display:flex;align-items:center;gap:10px;">' +
+            '<img src="assets/Wellframe/Logomark.png" alt="Wellframe" style="width:28px;height:28px;object-fit:contain;" />' +
+            '<div>' +
+              '<div style="font-size:13px;font-weight:700;color:var(--teal-dark);">Wellframe</div>' +
+              '<div style="font-size:11px;color:var(--text-muted);">Digital Health Platform</div>' +
+            '</div>' +
+            '<span class="gc-badge gc-badge-teal" style="margin-left:auto;">Enrolled</span>' +
+          '</div>' +
+          '<div class="gc-detail-card" style="margin:16px;border:1px solid var(--border-light);border-radius:var(--r-sm);">' +
+            '<div class="gc-detail-body" style="padding:12px 16px;">' +
+              '<div class="gc-section-heading">Enrollment Details</div>' +
+              '<div class="gc-kv-row"><span class="gc-kv-label">Member:</span>&nbsp;<span class="gc-kv-value">' + m.name + '</span></div>' +
+              '<div class="gc-kv-row"><span class="gc-kv-label">Program:</span>&nbsp;<span class="gc-kv-value">' + (m.program || 'Not Available') + '</span></div>' +
+              '<div class="gc-kv-row"><span class="gc-kv-label">Care Manager:</span>&nbsp;<span class="gc-kv-value">' + (m.careManager || 'Not Available') + '</span></div>' +
+              '<div class="gc-kv-row"><span class="gc-kv-label">Portal Access:</span>&nbsp;<span class="gc-kv-value">' + (m.portalAccess || 'Not Available') + '</span></div>' +
+            '</div>' +
+          '</div>';
+      } else {
+        wfPanel.innerHTML =
+          '<div style="padding:16px 20px;border-bottom:1px solid var(--border-light);display:flex;align-items:center;gap:10px;">' +
+            '<img src="assets/Wellframe/Logomark.png" alt="Wellframe" style="width:28px;height:28px;object-fit:contain;opacity:0.45;" />' +
+            '<div>' +
+              '<div style="font-size:13px;font-weight:700;color:var(--text-secondary);">Wellframe</div>' +
+              '<div style="font-size:11px;color:var(--text-muted);">Digital Health Platform</div>' +
+            '</div>' +
+            '<span class="gc-badge" style="margin-left:auto;background:#eee;color:var(--text-secondary);">Not Enrolled</span>' +
+          '</div>' +
+          '<div style="padding:40px 20px;text-align:center;color:var(--text-muted);font-size:12px;">' +
+            '<span class="material-icons" style="font-size:36px;color:#ccc;display:block;margin-bottom:8px;">smartphone</span>' +
+            m.name + ' is not currently enrolled in Wellframe.' +
+          '</div>';
+      }
+    }
 
     // Populate tab content for this member
     populateTabs(key);
