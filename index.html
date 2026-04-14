@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -354,6 +354,94 @@
   .gc-footer-right { display: flex; align-items: center; gap: 12px; }
   .gc-footer-health { display: flex; align-items: center; gap: 4px; color: #2E7D32; }
   .gc-footer-health .material-icons { font-size: 14px; }
+
+  /* ── Wellframe Mobile Panel ── */
+  #wellframe-panel-content { padding: 0 !important; background: #EBEBEB !important; display: flex; flex-direction: column; }
+  .wfm-hd { display:flex; align-items:center; gap:10px; padding:12px 16px; background:#fff; border-bottom:1px solid var(--border-light); flex-shrink:0; }
+  .wfm-hd-logo { width:26px; height:26px; object-fit:contain; flex-shrink:0; }
+  .wfm-hd-title { font-size:13px; font-weight:700; color:var(--teal-dark); }
+  .wfm-hd-sub { font-size:11px; color:var(--text-muted); }
+  .wfm-switcher { display:flex; gap:6px; padding:8px 16px; background:#fff; border-bottom:1px solid var(--border-light); flex-shrink:0; }
+  .wfm-sw-btn { display:inline-flex; align-items:center; gap:4px; padding:4px 12px; border-radius:20px; border:1px solid var(--border); font-size:11px; font-weight:600; cursor:pointer; background:#fff; color:var(--text-secondary); }
+  .wfm-sw-btn .material-icons { font-size:13px; }
+  .wfm-sw-btn.active { background:var(--teal); color:#fff; border-color:var(--teal); }
+  .wfm-device-wrap { flex:1; display:flex; justify-content:center; padding:20px 16px 28px; overflow-y:auto; }
+  .wfm-device { width:296px; background:#18181B; border-radius:44px; padding:10px; box-shadow:0 16px 48px rgba(0,0,0,0.4),inset 0 0 0 1px #3a3a3a; flex-shrink:0; }
+  .wfm-screen-outer { background:#F2F8FA; border-radius:36px; overflow:hidden; }
+  .wfm-status { background:#F2F8FA; display:flex; justify-content:space-between; align-items:center; padding:10px 20px 0; height:44px; }
+  .wfm-time { font-size:15px; font-weight:600; color:#161B1F; letter-spacing:0.2px; font-family:system-ui,-apple-system,sans-serif; }
+  .wfm-status-icons { display:flex; align-items:center; gap:4px; color:#161B1F; }
+  .wfm-status-icons .material-icons { font-size:14px; }
+  .wfm-screen-scroll { overflow-y:auto; max-height:440px; }
+  .wfm-screen { display:none; }
+  .wfm-screen.wfm-active { display:block; }
+  .wfm-tab-bar { background:#fff; border-top:1px solid #D9E3E7; display:flex; padding:8px 0 22px; }
+  .wfm-tab { flex:1; display:flex; flex-direction:column; align-items:center; gap:2px; cursor:pointer; border:none; background:none; }
+  .wfm-tab .material-icons { font-size:22px; color:#4E5961; }
+  .wfm-tab-lbl { font-size:9px; color:#4E5961; letter-spacing:0.05px; font-family:system-ui,-apple-system,sans-serif; }
+  .wfm-tab.wfm-tab-on .material-icons { color:#0080A3; }
+  .wfm-tab.wfm-tab-on .wfm-tab-lbl { color:#0080A3; }
+  .wfm-page { padding:4px 16px 12px; }
+  .wfm-page-title { font-family:Georgia,'Times New Roman',serif; font-size:22px; color:#161B1F; margin-bottom:18px; padding-top:10px; letter-spacing:0.3px; }
+  .wfm-sec-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:8px; }
+  .wfm-sec-title { font-size:17px; color:#161B1F; font-weight:400; font-family:system-ui,-apple-system,sans-serif; }
+  .wfm-add-btn { display:inline-flex; align-items:center; gap:4px; background:#fff; border-radius:4px; padding:5px 10px; font-size:12px; color:#0E98BE; font-weight:600; box-shadow:0 1px 3px rgba(0,0,0,.15); font-family:system-ui,-apple-system,sans-serif; }
+  .wfm-add-btn .material-icons { font-size:14px; }
+  .wfm-step-card { background:#fff; border-radius:10px; margin-bottom:8px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,.15); }
+  .wfm-step-head { display:flex; align-items:center; gap:10px; padding:11px 12px 11px 16px; }
+  .wfm-step-head .material-icons { font-size:20px; color:#0E98BE; }
+  .wfm-step-title { flex:1; font-size:14px; color:#282F35; font-family:system-ui,-apple-system,sans-serif; letter-spacing:-0.2px; }
+  .wfm-step-chev { color:#282F35; }
+  .wfm-step-bar { height:6px; background:#D9E3E7; }
+  .wfm-step-fill { height:100%; background:linear-gradient(to right,#0E98BE,#0080A3); width:41%; }
+  .wfm-task-card { background:#fff; border-radius:10px; margin-bottom:8px; padding:11px 12px; box-shadow:0 1px 4px rgba(0,0,0,.15); }
+  .wfm-task-card.wfm-done { opacity:0.5; }
+  .wfm-task-head { display:flex; align-items:center; gap:8px; margin-bottom:7px; }
+  .wfm-task-head .material-icons { font-size:18px; color:#0E98BE; }
+  .wfm-task-type { font-size:13px; color:#0080A3; font-family:system-ui,-apple-system,sans-serif; letter-spacing:-0.2px; }
+  .wfm-task-main { display:flex; align-items:center; gap:6px; }
+  .wfm-task-title { flex:1; font-size:14px; color:#282F35; line-height:1.3; font-family:system-ui,-apple-system,sans-serif; letter-spacing:-0.2px; }
+  .wfm-task-chev .material-icons { font-size:18px; color:#282F35; }
+  .wfm-task-check .material-icons { font-size:20px; color:#73BE5E; }
+  .wfm-care-tag { display:inline-flex; align-items:center; gap:4px; background:#F0F4F5; border-radius:20px; padding:4px 8px; margin-top:6px; }
+  .wfm-care-tag .material-icons { font-size:11px; color:#0080A3; }
+  .wfm-care-tag-txt { font-size:10px; color:#4E5961; font-weight:500; font-family:system-ui,-apple-system,sans-serif; letter-spacing:0.04px; }
+  .wfm-prof-hd { background:#fff; border-bottom:1px solid #D9E3E7; padding:10px 16px 14px; }
+  .wfm-prof-title-row { display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+  .wfm-prof-title { font-family:Georgia,'Times New Roman',serif; font-size:22px; color:#161B1F; }
+  .wfm-prof-scroll { padding:0 16px 16px; background:#F2F8FA; }
+  .wfm-user-row { display:flex; align-items:center; gap:12px; }
+  .wfm-avatar { width:44px; height:44px; border-radius:22px; background:#0080A3; display:flex; align-items:center; justify-content:center; color:#fff; font-size:15px; font-weight:700; flex-shrink:0; font-family:system-ui,-apple-system,sans-serif; }
+  .wfm-user-name { font-size:17px; font-weight:500; color:#282F35; font-family:system-ui,-apple-system,sans-serif; letter-spacing:-0.3px; }
+  .wfm-user-day { font-size:12px; color:#78868E; margin-top:2px; font-family:system-ui,-apple-system,sans-serif; }
+  .wfm-prof-sec { font-size:17px; color:#161B1F; font-weight:400; margin:14px 0 8px; font-family:system-ui,-apple-system,sans-serif; }
+  .wfm-cp-scroll { display:flex; overflow-x:auto; gap:0; margin:0 -16px; padding:4px 16px; }
+  .wfm-cp-card { width:140px; border-radius:10px; overflow:hidden; background:#fff; flex-shrink:0; box-shadow:0 1px 4px rgba(0,0,0,.15); margin-right:10px; }
+  .wfm-cp-top { padding:12px 12px 8px; }
+  .wfm-cp-top .material-icons { font-size:20px; color:#0E98BE; margin-bottom:6px; display:block; }
+  .wfm-cp-title { font-size:13px; font-weight:500; color:#161B1F; line-height:1.3; font-family:system-ui,-apple-system,sans-serif; }
+  .wfm-cp-bot { height:56px; display:flex; align-items:center; justify-content:center; }
+  .wfm-ci-card { background:#fff; border-radius:10px; margin-bottom:8px; padding:11px 12px; box-shadow:0 1px 4px rgba(0,0,0,.15); }
+  .wfm-ci-row { display:flex; align-items:center; gap:10px; }
+  .wfm-ci-row .material-icons { font-size:18px; color:#0E98BE; flex-shrink:0; }
+  .wfm-ci-body { flex:1; }
+  .wfm-ci-name { font-size:13px; font-weight:500; color:#282F35; font-family:system-ui,-apple-system,sans-serif; }
+  .wfm-ci-sub { font-size:11px; color:#4E5961; margin-top:2px; font-family:system-ui,-apple-system,sans-serif; }
+  .wfm-ci-prog { display:flex; align-items:center; gap:6px; margin-top:5px; }
+  .wfm-ci-track { flex:1; height:4px; background:#D9E3E7; border-radius:2px; overflow:hidden; }
+  .wfm-ci-fill { height:100%; background:#0080A3; border-radius:2px; }
+  .wfm-ci-pct { font-size:10px; color:#78868E; font-weight:500; font-family:system-ui,-apple-system,sans-serif; min-width:24px; }
+  .wfm-list-card { background:#fff; border-radius:10px; margin-bottom:8px; overflow:hidden; box-shadow:0 1px 4px rgba(0,0,0,.15); }
+  .wfm-list-row { display:flex; align-items:center; padding:9px 12px; gap:9px; border-bottom:1px solid #F0F4F5; }
+  .wfm-list-row:last-child { border-bottom:none; }
+  .wfm-list-row .material-icons { font-size:17px; color:#0E98BE; flex-shrink:0; }
+  .wfm-list-body { flex:1; min-width:0; }
+  .wfm-list-name { font-size:13px; font-weight:500; color:#282F35; font-family:system-ui,-apple-system,sans-serif; }
+  .wfm-list-sub { font-size:11px; color:#4E5961; margin-top:1px; font-family:system-ui,-apple-system,sans-serif; }
+  .wfm-list-note { font-size:10px; color:#0E98BE; margin-top:1px; font-family:system-ui,-apple-system,sans-serif; }
+  .wfm-add-row { display:flex; align-items:center; gap:8px; background:#fff; border-radius:10px; padding:10px 12px; margin-bottom:8px; box-shadow:0 1px 4px rgba(0,0,0,.15); }
+  .wfm-add-row .material-icons { font-size:18px; color:#0E98BE; }
+  .wfm-add-row-lbl { font-size:13px; color:#0E98BE; font-weight:600; font-family:system-ui,-apple-system,sans-serif; }
 </style>
 </head>
 <body>
@@ -361,7 +449,7 @@
 <!-- ══════════════ GLOBAL NAV ══════════════ -->
 <div class="gc-nav-outer">
   <div class="gc-nav-top">
-    <div class="gc-nav-logo"><img src="/gc-assessments/assets/Wordmark-BaI3TNjL.png" alt="HealthEdge" /></div>
+    <div class="gc-nav-logo"><img src="assets/_Custom/Wordmark.png" alt="HealthEdge" /></div>
     <div class="gc-nav-context">
       You are in <strong>Care Coordination</strong><br>
       <a href="#">Go to Population Health</a>
@@ -378,7 +466,7 @@
     </div>
     <div class="gc-nav-icons">
       <div class="gc-nav-icon-btn"><span class="material-icons">notifications</span><div class="gc-nav-badge">3</div></div>
-      <div class="gc-nav-icon-btn"><img src="assets/gmail.png" alt="Gmail" style="width:20px;height:20px;object-fit:contain;" /><div class="gc-nav-badge">1</div></div>
+      <div class="gc-nav-icon-btn"><span class="material-icons">email</span><div class="gc-nav-badge">1</div></div>
       <div class="gc-nav-icon-btn"><span class="material-icons">account_circle</span></div>
       <div class="gc-nav-icon-btn"><span class="material-icons">help_outline</span></div>
     </div>
@@ -391,21 +479,21 @@
         <span id="currentMemberName">Jackson Thomas</span> &#9662;
         <div class="member-switcher-menu">
           <div class="member-switcher-menu-title">Switch Member</div>
-          <div class="member-switcher-item active" data-member="jackson-thomas" data-name="Jackson Thomas" data-dob="03/15/1958" data-age="67" data-id="MBR-2024-3742">
-            <div>Jackson Thomas <span class="msw-meta">DOB 03/15/1958 · MBR-2024-3742</span></div>
+          <div class="member-switcher-item active" data-member="jackson-thomas" data-name="Jackson Thomas" data-dob="03/15/1958" data-age="67" data-id="MBR-2024-0847">
+            <div>Jackson Thomas <span class="msw-meta">DOB 03/15/1958 · MBR-2024-0847</span></div>
             <span class="material-icons" style="font-size:14px;color:var(--teal);">check</span>
           </div>
-          <div class="member-switcher-item" data-member="maria-rivera" data-name="Maria Rivera" data-dob="08/22/1975" data-age="50" data-id="MBR-2024-8516">
-            <div>Maria Rivera <span class="msw-meta">DOB 08/22/1975 · MBR-2024-8516</span></div>
+          <div class="member-switcher-item" data-member="maria-rivera" data-name="Maria Rivera" data-dob="08/22/1975" data-age="50" data-id="MBR-2024-1203">
+            <div>Maria Rivera <span class="msw-meta">DOB 08/22/1975 · MBR-2024-1203</span></div>
           </div>
-          <div class="member-switcher-item" data-member="robert-chen" data-name="Robert Chen" data-dob="11/03/1982" data-age="43" data-id="MBR-2024-2947">
-            <div>Robert Chen <span class="msw-meta">DOB 11/03/1982 · MBR-2024-2947</span></div>
+          <div class="member-switcher-item" data-member="robert-chen" data-name="Robert Chen" data-dob="11/03/1982" data-age="43" data-id="MBR-2024-0591">
+            <div>Robert Chen <span class="msw-meta">DOB 11/03/1982 · MBR-2024-0591</span></div>
           </div>
-          <div class="member-switcher-item" data-member="sarah-williams" data-name="Sarah Williams" data-dob="06/17/1990" data-age="35" data-id="MBR-2024-6183">
-            <div>Sarah Williams <span class="msw-meta">DOB 06/17/1990 · MBR-2024-6183</span></div>
+          <div class="member-switcher-item" data-member="sarah-williams" data-name="Sarah Williams" data-dob="06/17/1990" data-age="35" data-id="MBR-2024-2108">
+            <div>Sarah Williams <span class="msw-meta">DOB 06/17/1990 · MBR-2024-2108</span></div>
           </div>
-          <div class="member-switcher-item" data-member="james-oconnor" data-name="James O'Connor" data-dob="02/28/1968" data-age="58" data-id="MBR-2024-9025">
-            <div>James O'Connor <span class="msw-meta">DOB 02/28/1968 · MBR-2024-9025</span></div>
+          <div class="member-switcher-item" data-member="james-oconnor" data-name="James O'Connor" data-dob="02/28/1968" data-age="58" data-id="MBR-2024-0334">
+            <div>James O'Connor <span class="msw-meta">DOB 02/28/1968 · MBR-2024-0334</span></div>
           </div>
         </div>
       </div>
@@ -417,7 +505,7 @@
     <div class="gc-shortcut"><div class="gc-shortcut-icon"><span class="material-icons">assignment_late</span></div>Complaint</div>
     <div class="gc-toolbar">
       <div class="gc-tool"><div class="gc-tool-icon"><span class="material-icons">link</span></div>Quick Links&#9662;</div>
-      <div class="gc-tool"><div class="gc-tool-icon" style="line-height:0;text-align:center;"><img src="data:image/png;base64,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" style="width:16px;height:16px;object-fit:contain;vertical-align:middle;" /></div>Wellframe</div>
+      <div class="gc-tool"><div class="gc-tool-icon" style="display:flex;align-items:center;justify-content:center;"><img src="assets/Group 1657.png" style="width:16px;height:16px;object-fit:contain;" /></div>Wellframe</div>
       <div class="gc-tool"><div class="gc-tool-icon"><span class="material-icons">calendar_month</span></div>Calendar</div>
       <div class="gc-tool gc-tool-dropdown" id="actionsDropdown" onclick="var m=this.querySelector('.gc-tool-menu');var r=this.getBoundingClientRect();m.style.top=r.bottom+'px';m.style.right=(window.innerWidth-r.right)+'px';m.classList.toggle('open');event.stopPropagation();"><div class="gc-tool-icon"><span class="material-icons">bolt</span></div>Actions&#9662;
         <div class="gc-tool-menu">
@@ -443,29 +531,7 @@
       <div class="gc-tool"><div class="gc-tool-icon"><span class="material-icons">admin_panel_settings</span></div>Admin&#9662;</div>
       <div class="gc-tool"><div class="gc-tool-icon"><span class="material-icons">build</span></div>Config&#9662;</div>
       <div class="gc-tool"><div class="gc-tool-icon"><span class="material-icons">menu_book</span></div>Know&#9662;</div>
-      <div class="gc-tool gc-tool-dropdown" onclick="var m=this.querySelector('.gc-tool-menu');var r=this.getBoundingClientRect();m.style.top=r.bottom+'px';m.style.right=(window.innerWidth-r.right)+'px';m.classList.toggle('open');event.stopPropagation();"><div class="gc-tool-icon"><span class="material-icons">manage_accounts</span></div>Manage&#9662;
-        <div class="gc-tool-menu">
-          <div class="gc-tool-menu-title">Manage</div>
-          <div class="gc-tool-menu-body">
-            <div class="gc-tool-menu-item">Assign Care Member &amp; Mailing</div>
-            <div class="gc-tool-menu-item">Member Merge</div>
-            <div class="gc-tool-menu-item">Assigned Activity Summary</div>
-            <div class="gc-tool-menu-item">My Activity Notification Summary</div>
-            <div class="gc-tool-menu-item">Bulk Referral</div>
-            <div class="gc-tool-menu-item">Pending Activities</div>
-            <div class="gc-tool-menu-item" onclick="showCareActivityLog()">Care Activity Log</div>
-            <div class="gc-tool-menu-item">Referral Request Summary</div>
-            <div class="gc-tool-menu-item">Full Dashboard</div>
-            <div class="gc-tool-menu-item">Worklog Manager</div>
-            <div class="gc-tool-menu-item">Manage Care Member</div>
-            <div class="gc-tool-menu-item">Eligibility Reconciliation</div>
-            <div class="gc-tool-menu-item">Manage EPSDT Features</div>
-            <div class="gc-tool-menu-item">Authorization Delivery Status</div>
-            <div class="gc-tool-menu-item">Manage Leave</div>
-            <div class="gc-tool-menu-item"></div>
-          </div>
-        </div>
-      </div>
+      <div class="gc-tool"><div class="gc-tool-icon"><span class="material-icons">manage_accounts</span></div>Manage&#9662;</div>
       <div class="gc-tool"><div class="gc-tool-icon"><span class="material-icons">settings</span></div>Settings&#9662;</div>
       <div class="gc-tool"><div class="gc-tool-icon"><span class="material-icons">bar_chart</span></div>CareScribe</div>
     </div>
@@ -520,7 +586,7 @@
               <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">Active</a></td>
               <td style="padding:4px 8px;"><a href="#" class="gc-kv-link member-link" data-member="jackson-thomas">Thomas</a></td>
               <td style="padding:4px 8px;">Jackson</td>
-              <td style="padding:4px 8px;">MBR-2024-3742</td>
+              <td style="padding:4px 8px;">MBR-2024-0847</td>
               <td style="padding:4px 8px;">03/15/1958</td>
               <td style="padding:4px 8px;">High</td>
               <td style="padding:4px 8px;">04/01/2026</td>
@@ -532,19 +598,19 @@
               <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">Active</a></td>
               <td style="padding:4px 8px;"><a href="#" class="gc-kv-link member-link" data-member="maria-rivera">Rivera</a></td>
               <td style="padding:4px 8px;">Maria</td>
-              <td style="padding:4px 8px;">MBR-2024-8516</td>
+              <td style="padding:4px 8px;">MBR-2024-1203</td>
               <td style="padding:4px 8px;">08/22/1975</td>
-              <td style="padding:4px 8px;">--</td>
-              <td style="padding:4px 8px;">--</td>
+              <td style="padding:4px 8px;">Medium</td>
+              <td style="padding:4px 8px;">04/05/2026</td>
               <td style="padding:4px 8px;">03/01/2025</td>
-              <td style="padding:4px 8px;">Health Risk Assessment</td>
+              <td style="padding:4px 8px;">Cardiac Rehab</td>
             </tr>
             <tr>
               <td style="padding:4px 8px;"><span class="material-icons" style="font-size:14px;color:var(--teal);">check_circle</span></td>
               <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">Active</a></td>
               <td style="padding:4px 8px;"><a href="#" class="gc-kv-link member-link" data-member="robert-chen">Chen</a></td>
               <td style="padding:4px 8px;">Robert</td>
-              <td style="padding:4px 8px;">MBR-2024-2947</td>
+              <td style="padding:4px 8px;">MBR-2024-0591</td>
               <td style="padding:4px 8px;">11/03/1982</td>
               <td style="padding:4px 8px;">Low</td>
               <td style="padding:4px 8px;">04/10/2026</td>
@@ -556,7 +622,7 @@
               <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">Active</a></td>
               <td style="padding:4px 8px;"><a href="#" class="gc-kv-link member-link" data-member="sarah-williams">Williams</a></td>
               <td style="padding:4px 8px;">Sarah</td>
-              <td style="padding:4px 8px;">MBR-2024-6183</td>
+              <td style="padding:4px 8px;">MBR-2024-2108</td>
               <td style="padding:4px 8px;">06/17/1990</td>
               <td style="padding:4px 8px;">Medium</td>
               <td style="padding:4px 8px;">04/12/2026</td>
@@ -568,7 +634,7 @@
               <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">Active</a></td>
               <td style="padding:4px 8px;"><a href="#" class="gc-kv-link member-link" data-member="james-oconnor">O'Connor</a></td>
               <td style="padding:4px 8px;">James</td>
-              <td style="padding:4px 8px;">MBR-2024-9025</td>
+              <td style="padding:4px 8px;">MBR-2024-0334</td>
               <td style="padding:4px 8px;">02/28/1968</td>
               <td style="padding:4px 8px;">High</td>
               <td style="padding:4px 8px;">04/08/2026</td>
@@ -669,10 +735,34 @@
           </thead>
           <tbody id="dashAlertsTbody">
             <tr>
+              <td style="padding:4px 8px;">HEALTH_INDICATOR</td>
+              <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">1</a></td>
+              <td style="padding:4px 8px;">HEALTH_INDICATOR</td>
+              <td style="padding:4px 8px;">N/A</td>
+            </tr>
+            <tr>
+              <td style="padding:4px 8px;">Missed medication check-in</td>
+              <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">1</a></td>
+              <td style="padding:4px 8px;">Wellframe</td>
+              <td style="padding:4px 8px;">03/24/2026</td>
+            </tr>
+            <tr>
               <td style="padding:4px 8px;">ER visit reported</td>
               <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">1</a></td>
               <td style="padding:4px 8px;">Claims</td>
               <td style="padding:4px 8px;">03/23/2026</td>
+            </tr>
+            <tr>
+              <td style="padding:4px 8px;">Assessment overdue</td>
+              <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">2</a></td>
+              <td style="padding:4px 8px;">Care Plan</td>
+              <td style="padding:4px 8px;">03/22/2026</td>
+            </tr>
+            <tr>
+              <td style="padding:4px 8px;">High A1C lab result</td>
+              <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">1</a></td>
+              <td style="padding:4px 8px;">Lab Results</td>
+              <td style="padding:4px 8px;">03/20/2026</td>
             </tr>
           </tbody>
         </table>
@@ -753,6 +843,15 @@
               <td style="padding:4px 8px;"><input type="checkbox"></td>
               <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">Adam Eve</a></td>
               <td style="padding:4px 8px;">07/25/2025</td>
+              <td style="padding:4px 8px;">Vidya Pitta</td>
+              <td style="padding:4px 8px;">Beatrice Kanya</td>
+              <td style="padding:4px 8px;">Pending</td>
+              <td style="padding:4px 8px;"></td>
+            </tr>
+            <tr>
+              <td style="padding:4px 8px;"><input type="checkbox"></td>
+              <td style="padding:4px 8px;"><a href="#" class="gc-kv-link">Robert Chen</a></td>
+              <td style="padding:4px 8px;">03/18/2026</td>
               <td style="padding:4px 8px;">Jennifer Reyes</td>
               <td style="padding:4px 8px;">Beatrice Kanya</td>
               <td style="padding:4px 8px;">Pending</td>
@@ -787,10 +886,10 @@
 <!-- ══════════════ MEMBER BANNER ══════════════ -->
 <div style="background:#fff;width:100%;">
 <div class="gc-member-banner">
-  <div style="position:relative;display:inline-flex;flex-shrink:0;"><span class="material-icons" style="font-size:26px;color:#315E7B;">notifications</span><span id="bannerAlertBadge" style="position:absolute;top:-4px;right:-6px;min-width:18px;height:18px;background:#C62828;color:white;border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:700;padding:0 3px;">2</span></div>
+  <div style="position:relative;display:inline-flex;flex-shrink:0;"><span class="material-icons" style="font-size:26px;color:#315E7B;">notifications</span><span style="position:absolute;top:-4px;right:-6px;min-width:18px;height:18px;background:#C62828;color:white;border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:700;padding:0 3px;">2</span></div>
   <span class="gc-banner-check" style="flex-shrink:0;"><span class="material-icons" style="font-size:22px;color:#2E7D32;">check_circle</span></span>
-  <img id="bannerLogo" src="data:image/png;base64,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" alt="Wellframe" style="width:24px;height:24px;flex-shrink:0;display:inline-block;" title="Wellframe">
-  <span class="gc-banner-name">John Everhart-AH47391826</span>
+  <img src="assets/Group 1657.png" alt="Wellframe" style="width:24px;height:24px;flex-shrink:0;display:inline-block;" title="Wellframe">
+  <span class="gc-banner-name">John Everhart-AH00000121</span>
   <span class="gc-banner-dob"><strong style="font-size:12px;letter-spacing:0.3px;">DOB</strong> 05/14/1942 83 yr(s)</span>
   <span class="gc-banner-expand" style="margin-left:16px;flex-shrink:0;"><span class="material-icons" style="font-size:18px;color:var(--teal);">open_in_full</span></span>
 </div>
@@ -824,6 +923,9 @@
     </div>
     <div class="gc-left-item" data-left="packet-log">
       <span class="gc-left-icon"><span class="material-icons">move_to_inbox</span></span><span class="gc-left-label">Packet Log</span>
+    </div>
+    <div class="gc-left-item" data-left="wellframe" role="button" aria-label="Wellframe">
+      <span class="gc-left-icon"><img src="assets/Wellframe/Logomark.png" alt="" aria-hidden="true" style="width:22px;height:22px;object-fit:contain;" /></span><span class="gc-left-label">Wellframe</span>
     </div>
   </nav>
 
@@ -1211,7 +1313,7 @@
                   <div class="gc-kv-row"><span class="gc-kv-label">Effective Date:</span> <span class="gc-kv-value">01/01/2024</span></div>
                   <div class="gc-kv-row"><span class="gc-kv-label">Term Date:</span> <span class="gc-kv-value">12/31/2024</span></div>
                   <div class="gc-kv-row"><span class="gc-kv-label">Status:</span> <span class="gc-kv-value">Active</span></div>
-                  <div class="gc-kv-row"><span class="gc-kv-label">Member ID:</span> <span class="gc-kv-value">MBR-2024-3742</span></div>
+                  <div class="gc-kv-row"><span class="gc-kv-label">Member ID:</span> <span class="gc-kv-value">MBR-2024-0847</span></div>
                   <div class="gc-kv-row"><span class="gc-kv-label">Group:</span> <span class="gc-kv-value">GRP-AK-001</span></div>
                 </div>
               </div>
@@ -1872,7 +1974,7 @@
               <div style="padding:7px 12px 4px;font-size:12px;color:var(--teal);cursor:pointer;display:flex;align-items:center;gap:4px;border-bottom:3px solid #E07820;white-space:nowrap;"><span class="material-icons" style="font-size:14px;">table_chart</span> Care Plan Details</div>
             </div>
           </div>
-          <div id="cp-ogi-list" style="background:var(--white);min-height:300px;"></div>
+          <div id="cp-overview-body" style="background:var(--white);min-height:300px;"></div>
         </div>
 
         <!-- SUB-PANEL: Care Plan Barriers -->
@@ -2618,9 +2720,14 @@
                   <th>Activity Type</th>
                   <th>Activity Outcome</th>
                   <th>Actual Duration</th>
+                  <th>Visible to Member</th>
                   <th>Actions</th>
                 </tr></thead>
                 <tbody id="scriptActivityTbody" onclick="(function(e){var b=e.target.closest('button,a');if(b&&b.textContent.trim()===(window._gcSelectedActivity||'Health Risk Assessment')){e.preventDefault();openScriptResponseModal();}})(event)">
+                  <tr><td><input type="checkbox" /></td><td><a href="#" style="color:var(--link);font-size:11px;">Adding a script</a></td><td>03/12/2025 06:46:33 AM</td><td>Sridevi Palepu : All Access Admin</td><td>Pending</td><td>N/A</td><td>N/A</td><td>N/A</td><td>0</td><td>Assessments.</td><td><a href="#" style="color:var(--link);">Add</a></td><td>00:00:00</td><td></td><td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td></tr>
+                  <tr><td><input type="checkbox" /></td><td><a href="#" style="color:var(--link);font-size:11px;">Adding a script</a></td><td>03/08/2025 06:11:24 AM</td><td>Sridevi Palepu : All Access Admin</td><td>Cancelled</td><td>03/08/2025 06:19:05 AM</td><td>N/A</td><td>N/A</td><td>0</td><td>Assessments.</td><td><a href="#" style="color:var(--link);">Add</a></td><td>00:00:00</td><td></td><td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td></tr>
+                  <tr><td><input type="checkbox" /></td><td><a href="#" style="color:var(--link);font-size:11px;">QQ Individual Budget</a></td><td>03/14/2024 12:24:59 AM</td><td>Sridevi Palepu : All Access Admin</td><td>Pending</td><td>N/A</td><td>N/A</td><td>N/A</td><td>0</td><td>Follow Up.</td><td><a href="#" style="color:var(--link);">Add</a></td><td>00:00:00</td><td></td><td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td></tr>
+                  <tr><td><input type="checkbox" /></td><td><a href="#" style="color:var(--link);font-size:11px;">TX SK SAI Script Form</a></td><td>02/15/2022 10:17:15 AM</td><td>Valliappan Pethaperumal : test ems</td><td>Pending</td><td>N/A</td><td>N/A</td><td>N/A</td><td>0</td><td>Care Coordination.</td><td><a href="#" style="color:var(--link);">Add</a></td><td>00:00:00</td><td></td><td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td></tr>
                 </tbody>
               </table>
             </div>
@@ -2873,7 +2980,7 @@
                 <thead><tr>
                   <th style="width:28px;"><input type="checkbox" /></th>
                   <th>Activity Type</th>
-                  <th>Contact Method</th>
+                  <th>MP</th>
                   <th>Priority</th>
                   <th>Follow up Date</th>
                   <th>Due Date</th>
@@ -2887,9 +2994,12 @@
                   <th>Assigned To / WQ</th>
                   <th>Notes</th>
                   <th>Created On</th>
+                  <th>Visible to Member</th>
                   <th style="width:80px;">Actions</th>
                 </tr></thead>
                 <tbody id="outstandingTbody">
+                  <tr><td><input type="checkbox" /></td><td>Follow Up.</td><td></td><td>High</td><td>03/27/2026</td><td>N/A</td><td>07:59</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">03/27/2026 08:00:00</td><td></td><td style="white-space:nowrap;"><span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:#315E7B;cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span></td></tr>
+                  <tr><td><input type="checkbox" /></td><td>Assessments - Initial Outreach</td><td></td><td>Medium</td><td>03/20/2026</td><td>N/A</td><td>08:30</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">03/20/2026 07:04:07</td><td></td><td style="white-space:nowrap;"><span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:#315E7B;cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span></td></tr>
                 </tbody>
               </table>
             </div>
@@ -3315,6 +3425,13 @@
       </div>
     </div>
 
+    <!-- ═══ LEFT PANEL: Wellframe ═══ -->
+    <div class="left-panel" id="panel-wellframe">
+      <div class="content-body" id="wellframe-panel-content">
+        <!-- populated by populateProfile -->
+      </div>
+    </div>
+
     <!-- ═══ LEFT PANEL: Packet Log ═══ -->
     <div class="left-panel" id="panel-packet-log">
       <div class="content-body">
@@ -3404,13 +3521,10 @@ function cpSubTab(name) {
 // Set default active tab
 cpSubTab('overview');
 
-
-function openScriptResponseModal(assessmentName) {
+function openScriptResponseModal() {
   // Remove any prior dynamic instance
   var prior = document.getElementById('msriDyn');
   if (prior) prior.remove();
-
-  var scriptName = assessmentName || window._gcSelectedActivity || 'Health Risk Assessment';
 
   // Hardcoded fallback member (Jackson Thomas)
   var FALLBACK_MEMBER = {
@@ -3448,48 +3562,33 @@ function openScriptResponseModal(assessmentName) {
 
   var key = (window._gcGetKey ? window._gcGetKey() : null) || 'jackson-thomas';
   var md = window._gcMemberData || {};
-
-  // Check for partial QA saved by member (save-and-close flow)
-  var qa;
-  try {
-    // Check member-specific key first (e.g. assessment-partial-qa-jackson-thomas)
-    var rawMemberPartial = localStorage.getItem('assessment-partial-qa-' + key);
-    var memberPartialData = rawMemberPartial ? JSON.parse(rawMemberPartial) : null;
-    if (memberPartialData && memberPartialData.assessmentType === scriptName && Array.isArray(memberPartialData.qa) && memberPartialData.qa.length > 0) {
-      qa = memberPartialData.qa;
-    }
-    // Fall back to general key (used by member-assessmentscampaign for maria-rivera)
-    if (!qa) {
-      var rawPartial = localStorage.getItem('assessment-partial-qa');
-      var partialData = rawPartial ? JSON.parse(rawPartial) : null;
-      if (partialData && partialData.assessmentType === scriptName && Array.isArray(partialData.qa) && partialData.qa.length > 0) {
-        qa = partialData.qa;
-      }
-    }
-    // Check completed QA (saved when member fully submits the assessment)
-    if (!qa) {
-      var rawCompleted = localStorage.getItem('assessment-completed-qa');
-      var completedData = rawCompleted ? JSON.parse(rawCompleted) : null;
-      if (completedData && completedData.assessmentType === scriptName && Array.isArray(completedData.qa) && completedData.qa.length > 0) {
-        qa = completedData.qa;
-      }
-    }
-    // Check member-specific completed QA (saved by member-cwfassessments for jackson-thomas)
-    if (!qa) {
-      var rawMemberCompleted = localStorage.getItem('assessment-completed-qa-' + key);
-      var memberCompletedData = rawMemberCompleted ? JSON.parse(rawMemberCompleted) : null;
-      if (memberCompletedData && memberCompletedData.assessmentType === scriptName && Array.isArray(memberCompletedData.qa) && memberCompletedData.qa.length > 0) {
-        qa = memberCompletedData.qa;
-      }
-    }
-  } catch(_) {}
-  if (!qa) {
-    qa = (window._gcAllAssessmentQA && window._gcAllAssessmentQA[scriptName])
-      ? window._gcAllAssessmentQA[scriptName]
-      : (window._gcHraQA && window._gcHraQA.length > 0) ? window._gcHraQA : FALLBACK_QA;
-  }
-
   var m = md[key] || md['jackson-thomas'] || FALLBACK_MEMBER;
+
+  // Derive the member app's localStorage key from the member's name and DOB
+  var nameParts = (m.name || '').toLowerCase().split(' ');
+  var memberStorageKey = 'wf_assessment_' + nameParts[0] + '_' + (nameParts[1] || '') + '_' + (m.dob || '');
+
+  // Read member's actual assessment answers: completed > partial save > in-progress
+  var qa = FALLBACK_QA;
+  (function() {
+    var sources = [
+      'assessment-completed-qa-' + memberStorageKey,
+      'assessment-partial-qa-' + memberStorageKey,
+      'assessment-live-qa-' + memberStorageKey
+    ];
+    for (var i = 0; i < sources.length; i++) {
+      try {
+        var raw = localStorage.getItem(sources[i]);
+        if (raw) {
+          var parsed = JSON.parse(raw);
+          if (parsed && Array.isArray(parsed.qa) && parsed.qa.length > 0) {
+            qa = parsed.qa;
+            return;
+          }
+        }
+      } catch(_) {}
+    }
+  })();
 
   var now = new Date();
   var pad = function(n) { return String(n).padStart(2,'0'); };
@@ -3518,13 +3617,13 @@ function openScriptResponseModal(assessmentName) {
     rowsHtml +=
       '<tr style="background:#fff;">' +
       '<td style="padding:5px 9px;border:1px solid #e0e0e0;width:24px;"></td>' +
-      '<td style="padding:5px 9px;border:1px solid #e0e0e0;">'+scriptName+'</td>' +
+      '<td style="padding:5px 9px;border:1px solid #e0e0e0;">'+(window._gcSelectedActivity||'Health Risk Assessment')+'</td>' +
       '<td style="padding:5px 9px;border:1px solid #e0e0e0;">'+(r.q||'')+'</td>' +
       '<td style="padding:5px 9px;border:1px solid #e0e0e0;">'+(r.option||'')+'</td>' +
       '<td style="padding:5px 9px;border:1px solid #e0e0e0;">'+(r.sub||'')+'</td>' +
       '<td style="padding:5px 9px;border:1px solid #e0e0e0;text-align:right;">'+(r.score>0?r.score.toFixed(2):'0')+'</td>' +
       '<td style="padding:5px 9px;border:1px solid #e0e0e0;">N/A</td>' +
-      '<td style="padding:5px 9px;border:1px solid #e0e0e0;">'+(m.name||'')+'</td>' +
+      '<td style="padding:5px 9px;border:1px solid #e0e0e0;">'+completedBy+'</td>' +
       '<td style="padding:5px 9px;border:1px solid #e0e0e0;">'+ts+'</td>' +
       '</tr>';
   });
@@ -3555,7 +3654,7 @@ function openScriptResponseModal(assessmentName) {
         '<div><strong>SUBSCRIBER_SSN :</strong> '+(m.ssn||'N/A')+'</div>' +
         '<div><strong>Member\'s DOB :</strong> '+dobFmt+'</div>' +
         '<div><strong>Member Name :</strong> '+m.name+'</div>' +
-        '<div><strong>Script Name :</strong> '+scriptName+'</div>' +
+        '<div><strong>Script Name :</strong> '+(window._gcSelectedActivity||'Health Risk Assessment')+'</div>' +
         '<div><strong>Completed By :</strong> '+completedBy+'</div>' +
         '<div><strong>Completed On :</strong> '+ts+'</div>' +
         '<div><strong>Eligibility :</strong> N/A</div>' +
@@ -3582,7 +3681,7 @@ function openScriptResponseModal(assessmentName) {
             '<th '+TH+'>Sub Option</th>' +
             '<th '+TH+'>Script Score</th>' +
             '<th '+TH+'>Care Notes</th>' +
-            '<th '+TH+'>Answered by</th>' +
+            '<th '+TH+'>Staff Name</th>' +
             '<th '+TH+'>Date Entered</th>' +
           '</tr></thead>' +
           '<tbody>'+rowsHtml+'</tbody>' +
@@ -3597,7 +3696,7 @@ function openScriptResponseModal(assessmentName) {
         '<button style="min-width:22px;height:22px;border:1px solid #ccc;border-radius:2px;background:#fff;font-size:11px;cursor:pointer;">&#x276F;&#x276F;</button>' +
         '<select style="font-size:11px;border:1px solid #ccc;border-radius:2px;padding:1px 4px;margin-left:4px;"><option>25</option></select>' +
         '<span>items per page</span>' +
-        '<span style="margin-left:auto;">1 - '+qa.length+' of '+qa.length+' items</span>' +
+        '<span style="margin-left:auto;">1 - 25 of 25 items</span>' +
       '</div>' +
     '</div>';
 
@@ -3609,122 +3708,6 @@ function openScriptResponseModal(assessmentName) {
   });
 }
 
-// ── Per-assessment Q&A mock data ──────────────────────────────────────────
-window._gcAllAssessmentQA = {
-  'Health Risk Assessment': [
-    {q:'In general, how would you rate your overall health?', option:'Good', sub:'', score:0},
-    {q:'Compared to one year ago, how would you rate your health in general now?', option:'About the same', sub:'', score:0},
-    {q:'In the past 12 months, have you visited an emergency department?', option:'No', sub:'', score:0},
-    {q:'In the past 12 months, how many times have you been admitted to a hospital overnight or longer?', option:'None', sub:'', score:0},
-    {q:'Do you have a primary care provider (PCP) that you see for routine care?', option:'Yes', sub:'', score:0},
-    {q:'Have you been told by a doctor that you have any of the following conditions? (Select all that apply)', option:'Diabetes or pre-diabetes; High blood pressure', sub:'', score:0},
-    {q:'How many prescription medications do you currently take on a regular basis?', option:'4–6 medications', sub:'', score:0},
-    {q:'Please list any known allergies (medications, food, latex, or environmental). If none, write "None."', option:'None', sub:'', score:0},
-    {q:'How often do you have difficulty remembering to take your medications as prescribed?', option:'Rarely', sub:'', score:0},
-    {q:'Are you currently experiencing any pain or discomfort on most days?', option:'No', sub:'', score:0},
-    {q:'In a typical week, how many days do you engage in at least 30 minutes of moderate physical activity?', option:'1–2 days', sub:'', score:0},
-    {q:'How would you describe your eating habits?', option:'Mostly healthy with occasional processed foods', sub:'', score:0},
-    {q:'On average, how many hours of sleep do you get per night?', option:'7–8 hours', sub:'', score:0},
-    {q:'Do you currently use any tobacco or nicotine products?', option:'Never used', sub:'', score:0},
-    {q:'How often do you have a drink containing alcohol?', option:'Never', sub:'', score:0},
-    {q:'Have you fallen or felt unsteady while walking or standing in the past 12 months?', option:'No falls and no balance concerns', sub:'', score:0},
-    {q:'Do you need help with any of the following activities? (Select all that apply)', option:'I do not need help with any of these', sub:'', score:0},
-    {q:'Do you feel physically and emotionally safe where you currently live?', option:'Yes', sub:'', score:0},
-    {q:'When did you last have an annual wellness visit or physical exam with your doctor?', option:'2026-01-10', sub:'', score:0},
-    {q:'Have you seen a doctor, therapist, or counselor for a mental or behavioral health concern in the past 12 months?', option:'No, and I do not feel I need to', sub:'', score:0},
-    {q:'Over the past 2 weeks, how often have you been bothered by feeling down, depressed, or hopeless?', option:'Not at all', sub:'', score:0},
-    {q:'Over the past 2 weeks, how often have you been bothered by feeling nervous, anxious, or on edge?', option:'Not at all', sub:'', score:0},
-    {q:'How often do you feel isolated, lonely, or that you lack companionship?', option:'Hardly ever', sub:'', score:0},
-    {q:'If you needed help during an illness or emergency, do you have someone you could count on?', option:'Yes', sub:'', score:0},
-    {q:'Within the past 12 months, have you ever worried that your food would run out before you had money to buy more?', option:'Never', sub:'', score:0},
-    {q:'In the past 12 months, has a lack of reliable transportation kept you from medical appointments, meetings, work, or getting things needed for daily living?', option:'No', sub:'', score:0},
-    {q:'Which of the following health goals are most important to you right now? (Select all that apply)', option:'Managing a chronic condition', sub:'', score:0},
-    {q:'Is there anything else you would like your care team to know about your health, your needs, or your goals?', option:'I am focused on keeping my diabetes under control.', sub:'', score:0}
-  ],
-  'Comprehensive Assessment': [
-    {q:'In general, how would you rate your overall health?', option:'Good', sub:'', score:0},
-    {q:'Which chronic conditions are you currently managing? (Select all that apply)', option:'Diabetes or pre-diabetes', sub:'', score:0},
-    {q:'How often do you feel down, depressed, or hopeless?', option:'Not at all', sub:'', score:0},
-    {q:'How would you rate your ability to perform daily activities?', option:'Fully independent', sub:'', score:0},
-    {q:'Do you have reliable housing, food, and transportation?', option:'Yes — all needs are met', sub:'', score:0},
-    {q:'How many prescription medications do you currently take?', option:'4–6', sub:'', score:0},
-    {q:'Have you visited an emergency department or been hospitalized in the past 6 months?', option:'No', sub:'', score:0},
-    {q:'What health goals are most important to you right now? (Select all that apply)', option:'Managing a chronic condition', sub:'', score:0},
-    {q:'Is there anything else you would like your care team to know?', option:'No additional concerns at this time.', sub:'', score:0}
-  ],
-  'Functional Status Assessment': [
-    {q:'How would you rate your ability to perform daily activities (such as bathing, dressing, cooking, and housekeeping)?', option:'Fully independent — no help needed', sub:'', score:0},
-    {q:'Do you need assistance with personal care activities (bathing, dressing, grooming, or toileting)?', option:'No, I manage independently', sub:'', score:0},
-    {q:'How would you describe your mobility?', option:'Fully mobile without assistance', sub:'', score:0},
-    {q:'Have you fallen or nearly fallen in the past 12 months?', option:'No', sub:'', score:0},
-    {q:'Which of the following activities do you need help with? (Select all that apply)', option:'None — I manage all activities independently', sub:'', score:0},
-    {q:'Is there anything else about your physical function or daily activities your care team should know?', option:'Managing well on my own.', sub:'', score:0}
-  ],
-  'Social Determinants of Health (SDOH) Assessment': [
-    {q:'Which of the following best describes your current housing situation?', option:'I have stable, permanent housing', sub:'', score:0},
-    {q:'In the past 12 months, have you worried about running out of food before you had money to buy more?', option:'Never', sub:'', score:0},
-    {q:'Do you have reliable transportation to get to medical appointments and other essential errands?', option:'Yes', sub:'', score:0},
-    {q:'What is your current employment status?', option:'Retired', sub:'', score:0},
-    {q:'Do you feel safe in your home and your neighborhood?', option:'Yes', sub:'', score:0},
-    {q:'Are there other social or financial needs affecting your health that you would like help with?', option:'No additional needs at this time.', sub:'', score:0}
-  ],
-  'Pediatric HRA': [
-    {q:'How old is your child?', option:'6–11 years', sub:'', score:0},
-    {q:"How would you rate your child's overall health?", option:'Excellent', sub:'', score:0},
-    {q:'Does your child have any diagnosed medical conditions? (Select all that apply)', option:'None', sub:'', score:0},
-    {q:'Is your child up to date on recommended vaccinations?', option:'Yes', sub:'', score:0},
-    {q:"How would you describe your child's diet on most days?", option:'Mostly fruits, vegetables, and whole foods', sub:'', score:0},
-    {q:'Does your child receive regular physical activity (at least 60 minutes per day)?', option:'Yes, most days', sub:'', score:0},
-    {q:"Do you have concerns about your child's behavior, mood, or emotional health?", option:'No concerns', sub:'', score:0},
-    {q:"Is there anything else about your child's health you'd like your care team to know?", option:'Child is developing well and meeting all milestones.', sub:'', score:0}
-  ],
-  'Oncology HRA': [
-    {q:'What is your current cancer status?', option:'In remission — under surveillance', sub:'', score:0},
-    {q:'Which of the following treatments are you currently receiving or have recently completed? (Select all that apply)', option:'None currently', sub:'', score:0},
-    {q:'How would you rate your current pain level on most days?', option:'No pain (0)', sub:'', score:0},
-    {q:'Are you experiencing any of the following side effects? (Select all that apply)', option:'No significant side effects', sub:'', score:0},
-    {q:'How is your emotional wellbeing since your diagnosis?', option:'Managing well — feeling positive', sub:'', score:0},
-    {q:'Do you have reliable support from family, friends, or a caregiver during your treatment?', option:'Yes — strong support system', sub:'', score:0},
-    {q:"Do you have any questions or concerns about your treatment plan or prognosis you'd like to discuss?", option:'No current concerns about treatment plan.', sub:'', score:0}
-  ],
-  'Fall Risk Assessment': [
-    {q:'Have you fallen in the past 12 months?', option:'Yes, once', sub:'', score:0},
-    {q:'Were you injured during a fall?', option:'Minor injury (bruise, scrape)', sub:'', score:0},
-    {q:'Do you feel unsteady when standing or walking?', option:'Sometimes', sub:'', score:0},
-    {q:'Do you use any assistive devices? (Select all that apply)', option:'Grab bars at home', sub:'', score:0},
-    {q:'Do you take any medications that cause dizziness or drowsiness?', option:'Yes', sub:'', score:0},
-    {q:'Do you have any of the following conditions? (Select all that apply)', option:'Vision problems; Arthritis or joint pain', sub:'', score:0},
-    {q:'Are there any hazards in your home that could increase your risk of falling (loose rugs, poor lighting, clutter)?', option:'No', sub:'', score:0},
-    {q:'Is there anything else you would like your care team to know about your fall risk?', option:'I occasionally feel lightheaded when getting up quickly.', sub:'', score:0}
-  ],
-  'Fall Risk Prevention': [
-    {q:'Have you made any changes to your home to reduce fall risk in the past 12 months? (Select all that apply)', option:'Installed grab bars in bathroom; Removed loose rugs or clutter', sub:'', score:0},
-    {q:'Do you currently use any assistive devices to help with balance or mobility?', option:'No devices', sub:'', score:0},
-    {q:'Are you currently participating in any balance, strength, or fall prevention exercise programs?', option:'Yes', sub:'', score:0},
-    {q:'Do any of your current medications cause dizziness, drowsiness, or balance problems?', option:'No', sub:'', score:0},
-    {q:'Have you had a vision or hearing exam in the past 12 months?', option:'Yes — both vision and hearing', sub:'', score:0},
-    {q:'What additional fall prevention support would be most helpful for you?', option:'Continue with current fall prevention routine.', sub:'', score:0}
-  ],
-  'Transitions of Care (TOC) 1 Pre-Discharge': [
-    {q:'Do you understand the reason for your hospitalization and your current diagnosis?', option:'Yes, clearly', sub:'', score:0},
-    {q:'Have you received and reviewed your discharge instructions with your care team?', option:'Yes — I understand them', sub:'', score:0},
-    {q:'Do you have a follow-up appointment scheduled with your primary care provider or specialist?', option:'Yes — it is scheduled', sub:'', score:0},
-    {q:'Have any new medications been prescribed during this stay?', option:'No new medications', sub:'', score:0},
-    {q:'Do you have reliable transportation home from the facility?', option:'Yes', sub:'', score:0},
-    {q:'Will you have support at home (caregiver, family member, or home health) when you are discharged?', option:'Yes — family or caregiver', sub:'', score:0},
-    {q:'What concerns do you have about going home that your care team should address before discharge?', option:'Feel well prepared for discharge.', sub:'', score:0}
-  ],
-  'Transitions of Care (TOC) 3 Home Visit': [
-    {q:'How are you feeling since being discharged from the hospital or facility?', option:'Well — recovering as expected', sub:'', score:0},
-    {q:'Have you experienced any of the following symptoms since discharge? (Select all that apply)', option:'None of the above', sub:'', score:0},
-    {q:'Have you attended your scheduled follow-up appointment(s) since discharge?', option:'Yes — attended all appointments', sub:'', score:0},
-    {q:'Are you taking all prescribed medications as directed?', option:'Yes — as prescribed', sub:'', score:0},
-    {q:'Is your home environment safe and suitable for your recovery?', option:'Yes — my home is safe', sub:'', score:0},
-    {q:'Do you have adequate food, supplies, and support to continue your recovery at home?', option:'Yes — all needs are met', sub:'', score:0},
-    {q:'What questions or concerns can your care team help address today?', option:'Recovery is going smoothly.', sub:'', score:0}
-  ]
-};
-
 (function() {
   var homeDash = document.getElementById('home-dashboard');
   var memberView = document.getElementById('member-view');
@@ -3732,18 +3715,6 @@ window._gcAllAssessmentQA = {
 
   // Pending outstanding activities queue — flushed when user sees home dashboard
   var pendingOutstandingActivities = [];
-
-  // Purge legacy checklist items that have no memberKey (added before the per-member fix)
-  (function() {
-    try {
-      var raw = localStorage.getItem('wf_member_checklist');
-      if (raw) {
-        var items = JSON.parse(raw);
-        var clean = items.filter(function(it) { return !!it.memberKey; });
-        if (clean.length !== items.length) localStorage.setItem('wf_member_checklist', JSON.stringify(clean));
-      }
-    } catch(e) {}
-  })();
 
   function flushPendingOutstanding() {
     var tbody = document.getElementById('outstandingTbody');
@@ -3754,12 +3725,12 @@ window._gcAllAssessmentQA = {
       tr.style.background = '#FFFDE7';
       tr.innerHTML = '<td><input type="checkbox" /></td>' +
         '<td>' + item.activityType + '</td>' +
-        '<td>Wellframe</td>' +
+        '<td></td>' +
         '<td>High</td>' +
         '<td>' + item.dateStr + '</td>' +
         '<td>N/A</td>' +
         '<td>' + item.timeStr + '</td>' +
-        '<td>' + (item.scriptVal || 'N/A') + '</td>' +
+        '<td>N/A</td>' +
         '<td>N/A</td>' +
         '<td>N/A</td>' +
         '<td>Beatrice Kanya : All Access Admin</td>' +
@@ -3768,6 +3739,7 @@ window._gcAllAssessmentQA = {
         '<td>Beatrice Kanya : All Access Admin</td>' +
         '<td>' + item.notesVal + '</td>' +
         '<td style="font-size:10px;">' + item.createdStr + '</td>' +
+        '<td>' + (item.isAssessment ? '<span class="material-icons" style="font-size:16px;color:#388e3c;">check</span>' : '') + '</td>' +
         '<td style="white-space:nowrap;"><span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:#315E7B;cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span></td>';
       tbody.insertBefore(tr, tbody.firstChild);
       setTimeout(function() { tr.style.transition = 'background 1.5s'; tr.style.background = ''; }, 100);
@@ -3775,227 +3747,23 @@ window._gcAllAssessmentQA = {
     pendingOutstandingActivities = [];
   }
 
-  // Sync Outstanding Activities table to match localStorage checklist for the current member
-  function syncOutstandingActivities() {
-    var tbody = document.getElementById('outstandingTbody');
-    if (!tbody) return;
-    // Remove all dynamic rows
-    tbody.querySelectorAll('tr[data-dynamic="true"]').forEach(function(r) { r.remove(); });
-    // Re-render one row per localStorage item for this member
-    var items = JSON.parse(localStorage.getItem('wf_member_checklist') || '[]');
-    var memberItems = items.filter(function(it) { return it.memberKey === currentMemberKey && it.status !== 'Completed' && it.status !== 'In Progress'; });
-    memberItems.forEach(function(item) {
-      var parts = (item.date || '').split(' ');
-      var rowDate = parts[0] || '';
-      var rowTime = parts[1] ? parts[1].substring(0, 5) : '';
-      var tr = document.createElement('tr');
-      tr.dataset.dynamic = 'true';
-      tr.innerHTML = '<td><input type="checkbox" /></td>' +
-        '<td>Assessment</td>' +
-        '<td>Wellframe</td>' +
-        '<td>High</td>' +
-        '<td>' + rowDate + '</td>' +
-        '<td>N/A</td>' +
-        '<td>' + rowTime + '</td>' +
-        '<td>' + item.assessment + '</td>' +
-        '<td>N/A</td><td>N/A</td>' +
-        '<td>Beatrice Kanya : All Access Admin</td>' +
-        '<td>N/A</td>' +
-        '<td>Accepted</td>' +
-        '<td>Beatrice Kanya : All Access Admin</td>' +
-        '<td>N/A</td>' +
-        '<td style="font-size:10px;">' + item.date + '</td>' +
-        '<td><span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> ' +
-        '<span class="material-icons" style="font-size:18px;color:#315E7B;cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> ' +
-        '<span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span></td>';
-      tbody.insertBefore(tr, tbody.firstChild);
-    });
-  }
-
-  // Sync member-completed assessments into Activity Summary
-  function syncCompletedToActivitySummary() {
-    var genTbody = document.getElementById('generalActivityTbody');
-    var scriptTbody = document.getElementById('scriptActivityTbody');
-    // Remove any previously synced member-completed rows from both tables
-    if (genTbody) genTbody.querySelectorAll('tr[data-member-completed="true"]').forEach(function(r) { r.remove(); });
-    if (scriptTbody) scriptTbody.querySelectorAll('tr[data-member-completed="true"]').forEach(function(r) { r.remove(); });
-    var items = JSON.parse(localStorage.getItem('wf_member_checklist') || '[]');
-    var completed = items.filter(function(it) { return it.memberKey === currentMemberKey && it.memberKey !== 'maria-rivera' && (it.status === 'Completed' || it.status === 'In Progress'); });
-    completed.forEach(function(item) {
-      var isInProgress = item.status === 'In Progress';
-      var memberName = (memberData[currentMemberKey] || {}).name || 'Member';
-      var completedDate = item.completedAt || item.savedAt || 'N/A';
-
-      // ── General Activity row ──
-      if (genTbody) {
-        var gtr = document.createElement('tr');
-        gtr.dataset.memberCompleted = 'true';
-        gtr.style.background = '#E8F5E9';
-        gtr.innerHTML =
-          '<td>' + completedDate + '</td>' +
-          '<td>Beatrice Kanya : All Access Admin</td>' +
-          '<td>' + (item.date ? item.date.split(' ')[0] : 'N/A') + '</td>' +
-          '<td>Beatrice Kanya : All Access Admin</td>' +
-          '<td>Assessment – ' + item.assessment + '</td>' +
-          '<td>N/A</td>' +
-          '<td>N/A</td>' +
-          '<td><a href="#" style="color:var(--link);">Add</a></td>' +
-          '<td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">visibility</span></td>' +
-          '<td><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td>';
-        genTbody.insertBefore(gtr, genTbody.firstChild);
-        setTimeout(function(row) { row.style.transition = 'background 1.5s'; row.style.background = ''; }.bind(null, gtr), 100);
-      }
-
-      // ── Script Activity row ──
-      if (scriptTbody) {
-        var str = document.createElement('tr');
-        str.dataset.memberCompleted = 'true';
-        if (!isInProgress) str.style.background = '#E8F5E9';
-        str.innerHTML =
-          '<td><input type="checkbox" /></td>' +
-          '<td><a href="#" onclick="event.preventDefault();openScriptResponseModal(this.textContent);" style="color:var(--link);font-size:11px;">' + item.assessment + '</a></td>' +
-          '<td>' + completedDate + '</td>' +
-          '<td>Beatrice Kanya : All Access Admin</td>' +
-          '<td>' + (isInProgress ? 'In Progress' : 'Completed') + '</td>' +
-          '<td>' + completedDate + '</td>' +
-          '<td>N/A</td>' +
-          '<td>N/A</td>' +
-          '<td>0</td>' +
-          '<td>Assessments.</td>' +
-          '<td><a href="#" style="color:var(--link);">Add</a></td>' +
-          '<td>00:00:00</td>' +
-          '<td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td>';
-        scriptTbody.insertBefore(str, scriptTbody.firstChild);
-        if (!isInProgress) setTimeout(function(row) { row.style.transition = 'background 1.5s'; row.style.background = ''; }.bind(null, str), 100);
-      }
-    });
-  }
-
-  // Listen for member app completing an assessment
-  window.addEventListener('storage', function(e) {
-    if (e.key === 'wf_member_checklist') {
-      // Route maria-rivera entries through memberTabData handlers (not DOM sync)
-      var shouldNavigate = false;
-      try {
-        var cwfOldItems = JSON.parse(e.oldValue || '[]');
-        var cwfNewItems = JSON.parse(e.newValue || '[]');
-        cwfNewItems.forEach(function(item) {
-          if (item.memberKey === 'maria-rivera') {
-            var oldItem = cwfOldItems.find(function(o) { return o.memberKey === 'maria-rivera' && o.assessment === item.assessment; });
-            var prevStatus = oldItem ? oldItem.status : null;
-            if (prevStatus !== item.status) {
-              if (item.status === 'In Progress') {
-                handleMemberAssessmentSaved(item.assessment);
-              } else if (item.status === 'Completed') {
-                handleMemberAssessmentCompleted(item.assessment);
-              }
-            }
-          } else if (item.memberKey === currentMemberKey) {
-            var oldItem2 = cwfOldItems.find(function(o) { return o.memberKey === item.memberKey && o.assessment === item.assessment; });
-            var prevStatus2 = oldItem2 ? oldItem2.status : null;
-            if (prevStatus2 !== item.status && (item.status === 'In Progress' || item.status === 'Completed')) {
-              shouldNavigate = true;
-            }
-            if (prevStatus2 !== item.status && item.status === 'Completed') {
-              var dCwf = memberTabData[item.memberKey];
-              if (dCwf) {
-                if (!dCwf.carePlanOGI) dCwf.carePlanOGI = [];
-                var alrOGI = dCwf.carePlanOGI.some(function(o) { return o.assessmentType === item.assessment; });
-                if (!alrOGI) {
-                  var tplCwf = _OGI_TEMPLATES[item.assessment] || { opportunity: 'Potential need identified via ' + item.assessment, goal: 'Member has a plan to address needs identified during ' + item.assessment, condition: 'General', intervention: 'Follow up on ' + item.assessment + ' results and connect member with appropriate resources', priority: 'High' };
-                  dCwf.carePlanOGI.push({ assessmentType: item.assessment, opportunity: tplCwf.opportunity, goal: tplCwf.goal, condition: tplCwf.condition, intervention: tplCwf.intervention, priority: tplCwf.priority });
-                }
-              }
-            }
-          }
-        });
-      } catch(_) {}
-      // Sync non-maria-rivera members via DOM approach
-      syncOutstandingActivities();
-      syncCompletedToActivitySummary();
-      syncCareActivityLog();
-      if (shouldNavigate) goToActivitySummary();
-    }
-  });
-
   // Show dashboard / hide member view (or toggle)
-  function hideAllPages() {
-    homeDash.style.display = 'none';
+  function showDashboard() {
+    homeDash.style.display = '';
     memberView.style.display = 'none';
     var hraPage = document.getElementById('hraReviewPage');
     if (hraPage) hraPage.style.display = 'none';
-    var calPage = document.getElementById('careActivityLogPage');
-    if (calPage) calPage.style.display = 'none';
-  }
-
-  function showDashboard() {
-    hideAllPages();
-    homeDash.style.display = '';
+    // When user sees the home dashboard (and the alerts), flush pending outstanding activities
     flushPendingOutstanding();
+    window.parent.postMessage({ type: 'VIEW_HOME' }, '*');
   }
 
   function showMemberView() {
-    hideAllPages();
+    homeDash.style.display = 'none';
     memberView.style.display = '';
+    var hraPage = document.getElementById('hraReviewPage');
+    if (hraPage) hraPage.style.display = 'none';
   }
-
-  function syncCareActivityLog() {
-    var tbody = document.getElementById('calTbody');
-    if (!tbody) return;
-    tbody.innerHTML = '';
-    var items = JSON.parse(localStorage.getItem('wf_member_checklist') || '[]');
-    var memberItems = items.filter(function(it) { return it.memberKey === currentMemberKey && it.status !== 'Completed' && it.status !== 'In Progress'; });
-    var m = memberData[currentMemberKey] || {};
-    var nameParts = (m.name || '').split(' ');
-    var firstName = nameParts[0] || '';
-    var lastName = nameParts.slice(1).join(' ') || '';
-    var digital = m.digital || '';
-    var idMap = {'jackson-thomas':'GC00001','maria-rivera':'GC00002','robert-chen':'GC00003','sarah-williams':'GC00004'};
-    var shortId = idMap[currentMemberKey] || (m.id || 'N/A');
-    memberItems.forEach(function(item) {
-      var followUp = item.date || 'N/A';
-      var isPast = followUp !== 'N/A' && new Date(followUp) < new Date();
-      var dateStyle = isPast ? 'color:#C62828;font-weight:600;' : '';
-      var tr = document.createElement('tr');
-      tr.innerHTML =
-        '<td><input type="checkbox"></td>' +
-        '<td><span class="gc-badge gc-badge-teal">Active</span></td>' +
-        '<td><a href="#" class="gc-kv-link">' + lastName + '</a></td>' +
-        '<td>' + firstName + '</td>' +
-        '<td>' + shortId + '</td>' +
-        '<td>' + item.assessment + '</td>' +
-        '<td>' + digital + '</td>' +
-        '<td style="' + dateStyle + '">' + followUp + '</td>' +
-        '<td>N/A</td>' +
-        '<td>' + (item.addedBy || 'Beatrice Kanya') + '</td>' +
-        '<td>N/A</td><td>N/A</td>' +
-        '<td>High</td><td>N/A</td><td>N/A</td>' +
-        '<td>' + item.assessment + '</td>' +
-        '<td style="text-align:center;"><span class="material-icons" style="font-size:18px;color:var(--teal);cursor:pointer;">thumb_up</span></td>';
-      tbody.appendChild(tr);
-    });
-    var countEl = document.getElementById('calItemCount');
-    if (countEl) {
-      var n = memberItems.length;
-      countEl.textContent = n === 0 ? '0 items' : '1 - ' + n + ' of ' + n + ' items';
-    }
-  }
-  window.syncCareActivityLog = syncCareActivityLog;
-
-  function showCareActivityLog() {
-    hideAllPages();
-    var calPage = document.getElementById('careActivityLogPage');
-    if (calPage) calPage.style.display = '';
-    document.querySelectorAll('.gc-tool-menu').forEach(function(m) { m.classList.remove('open'); });
-    syncCareActivityLog();
-  }
-  window.showCareActivityLog = showCareActivityLog;
-
-  function calExpandAll(e) {
-    e.preventDefault();
-    document.querySelectorAll('#careActivityLogPage .gc-accordion').forEach(function(a) { a.classList.add('open'); });
-  }
-  window.calExpandAll = calExpandAll;
 
   // Home shortcut toggles between dashboard and member view
   homeBtn.addEventListener('click', function() {
@@ -4029,6 +3797,7 @@ window._gcAllAssessmentQA = {
         });
       }
       showMemberView();
+      window.parent.postMessage({ type: 'MEMBER_SWITCH', memberId: key, memberName: memberData[key].name, phone: memberData[key].phone, pcp: memberData[key].pcp }, '*');
     });
   });
 
@@ -4045,7 +3814,6 @@ window._gcAllAssessmentQA = {
       leftPanels.forEach(function(p) { p.classList.remove('active'); });
       var panel = document.getElementById('panel-' + target);
       if (panel) panel.classList.add('active');
-      if (target === 'care-plan') renderCarePlanOGI(currentMemberKey);
     });
   });
 
@@ -4078,8 +3846,6 @@ window._gcAllAssessmentQA = {
       var target = tab.getAttribute('data-artab');
       var panel = document.getElementById('artab-' + target);
       if (panel) { panel.style.display = ''; panel.classList.add('active'); }
-      if (target === 'outstanding-activities') syncOutstandingActivities();
-      if (target === 'activity-summary') syncCompletedToActivitySummary();
     });
   });
 
@@ -4124,18 +3890,49 @@ window._gcAllAssessmentQA = {
   // Start with dashboard visible (default)
   // Show success banner after adding activity
   // Open Add Activity modal with current member
+  window.updateWellframeSection = function() {
+    var actType = document.getElementById('modalActivityType');
+    var script  = document.getElementById('modalScript');
+    var section = document.getElementById('wellframeAssessmentSection');
+    if (!actType || !script || !section) return;
+    var isAssessment = actType.value !== 'Select' && actType.value.toLowerCase().indexOf('assessment') > -1;
+    var hasScript    = script.value !== 'Select' && script.value !== '';
+    var show = isAssessment && hasScript;
+    section.style.display = show ? '' : 'none';
+    if (!show) {
+      var chk = document.getElementById('wellframeAssessmentCheck');
+      if (chk) chk.checked = false;
+    }
+  };
+
   window.openAddActivity = function() {
     var m = memberData[currentMemberKey];
     if (m) {
       var modalName = document.getElementById('modalMemberName');
       if (modalName) modalName.textContent = m.name;
     }
+    // Reset activity type, script, and wellframe section on each open
+    var actType = document.getElementById('modalActivityType');
+    var script  = document.getElementById('modalScript');
+    if (actType) actType.value = 'Select';
+    if (script)  script.value  = 'Select';
+    window.updateWellframeSection();
     // Force close all open menus with a slight delay to override toggle
     setTimeout(function() {
       document.querySelectorAll('.gc-tool-menu').forEach(function(m) { m.classList.remove('open'); });
     }, 0);
     document.getElementById('addActivityModal').classList.add('open');
     document.getElementById('modalSuccessBanner').style.display = 'none';
+  };
+
+  // Wellframe mobile panel screen switcher
+  window.wfmTab = function(screen) {
+    document.querySelectorAll('.wfm-screen').forEach(function(s) { s.classList.remove('wfm-active'); });
+    var el = document.getElementById('wfm-screen-' + screen);
+    if (el) el.classList.add('wfm-active');
+    document.querySelectorAll('.wfm-sw-btn').forEach(function(b) { b.classList.remove('active'); });
+    var btn = document.querySelector('.wfm-sw-btn[data-screen="' + screen + '"]');
+    if (btn) btn.classList.add('active');
   };
 
   window.showActivitySuccess = function(closeModal) {
@@ -4160,13 +3957,18 @@ window._gcAllAssessmentQA = {
     if (modalBody) modalBody.scrollTop = 0;
 
     // Add the activity to the outstanding activities table
+    var actType = document.querySelector('#addActivityModal .gc-modal-select') ;
+    var actTypeSelects = document.querySelectorAll('#addActivityModal .gc-modal-select');
     var activityTypeVal = 'N/A';
-    var scriptVal = 'N/A';
     var notesVal = '';
-    var actTypeSelect = document.getElementById('activityTypeSelect');
-    if (actTypeSelect && actTypeSelect.value !== 'Select') activityTypeVal = actTypeSelect.value;
-    var scriptSelect = document.getElementById('scriptSelect');
-    if (scriptSelect && scriptSelect.value !== 'Select') scriptVal = scriptSelect.value;
+    // Find the Activity Type select (3rd select in modal) and notes
+    actTypeSelects.forEach(function(sel) {
+      var label = sel.closest('.gc-modal-field');
+      if (label) {
+        var lbl = label.querySelector('label');
+        if (lbl && lbl.textContent.indexOf('Activity Type') > -1) activityTypeVal = sel.value !== 'Select' ? sel.value : 'N/A';
+      }
+    });
     var commentArea = document.querySelector('#addActivityModal textarea');
     if (commentArea) notesVal = commentArea.value || 'N/A';
     window._gcSelectedActivity = activityTypeVal;
@@ -4181,19 +3983,33 @@ window._gcAllAssessmentQA = {
     var timeStr = hh+':'+mi;
     var createdStr = mm+'/'+dd+'/'+yyyy+' '+hh+':'+mi+':'+String(now.getSeconds()).padStart(2,'0');
 
-    // Save to localStorage so member-cwfassessments checklist can pick it up
-    if (activityTypeVal === 'Assessment' && scriptVal !== 'N/A') {
-      var allItems = JSON.parse(localStorage.getItem('wf_member_checklist') || '[]');
-      // Remove any existing entry for this member+assessment to prevent duplicates
-      allItems = allItems.filter(function(it) {
-        return !(it.memberKey === currentMemberKey && it.assessment === scriptVal);
-      });
-      allItems.unshift({ assessment: scriptVal, addedBy: 'Beatrice Kanya', date: createdStr, status: 'Pending', memberKey: currentMemberKey });
-      localStorage.setItem('wf_member_checklist', JSON.stringify(allItems));
+    // Add directly to Outstanding Activities table
+    var outTbody = document.getElementById('outstandingTbody');
+    if (outTbody) {
+      var otr = document.createElement('tr');
+      otr.dataset.dynamic = 'true';
+      otr.style.background = '#FFFDE7';
+      otr.innerHTML = '<td><input type="checkbox" /></td>' +
+        '<td>' + activityTypeVal + '</td>' +
+        '<td></td>' +
+        '<td>High</td>' +
+        '<td>' + dateStr + '</td>' +
+        '<td>N/A</td>' +
+        '<td>' + timeStr + '</td>' +
+        '<td>N/A</td><td>N/A</td><td>N/A</td>' +
+        '<td>Beatrice Kanya : All Access Admin</td>' +
+        '<td>N/A</td>' +
+        '<td>Accepted</td>' +
+        '<td>Beatrice Kanya : All Access Admin</td>' +
+        '<td>' + (notesVal || 'N/A') + '</td>' +
+        '<td style="font-size:10px;">' + createdStr + '</td>' +
+        '<td>' + (activityTypeVal.toLowerCase().indexOf('assessment') > -1 ? '<span class="material-icons" style="font-size:16px;color:#388e3c;">check</span>' : '') + '</td>' +
+        '<td><span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> ' +
+        '<span class="material-icons" style="font-size:18px;color:#315E7B;cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> ' +
+        '<span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span></td>';
+      outTbody.insertBefore(otr, outTbody.firstChild);
+      setTimeout(function() { otr.style.transition = 'background 1.5s'; otr.style.background = ''; }, 100);
     }
-
-    // Sync Outstanding Activities table from localStorage (single source of truth)
-    syncOutstandingActivities();
 
     // Also add to General Activity table in Activity Summary
     var genTbody = document.getElementById('generalActivityTbody');
@@ -4271,37 +4087,83 @@ window._gcAllAssessmentQA = {
       });
 
 
+      // Add calendar review event 2 days from now
+      var reviewDate = new Date();
+      reviewDate.setDate(reviewDate.getDate() + 2);
+      var days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+      var months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+      var dayAbbr = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+      var rMM = String(reviewDate.getMonth()+1).padStart(2,'0');
+      var rDD = String(reviewDate.getDate()).padStart(2,'0');
+      var rDay = days[reviewDate.getDay()];
+      var rDayShort = dayAbbr[reviewDate.getDay()];
+      var rMonth = months[reviewDate.getMonth()];
+
+      // Update calendar header to review date
+      var calDateLabel = document.getElementById('calDateLabel');
+      if (calDateLabel) calDateLabel.textContent = rDay + ', ' + rMonth + ' ' + reviewDate.getDate() + ', ' + reviewDate.getFullYear();
+      var calDayColLabel = document.getElementById('calDayColLabel');
+      if (calDayColLabel) calDayColLabel.textContent = rDayShort + ' ' + rMM.replace(/^0/,'') + '/' + rDD.replace(/^0/,'');
+
+      var calSlot = document.getElementById('cal11Slot');
+      if (calSlot) {
+        var m = memberData[alertMemberKey];
+        var calName = m ? m.name : 'Member';
+        // Make the row taller for the card
+        calSlot.parentElement.style.minHeight = '120px';
+        var calCard = document.createElement('div');
+        calCard.className = 'cal-event-card';
+        calCard.dataset.dynamic = 'true';
+        calCard.style.borderLeftColor = '#2E7D32';
+        calCard.style.borderLeftWidth = '5px';
+        calCard.innerHTML = '<span class="cal-event-close material-icons" onclick="this.parentElement.remove();">close</span>' +
+          '<div class="cal-event-title">' +
+          '<img src="assets/Wellframe/Logomark.png" style="width:18px;height:18px;object-fit:contain;vertical-align:middle;" />' +
+          '<span class="material-icons" style="font-size:15px;">info</span>' +
+          calName + ', ' + activityTypeVal + ' (Review)' +
+          '</div>' +
+          '<div class="cal-event-actions">' +
+          '<span class="material-icons">edit</span>' +
+          '<span class="material-icons cal-perform-btn" title="Perform Activity" style="cursor:pointer;">thumb_up</span>' +
+          '<span class="material-icons">delete</span>' +
+          '<span class="material-icons" style="color:#315E7B;border-color:#315E7B;">location_on</span>' +
+          '</div>';
+        calSlot.appendChild(calCard);
+        // Attach perform activity handler to thumbs up
+        var performBtn = calCard.querySelector('.cal-perform-btn');
+        if (performBtn) {
+          performBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            showCalActionPopover(this);
+          });
+        }
+        calCard.style.opacity = '0';
+        calCard.style.transform = 'translateY(-8px)';
+        calCard.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        setTimeout(function() { calCard.style.opacity = '1'; calCard.style.transform = 'translateY(0)'; }, 50);
+      }
     }
   };
 
   // Member data for switching
   var memberData = {
-    'jackson-thomas': { name:'Jackson Thomas', preferred:'Jack', dob:'03/15/1958', dobLong:'March 15, 1958', age:'67', id:'MBR-2024-3742', ssn:'XXX-XX-4523', gender:'Male', genderIdentity:'Cisgender Male', sexualOrientation:'Heterosexual', pronouns:'He/Him', contactFormat:'Phone', serviceInterruption:'None', address:'1247 Glacier View Drive', city:'Anchorage', state:'AK', zip:'99501', county:'Anchorage County', country:'United States', phone:'(907) 555-0142', cell:'(907) 555-0198', altPhone:'(907) 555-0203', fax:'Not Available', prefCallTime:'Mornings (8am–12pm)', email:'jackson.thomas@email.com', altEmail:'Not Available', lang:'English', writtenLang:'English', spokenLang:'English', commImpairment:'None', pcp:'Dr. Sarah Chen', plan:'Alaska Premier Health', lob:'Medicare Advantage', primaryInsPolicy:'APH-847-2024-JT', secondaryIns:'Medicare Part B', secondaryInsPolicy:'1EG4-TE5-MK72', primaryCondition:'Type 2 Diabetes Mellitus', behavioralCondition:'Major Depressive Disorder', expectedRisk:'High (2.4)', sensitiveDx:'No', doctorAppt:'04/15/2026', doctorApptReason:'Quarterly Diabetes Check', epsdt:'No', portalAccess:'Active', race:'White', preferredRace:'White', ethnicity:'Non-Hispanic', preferredEthnicity:'Non-Hispanic', residenceStatus:'Independent', incomeStatus:'Middle Income', maritalStatus:'Married', veteranStatus:'Non-Veteran', evacuationZone:'Zone B', careManager:'Beatrice Kanya', risk:'2.4', program:'Diabetes Management', digital:'Wellframe', caregiver:{first:'Maria',last:'Thomas',relation:'Wife',type:'Primary Caregiver',start:'01/15/2020'}, careTeam:[{name:'Dr. Sarah Chen',role:'PCP',phone:'(907) 555-1001'},{name:'Jennifer Reyes, RN',role:'Care Manager',phone:'(907) 555-1002'},{name:'Dr. Michael Park',role:'Cardiologist',phone:'(907) 555-1003'}] },
-    'maria-rivera': { name:'Maria Rivera', preferred:'Maria', dob:'08/22/1975', dobLong:'August 22, 1975', age:'50', id:'MBR-2024-8516', ssn:'XXX-XX-7891', gender:'Female', genderIdentity:'Cisgender Female', sexualOrientation:'Heterosexual', pronouns:'She/Her', contactFormat:'Phone – Spanish Preferred', serviceInterruption:'None', address:'842 Cordova Street', city:'Anchorage', state:'AK', zip:'99501', county:'Anchorage County', country:'United States', phone:'(907) 555-0287', cell:'(907) 555-0344', altPhone:'(907) 555-0391', fax:'Not Available', prefCallTime:'Afternoons (12pm–5pm)', email:'maria.rivera@email.com', altEmail:'Not Available', lang:'Spanish', writtenLang:'Spanish', spokenLang:'Spanish', commImpairment:'None', pcp:'Dr. James Park', plan:'Alaska Premier Health', lob:'Medicaid', primaryInsPolicy:'APH-1203-2024-MR', secondaryIns:'Alaska Medicaid', secondaryInsPolicy:'MCD-AK-445821', primaryCondition:'Congestive Heart Failure (CHF)', behavioralCondition:'Generalized Anxiety Disorder', expectedRisk:'--', sensitiveDx:'No', doctorAppt:'--', doctorApptReason:'', epsdt:'No', portalAccess:'Active', race:'Hispanic or Latino', preferredRace:'Hispanic or Latino', ethnicity:'Hispanic', preferredEthnicity:'Hispanic', residenceStatus:'Independent', incomeStatus:'Low Income', maritalStatus:'Married', veteranStatus:'Non-Veteran', evacuationZone:'Zone A', careManager:'Beatrice Kanya', risk:'--', program:'Health Risk Assessment', digital:'', caregiver:{first:'Carlos',last:'Rivera',relation:'Husband',type:'Primary Caregiver',start:'03/10/2022'}, careTeam:[{name:'Dr. James Park',role:'PCP',phone:'(907) 555-2001'},{name:'Beatrice Kanya',role:'Care Manager',phone:'(907) 555-2002'},{name:'Dr. Amy Tran',role:'Cardiologist',phone:'(907) 555-2003'}] },
-    'robert-chen': { name:'Robert Chen', preferred:'Rob', dob:'11/03/1982', dobLong:'November 3, 1982', age:'43', id:'MBR-2024-2947', ssn:'XXX-XX-3345', gender:'Male', genderIdentity:'Cisgender Male', sexualOrientation:'Heterosexual', pronouns:'He/Him', contactFormat:'Email', serviceInterruption:'None', address:'315 Northern Lights Blvd', city:'Anchorage', state:'AK', zip:'99503', county:'Anchorage County', country:'United States', phone:'(907) 555-0463', cell:'(907) 555-0512', altPhone:'Not Available', fax:'Not Available', prefCallTime:'Evenings (5pm–8pm)', email:'robert.chen@email.com', altEmail:'rchen.work@gmail.com', lang:'English', writtenLang:'English', spokenLang:'English', commImpairment:'None', pcp:'Dr. Lisa Nguyen', plan:'Alaska Care Plus', lob:'Commercial', primaryInsPolicy:'ACP-0591-2024-RC', secondaryIns:'Not Available', secondaryInsPolicy:'Not Available', primaryCondition:'Osteoporosis with History of Falls', behavioralCondition:'Not Available', expectedRisk:'Medium (0.9)', sensitiveDx:'No', doctorAppt:'05/03/2026', doctorApptReason:'Annual Physical Exam', epsdt:'No', portalAccess:'Active', race:'Asian', preferredRace:'Asian', ethnicity:'Non-Hispanic', preferredEthnicity:'Non-Hispanic', residenceStatus:'Independent', incomeStatus:'Upper-Middle Income', maritalStatus:'Single', veteranStatus:'Non-Veteran', evacuationZone:'Zone C', careManager:'Beatrice Kanya', risk:'0.9', program:'Fall Prevention', digital:'', caregiver:{first:'Linda',last:'Chen',relation:'Mother',type:'Secondary Caregiver',start:'06/01/2024'}, careTeam:[{name:'Dr. Lisa Nguyen',role:'PCP',phone:'(907) 555-3001'},{name:'Beatrice Kanya',role:'Care Manager',phone:'(907) 555-3002'}] },
-    'sarah-williams': { name:'Sarah Williams', preferred:'Sarah', dob:'06/17/1990', dobLong:'June 17, 1990', age:'35', id:'MBR-2024-6183', ssn:'XXX-XX-6612', gender:'Female', genderIdentity:'Cisgender Female', sexualOrientation:'Heterosexual', pronouns:'She/Her', contactFormat:'Text Message', serviceInterruption:'None', address:'1520 E 5th Avenue', city:'Anchorage', state:'AK', zip:'99501', county:'Anchorage County', country:'United States', phone:'(907) 555-0891', cell:'(907) 555-0923', altPhone:'(907) 555-0944', fax:'Not Available', prefCallTime:'Mornings (9am–11am)', email:'sarah.williams@email.com', altEmail:'Not Available', lang:'English', writtenLang:'English', spokenLang:'English', commImpairment:'None', pcp:'Dr. Sarah Chen', plan:'Alaska Premier Health', lob:'Medicaid', primaryInsPolicy:'APH-2108-2024-SW', secondaryIns:'Alaska Medicaid', secondaryInsPolicy:'MCD-AK-773319', primaryCondition:'Gestational Diabetes Mellitus', behavioralCondition:'Perinatal Anxiety Disorder', expectedRisk:'Medium (1.5)', sensitiveDx:'No', doctorAppt:'04/10/2026', doctorApptReason:'OB Follow-Up – 32 Week Check', epsdt:'No', portalAccess:'Active', race:'White', preferredRace:'White', ethnicity:'Non-Hispanic', preferredEthnicity:'Non-Hispanic', residenceStatus:'Independent', incomeStatus:'Low Income', maritalStatus:'Married', veteranStatus:'Non-Veteran', evacuationZone:'Zone A', careManager:'Beatrice Kanya', risk:'1.5', program:'Maternal Health', digital:'Wellframe', caregiver:{first:'David',last:'Williams',relation:'Husband',type:'Primary Caregiver',start:'09/15/2024'}, careTeam:[{name:'Dr. Sarah Chen',role:'OB/GYN',phone:'(907) 555-4001'},{name:'Beatrice Kanya',role:'Care Manager',phone:'(907) 555-4002'},{name:'Dr. Rachel Kim',role:'Pediatrician',phone:'(907) 555-4003'}] },
-    'james-oconnor': { name:'James O\'Connor', preferred:'Jim', dob:'02/28/1968', dobLong:'February 28, 1968', age:'58', id:'MBR-2024-9025', ssn:'XXX-XX-9087', gender:'Male', genderIdentity:'Cisgender Male', sexualOrientation:'Heterosexual', pronouns:'He/Him', contactFormat:'Phone', serviceInterruption:'None', address:'2200 Lake Otis Pkwy', city:'Anchorage', state:'AK', zip:'99508', county:'Anchorage County', country:'United States', phone:'(907) 555-0156', cell:'(907) 555-0178', altPhone:'(907) 555-0192', fax:'Not Available', prefCallTime:'Late Morning (10am–2pm)', email:'james.oconnor@email.com', altEmail:'Not Available', lang:'English', writtenLang:'English', spokenLang:'English', commImpairment:'None', pcp:'Dr. Michael Torres', plan:'Alaska Care Plus', lob:'Medicare Advantage', primaryInsPolicy:'ACP-0334-2024-JO', secondaryIns:'Medicare Part B', secondaryInsPolicy:'4H52-WR8-LP19', primaryCondition:'COPD with Chronic Bronchitis', behavioralCondition:'Bipolar I Disorder', expectedRisk:'Very High (3.1)', sensitiveDx:'Yes', doctorAppt:'04/08/2026', doctorApptReason:'Behavioral Health Check-In', epsdt:'No', portalAccess:'Not Available', race:'White', preferredRace:'White', ethnicity:'Non-Hispanic', preferredEthnicity:'Non-Hispanic', residenceStatus:'Assisted Living', incomeStatus:'Middle Income', maritalStatus:'Divorced', veteranStatus:'Veteran – U.S. Army', evacuationZone:'Zone B', careManager:'Beatrice Kanya', risk:'3.1', program:'Behavioral Health', digital:'', caregiver:{first:'Patricia',last:'O\'Connor',relation:'Ex-Wife',type:'Emergency Contact',start:'04/20/2023'}, careTeam:[{name:'Dr. Michael Torres',role:'PCP',phone:'(907) 555-5001'},{name:'Beatrice Kanya',role:'Care Manager',phone:'(907) 555-5002'},{name:'Dr. Karen Lee',role:'Psychiatrist',phone:'(907) 555-5003'}] }
+    'jackson-thomas': { name:'Jackson Thomas', preferred:'Jack', dob:'03/15/1958', dobLong:'March 15, 1958', age:'67', id:'MBR-2024-0847', ssn:'XXX-XX-4523', gender:'Male', genderIdentity:'Cisgender Male', sexualOrientation:'Heterosexual', pronouns:'He/Him', contactFormat:'Phone', serviceInterruption:'None', address:'1247 Glacier View Drive', city:'Anchorage', state:'AK', zip:'99501', county:'Anchorage County', country:'United States', phone:'(907) 555-0142', cell:'(907) 555-0198', altPhone:'(907) 555-0203', fax:'Not Available', prefCallTime:'Mornings (8am–12pm)', email:'jackson.thomas@email.com', altEmail:'Not Available', lang:'English', writtenLang:'English', spokenLang:'English', commImpairment:'None', pcp:'Dr. Sarah Chen', plan:'Alaska Premier Health', lob:'Medicare Advantage', primaryInsPolicy:'APH-847-2024-JT', secondaryIns:'Medicare Part B', secondaryInsPolicy:'1EG4-TE5-MK72', primaryCondition:'Type 2 Diabetes Mellitus', behavioralCondition:'Major Depressive Disorder', expectedRisk:'High (2.4)', sensitiveDx:'No', doctorAppt:'04/15/2026', doctorApptReason:'Quarterly Diabetes Check', epsdt:'No', portalAccess:'Active', race:'White', preferredRace:'White', ethnicity:'Non-Hispanic', preferredEthnicity:'Non-Hispanic', residenceStatus:'Independent', incomeStatus:'Middle Income', maritalStatus:'Married', veteranStatus:'Non-Veteran', evacuationZone:'Zone B', careManager:'Beatrice Kanya', risk:'2.4', program:'Diabetes Management', digital:'Wellframe', caregiver:{first:'Maria',last:'Thomas',relation:'Wife',type:'Primary Caregiver',start:'01/15/2020'}, careTeam:[{name:'Dr. Sarah Chen',role:'PCP',phone:'(907) 555-1001'},{name:'Jennifer Reyes, RN',role:'Care Manager',phone:'(907) 555-1002'},{name:'Dr. Michael Park',role:'Cardiologist',phone:'(907) 555-1003'}] },
+    'maria-rivera': { name:'Maria Rivera', preferred:'Maria', dob:'08/22/1975', dobLong:'August 22, 1975', age:'50', id:'MBR-2024-1203', ssn:'XXX-XX-7891', gender:'Female', genderIdentity:'Cisgender Female', sexualOrientation:'Heterosexual', pronouns:'She/Her', contactFormat:'Phone – Spanish Preferred', serviceInterruption:'None', address:'842 Cordova Street', city:'Anchorage', state:'AK', zip:'99501', county:'Anchorage County', country:'United States', phone:'(907) 555-0287', cell:'(907) 555-0344', altPhone:'(907) 555-0391', fax:'Not Available', prefCallTime:'Afternoons (12pm–5pm)', email:'maria.rivera@email.com', altEmail:'Not Available', lang:'Spanish', writtenLang:'Spanish', spokenLang:'Spanish', commImpairment:'None', pcp:'Dr. James Park', plan:'Alaska Premier Health', lob:'Medicaid', primaryInsPolicy:'APH-1203-2024-MR', secondaryIns:'Alaska Medicaid', secondaryInsPolicy:'MCD-AK-445821', primaryCondition:'Congestive Heart Failure (CHF)', behavioralCondition:'Generalized Anxiety Disorder', expectedRisk:'High (1.8)', sensitiveDx:'No', doctorAppt:'04/22/2026', doctorApptReason:'Cardiology Follow-Up', epsdt:'No', portalAccess:'Active', race:'Hispanic or Latino', preferredRace:'Hispanic or Latino', ethnicity:'Hispanic', preferredEthnicity:'Hispanic', residenceStatus:'Independent', incomeStatus:'Low Income', maritalStatus:'Married', veteranStatus:'Non-Veteran', evacuationZone:'Zone A', careManager:'Beatrice Kanya', risk:'1.8', program:'Cardiac Rehab', digital:'', caregiver:{first:'Carlos',last:'Rivera',relation:'Husband',type:'Primary Caregiver',start:'03/10/2022'}, careTeam:[{name:'Dr. James Park',role:'PCP',phone:'(907) 555-2001'},{name:'Beatrice Kanya',role:'Care Manager',phone:'(907) 555-2002'},{name:'Dr. Amy Tran',role:'Cardiologist',phone:'(907) 555-2003'}] },
+    'robert-chen': { name:'Robert Chen', preferred:'Rob', dob:'11/03/1982', dobLong:'November 3, 1982', age:'43', id:'MBR-2024-0591', ssn:'XXX-XX-3345', gender:'Male', genderIdentity:'Cisgender Male', sexualOrientation:'Heterosexual', pronouns:'He/Him', contactFormat:'Email', serviceInterruption:'None', address:'315 Northern Lights Blvd', city:'Anchorage', state:'AK', zip:'99503', county:'Anchorage County', country:'United States', phone:'(907) 555-0463', cell:'(907) 555-0512', altPhone:'Not Available', fax:'Not Available', prefCallTime:'Evenings (5pm–8pm)', email:'robert.chen@email.com', altEmail:'rchen.work@gmail.com', lang:'English', writtenLang:'English', spokenLang:'English', commImpairment:'None', pcp:'Dr. Lisa Nguyen', plan:'Alaska Care Plus', lob:'Commercial', primaryInsPolicy:'ACP-0591-2024-RC', secondaryIns:'Not Available', secondaryInsPolicy:'Not Available', primaryCondition:'Osteoporosis with History of Falls', behavioralCondition:'Not Available', expectedRisk:'Medium (0.9)', sensitiveDx:'No', doctorAppt:'05/03/2026', doctorApptReason:'Annual Physical Exam', epsdt:'No', portalAccess:'Active', race:'Asian', preferredRace:'Asian', ethnicity:'Non-Hispanic', preferredEthnicity:'Non-Hispanic', residenceStatus:'Independent', incomeStatus:'Upper-Middle Income', maritalStatus:'Single', veteranStatus:'Non-Veteran', evacuationZone:'Zone C', careManager:'Beatrice Kanya', risk:'0.9', program:'Fall Prevention', digital:'', caregiver:{first:'Linda',last:'Chen',relation:'Mother',type:'Secondary Caregiver',start:'06/01/2024'}, careTeam:[{name:'Dr. Lisa Nguyen',role:'PCP',phone:'(907) 555-3001'},{name:'Beatrice Kanya',role:'Care Manager',phone:'(907) 555-3002'}] },
+    'sarah-williams': { name:'Sarah Williams', preferred:'Sarah', dob:'06/17/1990', dobLong:'June 17, 1990', age:'35', id:'MBR-2024-2108', ssn:'XXX-XX-6612', gender:'Female', genderIdentity:'Cisgender Female', sexualOrientation:'Heterosexual', pronouns:'She/Her', contactFormat:'Text Message', serviceInterruption:'None', address:'1520 E 5th Avenue', city:'Anchorage', state:'AK', zip:'99501', county:'Anchorage County', country:'United States', phone:'(907) 555-0891', cell:'(907) 555-0923', altPhone:'(907) 555-0944', fax:'Not Available', prefCallTime:'Mornings (9am–11am)', email:'sarah.williams@email.com', altEmail:'Not Available', lang:'English', writtenLang:'English', spokenLang:'English', commImpairment:'None', pcp:'Dr. Sarah Chen', plan:'Alaska Premier Health', lob:'Medicaid', primaryInsPolicy:'APH-2108-2024-SW', secondaryIns:'Alaska Medicaid', secondaryInsPolicy:'MCD-AK-773319', primaryCondition:'Gestational Diabetes Mellitus', behavioralCondition:'Perinatal Anxiety Disorder', expectedRisk:'Medium (1.5)', sensitiveDx:'No', doctorAppt:'04/10/2026', doctorApptReason:'OB Follow-Up – 32 Week Check', epsdt:'No', portalAccess:'Active', race:'White', preferredRace:'White', ethnicity:'Non-Hispanic', preferredEthnicity:'Non-Hispanic', residenceStatus:'Independent', incomeStatus:'Low Income', maritalStatus:'Married', veteranStatus:'Non-Veteran', evacuationZone:'Zone A', careManager:'Beatrice Kanya', risk:'1.5', program:'Maternal Health', digital:'Wellframe', caregiver:{first:'David',last:'Williams',relation:'Husband',type:'Primary Caregiver',start:'09/15/2024'}, careTeam:[{name:'Dr. Sarah Chen',role:'OB/GYN',phone:'(907) 555-4001'},{name:'Beatrice Kanya',role:'Care Manager',phone:'(907) 555-4002'},{name:'Dr. Rachel Kim',role:'Pediatrician',phone:'(907) 555-4003'}] },
+    'james-oconnor': { name:'James O\'Connor', preferred:'Jim', dob:'02/28/1968', dobLong:'February 28, 1968', age:'58', id:'MBR-2024-0334', ssn:'XXX-XX-9087', gender:'Male', genderIdentity:'Cisgender Male', sexualOrientation:'Heterosexual', pronouns:'He/Him', contactFormat:'Phone', serviceInterruption:'None', address:'2200 Lake Otis Pkwy', city:'Anchorage', state:'AK', zip:'99508', county:'Anchorage County', country:'United States', phone:'(907) 555-0156', cell:'(907) 555-0178', altPhone:'(907) 555-0192', fax:'Not Available', prefCallTime:'Late Morning (10am–2pm)', email:'james.oconnor@email.com', altEmail:'Not Available', lang:'English', writtenLang:'English', spokenLang:'English', commImpairment:'None', pcp:'Dr. Michael Torres', plan:'Alaska Care Plus', lob:'Medicare Advantage', primaryInsPolicy:'ACP-0334-2024-JO', secondaryIns:'Medicare Part B', secondaryInsPolicy:'4H52-WR8-LP19', primaryCondition:'COPD with Chronic Bronchitis', behavioralCondition:'Bipolar I Disorder', expectedRisk:'Very High (3.1)', sensitiveDx:'Yes', doctorAppt:'04/08/2026', doctorApptReason:'Behavioral Health Check-In', epsdt:'No', portalAccess:'Not Available', race:'White', preferredRace:'White', ethnicity:'Non-Hispanic', preferredEthnicity:'Non-Hispanic', residenceStatus:'Assisted Living', incomeStatus:'Middle Income', maritalStatus:'Divorced', veteranStatus:'Veteran – U.S. Army', evacuationZone:'Zone B', careManager:'Beatrice Kanya', risk:'3.1', program:'Behavioral Health', digital:'', caregiver:{first:'Patricia',last:'O\'Connor',relation:'Ex-Wife',type:'Emergency Contact',start:'04/20/2023'}, careTeam:[{name:'Dr. Michael Torres',role:'PCP',phone:'(907) 555-5001'},{name:'Beatrice Kanya',role:'Care Manager',phone:'(907) 555-5002'},{name:'Dr. Karen Lee',role:'Psychiatrist',phone:'(907) 555-5003'}] }
   };
 
   // ── Per-member tab data ──
-  var _SITE_BASE = (function() {
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') return '';
-    // Strip last path segment to get the directory (e.g. /gc-cwf-activity/ → /gc-cwf-activity)
-    return window.location.pathname.replace(/\/[^\/]*$/, '');
-  })();
-  var _ASSESSMENT_CAMPAIGN_URL = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1')
-    ? 'http://localhost:8081/member-assessmentscampaign/dist/'
-    : _SITE_BASE + '/member-assessmentscampaign/';
   var _ACT = '<span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Edit">edit_note</span> <span class="material-icons" style="font-size:18px;color:#315E7B;cursor:pointer;" title="Perform Activity" onclick="openOutcomeModal();">thumb_up</span> <span class="material-icons" style="font-size:18px;color:#5a8aab;cursor:pointer;" title="Delete">delete</span>';
   var _VIS = '<span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">visibility</span>';
   var _DEL = '<span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span>';
   var _SDOC = '<span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br>' + _DEL;
   function _nr(type,note,by,date){return '<tr><td><input type="checkbox"/></td><td>'+type+'</td><td>'+note+'</td><td>'+_VIS+'</td><td>N/A</td><td>N/A</td><td>'+by+'</td><td>'+date+'</td><td>N/A</td><td>N/A</td></tr>';}
-  function _sr(script,date,by,status,complete,program,score,actType,outcome,dur){return '<tr><td><input type="checkbox"/></td><td><a href="#" style="color:var(--link);font-size:11px;">'+script+'</a></td><td>'+date+'</td><td>'+by+'</td><td>'+status+'</td><td>'+complete+'</td><td>N/A</td><td>'+program+'</td><td>'+score+'</td><td>'+actType+'</td><td><a href="#" style="color:var(--link);">'+outcome+'</a></td><td>'+dur+'</td><td>'+_SDOC+'</td></tr>';}
-  function _sr_pending(script,date,by,program,actType){return '<tr data-pending="true"><td><input type="checkbox"/></td><td><a href="#" onclick="event.preventDefault();openScriptResponseModal(this.textContent);" style="color:var(--link);font-size:11px;">'+script+'</a></td><td>'+date+'</td><td>'+by+'</td><td>In Progress</td><td>N/A</td><td>N/A</td><td>'+program+'</td><td>0</td><td>'+actType+'</td><td><a href="#" style="color:var(--link);">Add</a></td><td>N/A</td><td>'+_SDOC+'</td></tr>';}
+  function _sr(script,date,by,status,complete,program,score,actType,outcome,dur){return '<tr><td><input type="checkbox"/></td><td><a href="#" style="color:var(--link);font-size:11px;">'+script+'</a></td><td>'+date+'</td><td>'+by+'</td><td>'+status+'</td><td>'+complete+'</td><td>N/A</td><td>'+program+'</td><td>'+score+'</td><td>'+actType+'</td><td><a href="#" style="color:var(--link);">'+outcome+'</a></td><td>'+dur+'</td><td></td><td>'+_SDOC+'</td></tr>';}
   function _gr(date,by,type,outcome){return '<tr><td>'+date+'</td><td>'+by+'</td><td>N/A</td><td>N/A</td><td>'+type+'</td><td>N/A</td><td>N/A</td><td><a href="#" style="color:var(--link);">'+outcome+'</a></td><td>'+_VIS+'</td><td>'+_DEL+'</td></tr>';}
   function _gs(sched,by,type){return '<tr><td>N/A</td><td>N/A</td><td>'+sched+'</td><td>'+by+'</td><td>'+type+'</td><td>N/A</td><td>N/A</td><td><a href="#" style="color:var(--link);">Scheduled</a></td><td>'+_VIS+'</td><td>'+_DEL+'</td></tr>';}
-  function _or(type,priority,followUp,callTime,created){return '<tr><td><input type="checkbox"/></td><td>'+type+'</td><td></td><td>'+priority+'</td><td>'+followUp+'</td><td>N/A</td><td>'+callTime+'</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">'+created+'</td><td style="white-space:nowrap;">'+_ACT+'</td></tr>';}
+  function _or(type,priority,followUp,callTime,created){return '<tr><td><input type="checkbox"/></td><td>'+type+'</td><td></td><td>'+priority+'</td><td>'+followUp+'</td><td>N/A</td><td>'+callTime+'</td><td>N/A</td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">'+created+'</td><td></td><td style="white-space:nowrap;">'+_ACT+'</td></tr>';}
   function _ar(badgeCls,status,desc,source,date){return '<tr><td><input type="checkbox"/></td><td><span class="gc-badge '+badgeCls+'">'+status+'</span></td><td>'+desc+'</td><td>'+source+'</td><td>'+date+'</td></tr>';}
 
   var memberTabData = {
@@ -4313,7 +4175,12 @@ window._gcAllAssessmentQA = {
         _nr('Social Determinants Note','During SDOH screening, member disclosed difficulty affording prescription co-pays since spouse\'s retirement. Identified food insecurity — member reports skipping meals 2-3 times/week. Referred to Alaska Food Bank and Community Action Program. Submitted application for pharmaceutical patient assistance program for Januvia.','Diana Reyes, MSW : Social Worker','02/18/2026 11:22:03 AM'),
         _nr('Medication Management Note','Comprehensive medication reconciliation completed via telehealth. Member currently on 9 medications including Metformin 1000mg BID, Januvia 100mg daily, Lisinopril 20mg daily, Atorvastatin 40mg daily, and ASA 81mg daily. Identified potential interaction between newly prescribed Fluconazole and Atorvastatin — notified prescribing physician. Pharmacist consulted and recommends temporary statin hold.','Tom Callahan, RN : Clinical Pharmacist','02/05/2026 03:55:09 PM')
       ],
-      scriptActivity: [],
+      scriptActivity: [
+        _sr('Adding a script','03/12/2025 06:46:33 AM','Sridevi Palepu : All Access Admin','Pending','N/A','N/A','0','Assessments','Add','00:00:00'),
+        _sr('Adding a script','03/08/2025 06:11:24 AM','Sridevi Palepu : All Access Admin','Cancelled','03/08/2025 06:19:05 AM','N/A','0','Assessments','Add','00:00:00'),
+        _sr('QQ Individual Budget','03/14/2024 12:24:59 AM','Sridevi Palepu : All Access Admin','Pending','N/A','N/A','0','Follow Up','Add','00:00:00'),
+        _sr('TX SK SAI Script Form','02/15/2022 10:17:15 AM','Valliappan Pethaperumal : test ems','Pending','N/A','N/A','0','Care Coordination','Add','00:00:00')
+      ],
       generalActivity: [
         _gr('03/20/2026 10:30 AM','Sarah Mitchell, RN','Telephonic Outreach','Completed'),
         _gr('03/12/2026 02:00 PM','James Okafor, CCM','Care Coordination','Completed'),
@@ -4322,8 +4189,10 @@ window._gcAllAssessmentQA = {
         _gr('02/05/2026 03:30 PM','Tom Callahan, RN','Medication Reconciliation','Completed'),
         _gs('04/08/2026','Priya Nandakumar, CCM','Follow-Up Call')
       ],
-      outstandingActivities: [],
-      carePlanOGI: [],
+      outstandingActivities: [
+        _or('Follow Up','High','03/27/2026','07:59','03/27/2026 08:00:00'),
+        _or('Assessments - Initial Outreach','Medium','03/20/2026','08:30','03/20/2026 07:04:07')
+      ],
       memberAlerts: [
         _ar('gc-badge-danger','New','Gap in Care — HbA1c test overdue','HEDIS measure CDC: Member has not completed HbA1c testing within the past 6 months. Last recorded A1C was 8.4% on 09/18/2025. Outreach required to schedule lab work.','03/22/2026'),
         _ar('gc-badge-danger','Active','Readmission Risk — ED visit within 30 days','Member had ED visit on 03/05/2026 for chest pain (R/O ACS). LACE index score of 11 indicates high readmission risk. Transition of care follow-up required within 48 hours of discharge.','03/06/2026'),
@@ -4332,12 +4201,29 @@ window._gcAllAssessmentQA = {
       ]
     },
     'maria-rivera': {
-      notes: [],
-      scriptActivity: [],
-      generalActivity: [],
-      carePlanOGI: [],
+      notes: [
+        _nr('Clinical Note','Member presents with worsening bilateral ankle edema and shortness of breath on exertion over past 10 days. Weight gain of 4 lbs since last contact. Carvedilol and Furosemide doses reviewed with cardiologist Dr. Tran — Furosemide increased from 40mg to 80mg daily. Member advised on fluid restriction (1.5L/day) and daily weight monitoring. Spanish interpreter utilized throughout call. Follow-up scheduled for 04/01/2026.','Beatrice Kanya : Care Manager','03/18/2026 09:22:14 AM'),
+        _nr('Nutrition Counseling Note','Completed telephonic dietary counseling session in Spanish. Member consuming high-sodium traditional foods including tamales and canned soups. Provided culturally appropriate low-sodium alternatives and written materials in Spanish. Reinforced 2g sodium diet and importance of reading food labels. Member\'s husband Carlos reported to be supportive of dietary changes.','Ana Castillo, RD : Registered Dietitian','03/05/2026 11:40:00 AM'),
+        _nr('Care Coordination Note','Coordinated referral to cardiology for echocardiogram follow-up. Last echo (01/12/2026) showed EF of 35%, down from 42% in October. Dr. Tran\'s office scheduled for 04/22/2026. Arranged medical transport — member does not drive. Contacted Alaska Medicaid transportation benefit and confirmed approval.','James Okafor, CCM : Care Coordinator','02/28/2026 02:15:33 PM'),
+        _nr('Behavioral Health Note','Member reports increased anxiety related to CHF diagnosis and fear of hospitalization. PHQ-4 score of 7 (moderate anxiety). Provided brief psychoeducation on CHF self-management to reduce uncertainty. Referred to behavioral health navigator for CBT-based telehealth program. Member expressed interest in Spanish-language mental health support resources.','Beatrice Kanya : Care Manager','02/14/2026 10:08:55 AM')
+      ],
+      scriptActivity: [
+        _sr('CHF Symptom Monitoring Assessment','03/18/2026 09:00:00 AM','Beatrice Kanya : All Access Admin','Completed','03/18/2026 09:45:00 AM','Cardiac Rehab','18.50','Assessments','Completed','00:45:00'),
+        _sr('Medication Adherence Script','03/05/2026 11:00:00 AM','Beatrice Kanya : All Access Admin','Completed','03/05/2026 11:30:00 AM','Cardiac Rehab','12.75','Care Coordination','Completed','00:30:00'),
+        _sr('SDOH Screening — Spanish','02/14/2026 10:00:00 AM','Ana Castillo, RD : All Access Admin','Completed','02/14/2026 10:25:00 AM','Cardiac Rehab','9.25','Assessments','Completed','00:25:00')
+      ],
+      generalActivity: [
+        _gr('03/18/2026 09:22 AM','Beatrice Kanya','Telephonic Outreach','Completed'),
+        _gr('03/05/2026 11:40 AM','Ana Castillo, RD','Nutrition Counseling','Completed'),
+        _gr('02/28/2026 02:15 PM','James Okafor, CCM','Care Coordination','Completed'),
+        _gr('02/14/2026 10:08 AM','Beatrice Kanya','Behavioral Health Referral','Completed'),
+        _gs('04/01/2026','Beatrice Kanya','CHF Follow-Up Call'),
+        _gs('04/22/2026','Beatrice Kanya','Cardiology Appointment')
+      ],
       outstandingActivities: [
-        '<tr><td><input type="checkbox"/></td><td>Assessment</td><td>SMS/Email</td><td>High</td><td>04/09/2026</td><td>N/A</td><td>08:00</td><td><a href="#" onclick="event.preventDefault();window.open(_ASSESSMENT_CAMPAIGN_URL,\'assessment-window\');" style="color:var(--link);">Health Risk Assessment</a></td><td>N/A</td><td>N/A</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td>Accepted</td><td>Beatrice Kanya : All Access Admin</td><td>N/A</td><td style="font-size:10px;">04/09/2026 08:00:00</td><td style="white-space:nowrap;">' + _ACT + '</td></tr>'
+        _or('CHF Weight Monitoring Check-In','High','03/25/2026','09:00','03/20/2026 08:30:00'),
+        _or('Medication Adherence Follow-Up','High','04/01/2026','09:30','03/18/2026 09:22:14'),
+        _or('Cardiac Rehab Enrollment','Medium','04/10/2026','10:00','02/28/2026 02:15:33')
       ],
       memberAlerts: [
         _ar('gc-badge-danger','New','CHF Exacerbation — Weight gain 4 lbs in 7 days','Automated weight monitoring alert: Member gained 4 lbs since 03/11/2026, exceeding 3 lb threshold for CHF decompensation risk. Care manager contacted and Furosemide dose adjusted per physician order. Daily weight monitoring reinforced.','03/18/2026'),
@@ -4457,8 +4343,6 @@ window._gcAllAssessmentQA = {
     var outTbody = document.getElementById('outstandingTbody');
     if (outTbody) outTbody.innerHTML = d.outstandingActivities.join('');
     pendingOutstandingActivities = [];
-    syncOutstandingActivities();
-    syncCompletedToActivitySummary();
     var alertsTbody = document.querySelector('#artab-member-alerts .gc-table tbody');
     if (alertsTbody) alertsTbody.innerHTML = d.memberAlerts.join('');
   }
@@ -4476,13 +4360,6 @@ window._gcAllAssessmentQA = {
     document.querySelector('.gc-banner-name').textContent = m.name;
     var dobSpan = document.querySelector('.gc-member-banner .gc-banner-dob');
     if (dobSpan) dobSpan.innerHTML = '<strong style="font-size:12px;letter-spacing:0.3px;">DOB</strong> ' + m.dob + ' ' + m.age + ' yr(s)';
-    var bannerLogo = document.getElementById('bannerLogo');
-    if (bannerLogo) bannerLogo.style.display = key === 'maria-rivera' ? 'none' : 'inline-block';
-    var alertBadge = document.getElementById('bannerAlertBadge');
-    if (alertBadge) {
-      alertBadge.textContent = key === 'maria-rivera' ? '0' : '2';
-      alertBadge.style.display = key === 'maria-rivera' ? 'none' : 'flex';
-    }
 
     // Nav label
     document.getElementById('currentMemberName').textContent = m.name;
@@ -4596,6 +4473,157 @@ window._gcAllAssessmentQA = {
     var modalName = document.getElementById('modalMemberName');
     if (modalName) modalName.textContent = m.name;
 
+    // Wellframe panel — phone mockup
+    var wfPanel = document.getElementById('wellframe-panel-content');
+    if (wfPanel) {
+      var isEnrolled = m.digital === 'Wellframe';
+      if (!isEnrolled) {
+        wfPanel.innerHTML =
+          '<div class="wfm-hd">' +
+            '<img src="assets/Wellframe/Logomark.png" alt="Wellframe" class="wfm-hd-logo" style="opacity:0.4;" />' +
+            '<div><div class="wfm-hd-title" style="color:var(--text-secondary);">Wellframe</div><div class="wfm-hd-sub">Digital Health Platform</div></div>' +
+            '<span class="gc-badge" style="margin-left:auto;background:#eee;color:var(--text-secondary);">Not Enrolled</span>' +
+          '</div>' +
+          '<div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center;color:var(--text-muted);">' +
+            '<span class="material-icons" style="font-size:48px;color:#ccc;display:block;margin-bottom:12px;">smartphone</span>' +
+            '<div style="font-size:13px;font-weight:600;color:var(--text-secondary);margin-bottom:6px;">' + m.name + ' is not enrolled in Wellframe</div>' +
+            '<div style="font-size:12px;">Enroll this member to view their mobile app experience.</div>' +
+          '</div>';
+      } else {
+        var wfData = {
+          'jackson-thomas': {
+            initials: 'JT', days: 103,
+            program: 'Diabetes Management', programAccent: '#D8EDF5',
+            checklist: [
+              { type: 'Reminder',  icon: 'alarm',      title: '10:00 AM: Take a walk', done: false },
+              { type: 'Check-In',  icon: 'assignment',  title: 'Health Risk Assessment', tag: 'Digital Intake Assessment', done: false },
+              { type: 'Medication',icon: 'medication',  title: '10:00 AM: Take Claritin', done: true },
+              { type: 'Article',   icon: 'article',     title: 'About Diabetes Medications', tag: 'Diabetes Management', done: true }
+            ],
+            checkins: [
+              { name: 'Health Risk Assessment', sub: 'Due Apr 20, 2026', pct: 0 },
+              { name: 'Fall Risk Assessment',   sub: 'Due May 3, 2026',  pct: 0 }
+            ],
+            meds: [
+              { name: 'Gabapentin',  schedule: 'Take daily, at 9:00AM', note: 'New — Starting tomorrow' },
+              { name: 'Metformin',   schedule: 'Take daily, at 9:00AM' },
+              { name: 'Claritin',    schedule: 'Take daily, at 9:00AM' }
+            ],
+            reminders: [
+              { name: 'Take a walk',               schedule: 'Daily, at 9:00AM' },
+              { name: 'Endocrinology appointment', schedule: 'Jan 15, 2024 at 8:00AM' }
+            ]
+          },
+          'sarah-williams': {
+            initials: 'SW', days: 47,
+            program: 'Maternal Health', programAccent: '#F0E6FA',
+            checklist: [
+              { type: 'Reminder',  icon: 'alarm',      title: '2:00 PM: Prenatal vitamins', done: false },
+              { type: 'Check-In',  icon: 'assignment',  title: 'Maternal Health Assessment', tag: 'Digital Intake Assessment', done: false },
+              { type: 'Article',   icon: 'article',     title: 'Gestational Diabetes Basics', tag: 'Maternal Health', done: true }
+            ],
+            checkins: [
+              { name: 'Maternal Health Assessment', sub: 'Due Apr 15, 2026', pct: 0 }
+            ],
+            meds: [
+              { name: 'Prenatal Vitamins', schedule: 'Take daily, at 2:00PM' },
+              { name: 'Folic Acid',        schedule: 'Take daily, at 9:00AM' }
+            ],
+            reminders: [
+              { name: 'OB check-up',         schedule: 'Apr 10, 2026 at 10:00AM' },
+              { name: 'Daily walk (15 min)', schedule: 'Daily, at 3:00PM' }
+            ]
+          }
+        };
+        var d = wfData[key] || { initials: m.name.split(' ').map(function(n){return n[0];}).join('').slice(0,2), days: 1, program: m.program || 'Care Program', programAccent: '#D9E3E7', checklist: [], checkins: [], meds: [], reminders: [] };
+
+        function taskCard(item) {
+          return '<div class="wfm-task-card' + (item.done ? ' wfm-done' : '') + '">' +
+            '<div class="wfm-task-head"><span class="material-icons">' + item.icon + '</span><span class="wfm-task-type">' + item.type + '</span></div>' +
+            '<div class="wfm-task-main"><span class="wfm-task-title">' + item.title + '</span>' +
+            (item.done ? '<span class="wfm-task-check"><span class="material-icons">check_circle</span></span>' : '<span class="wfm-task-chev"><span class="material-icons">chevron_right</span></span>') +
+            '</div>' +
+            (item.tag ? '<div class="wfm-care-tag"><span class="material-icons">favorite</span><span class="wfm-care-tag-txt">' + item.tag + '</span></div>' : '') +
+            '</div>';
+        }
+        var pendingItems = d.checklist.filter(function(i){return !i.done;}).map(taskCard).join('');
+        var doneItems   = d.checklist.filter(function(i){return  i.done;}).map(taskCard).join('');
+
+        var checklistScreen =
+          '<div class="wfm-page">' +
+            '<div class="wfm-page-title">Checklist</div>' +
+            '<div class="wfm-sec-row"><span class="wfm-sec-title">Today</span><span class="wfm-add-btn"><span class="material-icons">add_circle_outline</span>Add</span></div>' +
+            '<div class="wfm-step-card"><div class="wfm-step-head"><span class="material-icons">directions_walk</span><span class="wfm-step-title">Step Count</span><span class="material-icons wfm-step-chev" style="font-size:18px;color:#282F35;">chevron_right</span></div><div class="wfm-step-bar"><div class="wfm-step-fill"></div></div></div>' +
+            pendingItems +
+            (doneItems ? '<div class="wfm-sec-row" style="margin-top:12px;"><span class="wfm-sec-title">Complete</span></div>' + doneItems : '') +
+          '</div>';
+
+        var ciCards = d.checkins.map(function(ci) {
+          return '<div class="wfm-ci-card"><div class="wfm-ci-row"><span class="material-icons">assignment_turned_in</span><div class="wfm-ci-body"><div class="wfm-ci-name">' + ci.name + '</div><div class="wfm-ci-sub">' + ci.sub + '</div><div class="wfm-ci-prog"><div class="wfm-ci-track"><div class="wfm-ci-fill" style="width:' + ci.pct + '%;"></div></div><span class="wfm-ci-pct">' + ci.pct + '%</span></div></div></div></div>';
+        }).join('');
+        var medRows = d.meds.map(function(med) {
+          return '<div class="wfm-list-row"><span class="material-icons">medication</span><div class="wfm-list-body"><div class="wfm-list-name">' + med.name + '</div><div class="wfm-list-sub">' + med.schedule + '</div>' + (med.note ? '<div class="wfm-list-note">' + med.note + '</div>' : '') + '</div><span class="material-icons" style="font-size:18px;color:#0E98BE;">alarm</span></div>';
+        }).join('');
+        var reminderRows = d.reminders.map(function(r) {
+          return '<div class="wfm-list-row"><div class="wfm-list-body"><div class="wfm-list-name">' + r.name + '</div><div class="wfm-list-sub">' + r.schedule + '</div></div><span class="material-icons" style="font-size:18px;color:#0E98BE;">alarm</span></div>';
+        }).join('');
+
+        var profileScreen =
+          '<div class="wfm-prof-hd">' +
+            '<div class="wfm-prof-title-row"><span class="wfm-prof-title">Profile</span><span class="material-icons" style="font-size:22px;color:#282F35;">settings</span></div>' +
+            '<div class="wfm-user-row"><div class="wfm-avatar">' + d.initials + '</div><div><div class="wfm-user-name">' + m.preferred + ' ' + m.name.split(' ').slice(-1)[0] + '</div><div class="wfm-user-day">Day ' + d.days + ' on Wellframe</div></div></div>' +
+          '</div>' +
+          '<div class="wfm-prof-scroll">' +
+            '<div class="wfm-prof-sec">Enrolled Care Programs</div>' +
+            '<div class="wfm-cp-scroll">' +
+              '<div class="wfm-cp-card"><div class="wfm-cp-top"><span class="material-icons">favorite</span><div class="wfm-cp-title">' + d.program + '</div></div><div class="wfm-cp-bot" style="background:' + d.programAccent + ';"><span class="material-icons" style="font-size:32px;color:#0080A3;opacity:0.4;">local_hospital</span></div></div>' +
+            '</div>' +
+            '<div class="wfm-prof-sec">Check-Ins</div>' + ciCards +
+            '<div class="wfm-prof-sec">Medication List</div>' +
+            '<div class="wfm-add-row"><span class="material-icons">add_circle_outline</span><span class="wfm-add-row-lbl">Add Medication</span></div>' +
+            '<div class="wfm-list-card">' + medRows + '</div>' +
+            '<div class="wfm-prof-sec">Health Reminders</div>' +
+            '<div class="wfm-add-row"><span class="material-icons">add_circle_outline</span><span class="wfm-add-row-lbl">Add Reminder</span></div>' +
+            '<div class="wfm-list-card">' + reminderRows + '</div>' +
+          '</div>';
+
+        var tabBar =
+          '<div class="wfm-tab-bar">' +
+            '<button class="wfm-tab wfm-tab-on" onclick="wfmTab(\'checklist\')" aria-label="Checklist"><span class="material-icons">checklist</span><span class="wfm-tab-lbl">Checklist</span></button>' +
+            '<button class="wfm-tab" onclick="wfmTab(\'progress\')" aria-label="Progress"><span class="material-icons">show_chart</span><span class="wfm-tab-lbl">Progress</span></button>' +
+            '<button class="wfm-tab" onclick="wfmTab(\'chat\')" aria-label="Chat"><span class="material-icons">chat_bubble_outline</span><span class="wfm-tab-lbl">Chat</span></button>' +
+            '<button class="wfm-tab" onclick="wfmTab(\'resources\')" aria-label="Resources"><span class="material-icons">menu_book</span><span class="wfm-tab-lbl">Resources</span></button>' +
+            '<button class="wfm-tab" onclick="wfmTab(\'profile\')" aria-label="Profile"><span class="material-icons">person_outline</span><span class="wfm-tab-lbl">Profile</span></button>' +
+          '</div>';
+
+        wfPanel.innerHTML =
+          '<div class="wfm-hd">' +
+            '<img src="assets/Wellframe/Logomark.png" alt="Wellframe" class="wfm-hd-logo" />' +
+            '<div><div class="wfm-hd-title">Wellframe</div><div class="wfm-hd-sub">Member Mobile View</div></div>' +
+            '<span class="gc-badge gc-badge-teal" style="margin-left:auto;">Enrolled</span>' +
+          '</div>' +
+          '<div class="wfm-switcher">' +
+            '<button class="wfm-sw-btn active" data-screen="checklist" onclick="wfmTab(\'checklist\')"><span class="material-icons">checklist</span>Checklist</button>' +
+            '<button class="wfm-sw-btn" data-screen="profile" onclick="wfmTab(\'profile\')"><span class="material-icons">person_outline</span>Profile</button>' +
+          '</div>' +
+          '<div class="wfm-device-wrap">' +
+            '<div class="wfm-device">' +
+              '<div class="wfm-screen-outer">' +
+                '<div class="wfm-status"><span class="wfm-time">9:41</span><div class="wfm-status-icons"><span class="material-icons">signal_cellular_alt</span><span class="material-icons">wifi</span><span class="material-icons">battery_full</span></div></div>' +
+                '<div class="wfm-screen-scroll">' +
+                  '<div id="wfm-screen-checklist" class="wfm-screen wfm-active">' + checklistScreen + '</div>' +
+                  '<div id="wfm-screen-profile"   class="wfm-screen">' + profileScreen + '</div>' +
+                  '<div id="wfm-screen-progress"  class="wfm-screen"><div style="padding:24px 16px;text-align:center;color:#78868E;font-size:13px;font-family:system-ui,sans-serif;">Progress screen</div></div>' +
+                  '<div id="wfm-screen-chat"      class="wfm-screen"><div style="padding:24px 16px;text-align:center;color:#78868E;font-size:13px;font-family:system-ui,sans-serif;">Chat screen</div></div>' +
+                  '<div id="wfm-screen-resources" class="wfm-screen"><div style="padding:24px 16px;text-align:center;color:#78868E;font-size:13px;font-family:system-ui,sans-serif;">Resources screen</div></div>' +
+                '</div>' +
+                tabBar +
+              '</div>' +
+            '</div>' +
+          '</div>';
+      }
+    }
+
     // Populate tab content for this member
     populateTabs(key);
   }
@@ -4635,6 +4663,9 @@ window._gcAllAssessmentQA = {
       // Close dropdown
       document.querySelector('.member-switcher-menu.open')?.classList.remove('open');
 
+      // Notify Haven overlay of member switch
+      window.parent.postMessage({ type: 'MEMBER_SWITCH', memberId: key, memberName: m.name, phone: m.phone, pcp: m.pcp }, '*');
+
       // Switch to member view
       showMemberView();
     });
@@ -4672,6 +4703,12 @@ window._gcAllAssessmentQA = {
     var calBody = document.getElementById('dashCalBody');
     if (!calBody) return;
 
+    // Preserve any existing event cards before rebuilding
+    var savedCards = [];
+    calBody.querySelectorAll('.cal-event-card[data-dynamic]').forEach(function(c) {
+      savedCards.push(c.cloneNode(true));
+    });
+
     calBody.innerHTML = '';
     var curHour  = now.getHours();
     var curMin   = now.getMinutes();
@@ -4703,6 +4740,22 @@ window._gcAllAssessmentQA = {
       }
     }
 
+    // Re-insert saved event cards into current-hour slot
+    if (savedCards.length > 0) {
+      var target = curSlot || calBody.querySelector('.cal-day-col');
+      savedCards.forEach(function(card) {
+        if (target) {
+          // Re-attach perform-button handler on the cloned card
+          var pb = card.querySelector('.cal-perform-btn');
+          if (pb) pb.addEventListener('click', function(e) {
+            e.stopPropagation();
+            window.showCalActionPopover && window.showCalActionPopover(this);
+          });
+          target.parentElement.style.minHeight = '120px';
+          target.appendChild(card);
+        }
+      });
+    }
   }
   initCalendar();
   // Refresh every minute so the now-line stays accurate
@@ -4820,7 +4873,7 @@ window._gcAllAssessmentQA = {
         function(td) { td.textContent = 'N/A'; },
         function(td) { td.textContent = '21.72'; },
         function(td) { td.textContent = 'Assessments'; },
-        function(td) { td.innerHTML = '<a href="#" style="color:var(--link);">Add</a>'; },
+        function(td) { td.textContent = 'Successful: Assessment Complete'; },
         function(td) { td.textContent = '00:30:00'; },
         function(td) { td.innerHTML = '<span class="material-icons" style="font-size:16px;color:#388e3c;">check</span>'; },
         function(td) { td.innerHTML = '<span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span>'; }
@@ -4865,250 +4918,6 @@ window._gcAllAssessmentQA = {
     }
     document.getElementById('outcomeModal').classList.add('open');
   };
-
-  var _OGI_TEMPLATES = {
-    'Health Risk Assessment': {
-      opportunity: 'Member identified with multiple modifiable health risk factors following completion of Health Risk Assessment, including potential gaps in preventive care, social determinants of health needs, and chronic disease self-management barriers',
-      goal: 'Member will engage with care team to address identified health risk factors, improve chronic disease management, and reduce gaps in preventive care within the next 12 months',
-      condition: 'General Health',
-      intervention: 'Care Manager will review HRA results with member and care team, prioritize identified risk factors, develop individualized action steps, and coordinate referrals to appropriate disease management programs, community support services, and preventive care appointments',
-      priority: 'High',
-      scriptName: 'Health Risk Assessment'
-    },
-    'Diabetes Management Assessment': {
-      opportunity: 'Member with Type 2 Diabetes presents with suboptimal glycemic control and identified barriers to self-management, including medication adherence gaps and limited access to diabetes education resources',
-      goal: 'Member will achieve improved glycemic control (A1C < 8%) and demonstrate consistent self-management behaviors within 6 months',
-      condition: 'Type 2 Diabetes Mellitus',
-      intervention: 'Care Manager will educate member on diabetes self-management strategies, coordinate referral to diabetes education program (DSMES), review medication adherence barriers, and facilitate communication between member and PCP regarding treatment plan adjustments',
-      priority: 'High',
-      scriptName: 'Diabetes Management Assessment'
-    }
-  };
-
-  function _buildOGICard(ogi, idx) {
-    var pri = ogi.priority || 'High';
-    var uid = 'ogi-info-' + (idx || 0);
-    var now = new Date();
-    var pad2 = function(n) { return String(n).padStart(2,'0'); };
-    var startDate = pad2(now.getMonth()+1)+'/'+pad2(now.getDate())+'/'+now.getFullYear();
-    var tgt = new Date(now); tgt.setMonth(tgt.getMonth()+6);
-    var targetDate = pad2(tgt.getMonth()+1)+'/'+pad2(tgt.getDate())+'/'+tgt.getFullYear();
-    var md = window._gcMemberData || {};
-    var key = (window._gcGetKey ? window._gcGetKey() : null) || 'maria-rivera';
-    var m = md[key] || {};
-    var createdBy = (m.careManager || 'Beatrice Kanya');
-    var scriptName = ogi.scriptName || ogi.assessmentType || 'Health Risk Assessment';
-
-    return '<div style="border:1px solid var(--border-light);border-radius:var(--r-sm);margin:12px 16px;overflow:hidden;">' +
-      '<div style="display:flex;align-items:stretch;padding:14px 16px;border-bottom:1px solid var(--border-light);gap:0;">' +
-        '<div style="display:flex;align-items:flex-start;gap:10px;flex:0 0 38%;padding-right:20px;">' +
-          '<div style="background:#E07820;color:#fff;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px;">' +
-            '<span class="material-icons" style="font-size:18px;">gps_fixed</span>' +
-          '</div>' +
-          '<div>' +
-            '<div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:4px;">Opportunity</div>' +
-            '<div style="font-size:12px;color:var(--text-secondary);">' + ogi.opportunity + '</div>' +
-          '</div>' +
-        '</div>' +
-        '<div style="flex:1;padding:0 20px;border-left:1px solid var(--border-light);">' +
-          '<div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:4px;">Goal</div>' +
-          '<div style="font-size:12px;color:var(--text-secondary);">' + ogi.goal + '</div>' +
-        '</div>' +
-        '<div style="flex:0 0 130px;padding-left:20px;border-left:1px solid var(--border-light);">' +
-          '<div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:2px;">Condition</div>' +
-          '<div style="font-size:12px;color:var(--text-secondary);">' + ogi.condition + '</div>' +
-        '</div>' +
-      '</div>' +
-      '<div style="display:flex;align-items:center;gap:16px;padding:8px 16px 4px;background:#fafbfc;">' +
-        '<label style="display:flex;align-items:center;gap:5px;font-size:12px;font-weight:600;color:var(--text-primary);cursor:pointer;"><input type="checkbox" style="accent-color:var(--teal);" /> Select</label>' +
-        '<div style="display:flex;align-items:center;gap:5px;font-size:12px;color:var(--text-secondary);">Eligibility <span style="display:inline-flex;align-items:center;gap:3px;color:#2E7D32;font-weight:600;"><span class="material-icons" style="font-size:14px;">check_circle</span>Active</span></div>' +
-        '<div style="display:flex;align-items:center;gap:5px;font-size:12px;color:#E07820;font-weight:600;"><span class="material-icons" style="font-size:16px;">bookmark</span>Recommended</div>' +
-        '<div style="display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-secondary);margin-left:auto;">Priority <a href="#" style="color:var(--link);font-weight:600;text-decoration:none;">' + pri + '</a><span class="material-icons" style="font-size:14px;">arrow_drop_down</span></div>' +
-        '<label style="display:flex;align-items:center;gap:5px;font-size:12px;cursor:pointer;border:1px solid var(--border);border-radius:var(--r-sm);padding:3px 10px;"><input type="checkbox" style="accent-color:var(--teal);" /> Sign Off</label>' +
-      '</div>' +
-      '<div style="padding:4px 16px 12px 16px;">' +
-        '<div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:4px;">Intervention</div>' +
-        '<div style="font-size:12px;color:var(--text-secondary);">' + ogi.intervention + '</div>' +
-      '</div>' +
-      '<div style="border-top:1px solid var(--border-light);">' +
-        '<div style="padding:8px 16px;">' +
-          '<a href="#" style="color:var(--link);display:inline-flex;align-items:center;gap:4px;font-size:12px;text-decoration:none;" onclick="event.preventDefault();(function(el){var d=document.getElementById(\'' + uid + '\');if(d){d.style.display=d.style.display===\'none\'?\'block\':\'none\';el.querySelector(\'span.material-icons\').textContent=d.style.display===\'none\'?\'help_outline\':\'expand_less\';}})(this)">' +
-            '<span class="material-icons" style="font-size:15px;">help_outline</span>Additional Information' +
-          '</a>' +
-        '</div>' +
-        '<div id="' + uid + '" style="display:none;padding:0 16px 16px;border-top:1px solid var(--border-light);">' +
-          '<div style="display:grid;grid-template-columns:1fr 2fr 1fr 1fr 1fr;gap:14px 12px;padding:14px 0 10px;">' +
-            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Status</div><div style="font-size:12px;color:var(--text-secondary);">New</div></div>' +
-            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Member Plan</div><div style="font-size:12px;color:var(--text-secondary);">' + ogi.intervention + '</div></div>' +
-            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Start Date</div><div style="font-size:12px;color:var(--text-secondary);">' + startDate + '</div></div>' +
-            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Target Date</div><div style="font-size:12px;color:var(--text-secondary);">' + targetDate + '</div></div>' +
-            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Sign off Date</div><div style="font-size:12px;color:var(--text-secondary);">N/A</div></div>' +
-          '</div>' +
-          '<div style="display:grid;grid-template-columns:1fr 1fr 1fr 2fr 1fr 1fr;gap:14px 12px;padding:10px 0;border-top:1px solid var(--border-light);">' +
-            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Opportunity Resolved Date</div><div style="font-size:12px;color:var(--text-secondary);">N/A</div></div>' +
-            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Add Appointment</div><div style="font-size:12px;"><a href="#" style="color:var(--link);" onclick="event.preventDefault()">Add</a></div></div>' +
-            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Targeted To</div><div style="font-size:12px;color:var(--text-secondary);">N/A</div></div>' +
-            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Script Name</div><div style="font-size:12px;color:var(--text-secondary);">' + scriptName + '</div></div>' +
-            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Roles</div><div style="font-size:12px;color:var(--text-secondary);">All Access Admin</div></div>' +
-            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Term</div><div style="font-size:12px;"><a href="#" style="color:var(--link);" onclick="event.preventDefault()">Long</a></div></div>' +
-          '</div>' +
-          '<div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr 1fr 1fr;gap:14px 12px;padding:10px 0;border-top:1px solid var(--border-light);">' +
-            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Assigned Owner</div><div style="font-size:12px;color:var(--text-secondary);">N/A</div></div>' +
-            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Source</div><div style="font-size:12px;color:var(--text-secondary);">Script</div></div>' +
-            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Created On</div><div style="font-size:12px;color:var(--text-secondary);">' + startDate + '</div></div>' +
-            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Created By</div><div style="font-size:12px;color:var(--text-secondary);">' + createdBy + '</div></div>' +
-            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Updated On</div><div style="font-size:12px;color:var(--text-secondary);">N/A</div></div>' +
-            '<div><div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Updated By</div><div style="font-size:12px;color:var(--text-secondary);">N/A</div></div>' +
-          '</div>' +
-          '<div style="padding:10px 0;border-top:1px solid var(--border-light);">' +
-            '<div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Guideline Source</div>' +
-            '<div style="font-size:12px;color:var(--text-secondary);">N/A</div>' +
-          '</div>' +
-          '<div style="padding:10px 0;border-top:1px solid var(--border-light);">' +
-            '<div style="font-size:12px;font-weight:700;color:var(--text-primary);margin-bottom:3px;">Payor</div>' +
-            '<div style="font-size:12px;color:var(--text-secondary);">Program Enrollment &gt;&gt; Enrollment</div>' +
-          '</div>' +
-        '</div>' +
-      '</div>' +
-    '</div>';
-  }
-
-  function renderCarePlanOGI(key) {
-    var container = document.getElementById('cp-ogi-list');
-    if (!container) return;
-    var d = memberTabData[key];
-    if (!d || !d.carePlanOGI || d.carePlanOGI.length === 0) {
-      container.innerHTML = '';
-      return;
-    }
-    var html = d.carePlanOGI.map(_buildOGICard).join('');
-    var count = d.carePlanOGI.length;
-    html += '<div style="display:flex;align-items:center;justify-content:space-between;padding:8px 16px;border-top:1px solid var(--border-light);font-size:12px;color:var(--text-secondary);">' +
-      '<div style="display:flex;align-items:center;gap:6px;">' +
-        '<span class="material-icons" style="font-size:16px;color:var(--text-muted);">first_page</span>' +
-        '<span class="material-icons" style="font-size:16px;color:var(--text-muted);">chevron_left</span>' +
-        '<span style="border:1px solid var(--border);padding:2px 8px;border-radius:2px;background:white;font-weight:600;">1</span>' +
-        '<span class="material-icons" style="font-size:16px;color:var(--text-muted);">chevron_right</span>' +
-        '<span class="material-icons" style="font-size:16px;color:var(--text-muted);">last_page</span>' +
-        '<select style="border:1px solid var(--border);border-radius:2px;height:22px;font-size:11px;padding:0 4px;"><option>20</option></select>' +
-        '<span>items per page</span>' +
-      '</div>' +
-      '<span>1 – ' + count + ' of ' + count + ' items <span class="material-icons" style="font-size:14px;vertical-align:middle;cursor:pointer;">refresh</span></span>' +
-    '</div>';
-    container.innerHTML = html;
-  }
-
-  function handleMemberAssessmentCompleted(assessmentType) {
-    var now = new Date();
-    var mm = String(now.getMonth()+1).padStart(2,'0');
-    var dd = String(now.getDate()).padStart(2,'0');
-    var yyyy = now.getFullYear();
-    var hh = String(now.getHours()).padStart(2,'0');
-    var mi = String(now.getMinutes()).padStart(2,'0');
-    var ss = String(now.getSeconds()).padStart(2,'0');
-    var createdStr = mm+'/'+dd+'/'+yyyy+' '+hh+':'+mi+':'+ss;
-
-    var d = memberTabData['maria-rivera'];
-    if (!d) return;
-
-    // Remove from outstanding activities
-    d.outstandingActivities = d.outstandingActivities.filter(function(html) {
-      return html.indexOf(assessmentType) === -1;
-    });
-
-    // Replace any pending entry with the completed one
-    d.scriptActivity = d.scriptActivity.filter(function(html) {
-      return !(html.indexOf('data-pending="true"') !== -1 && html.indexOf(assessmentType) !== -1);
-    });
-
-    // Add completed entry if not already present
-    var alreadyCompleted = d.scriptActivity.some(function(html) {
-      return html.indexOf(assessmentType) !== -1 && html.indexOf('data-pending') === -1;
-    });
-    if (!alreadyCompleted) {
-      d.scriptActivity.unshift(
-        _sr(assessmentType, createdStr, 'Beatrice Kanya : All Access Admin', 'Completed', createdStr, 'Health Risk Assessment', '0', 'Assessments', 'Add', '00:30:00')
-      );
-    }
-
-    // Add OGI entry to care plan
-    if (!d.carePlanOGI) d.carePlanOGI = [];
-    var alreadyOGI = d.carePlanOGI.some(function(o) { return o.assessmentType === assessmentType; });
-    if (!alreadyOGI) {
-      var tpl = _OGI_TEMPLATES[assessmentType] || {
-        opportunity: 'Potential need identified via ' + assessmentType,
-        goal: 'Member has a plan to address needs identified during ' + assessmentType,
-        condition: 'General',
-        intervention: 'Follow up on results from ' + assessmentType + ' and connect member with appropriate resources',
-        priority: 'High'
-      };
-      d.carePlanOGI.push({ assessmentType: assessmentType, opportunity: tpl.opportunity, goal: tpl.goal, condition: tpl.condition, intervention: tpl.intervention, priority: tpl.priority });
-    }
-
-    // Re-render and navigate to Activity Summary if on Maria Rivera's profile
-    if (currentMemberKey === 'maria-rivera') {
-      populateTabs('maria-rivera');
-      renderCarePlanOGI('maria-rivera');
-      goToActivitySummary();
-    }
-  }
-
-  function handleMemberAssessmentSaved(assessmentType) {
-    var now = new Date();
-    var mm = String(now.getMonth()+1).padStart(2,'0');
-    var dd = String(now.getDate()).padStart(2,'0');
-    var yyyy = now.getFullYear();
-    var hh = String(now.getHours()).padStart(2,'0');
-    var mi = String(now.getMinutes()).padStart(2,'0');
-    var ss = String(now.getSeconds()).padStart(2,'0');
-    var createdStr = mm+'/'+dd+'/'+yyyy+' '+hh+':'+mi+':'+ss;
-
-    var d = memberTabData['maria-rivera'];
-    if (!d) return;
-
-    // Remove from outstanding activities
-    d.outstandingActivities = d.outstandingActivities.filter(function(html) {
-      return html.indexOf(assessmentType) === -1;
-    });
-
-    // Add pending entry if no entry already exists for this assessment
-    var alreadyExists = d.scriptActivity.some(function(html) {
-      return html.indexOf(assessmentType) !== -1;
-    });
-    if (!alreadyExists) {
-      d.scriptActivity.unshift(
-        _sr_pending(assessmentType, createdStr, 'Beatrice Kanya : All Access Admin', 'Health Risk Assessment', 'Assessments')
-      );
-    }
-
-    // Re-render and navigate to Activity Summary if on Maria Rivera's profile
-    if (currentMemberKey === 'maria-rivera') {
-      populateTabs('maria-rivera');
-      goToActivitySummary();
-    }
-  }
-
-  // Cross-origin: receive postMessage from member app opened via window.open()
-  window.addEventListener('message', function(e) {
-    if (e.data && e.data.type === 'ASSESSMENT_COMPLETED') {
-      handleMemberAssessmentCompleted(e.data.assessmentType);
-    }
-    if (e.data && e.data.type === 'ASSESSMENT_SAVED') {
-      handleMemberAssessmentSaved(e.data.assessmentType);
-    }
-  });
-
-  // Same-origin fallback: localStorage storage event
-  window.addEventListener('storage', function(e) {
-    if (e.key === 'assessment-completed' && e.newValue) {
-      localStorage.removeItem('assessment-completed');
-      handleMemberAssessmentCompleted(e.newValue);
-    }
-    if (e.key === 'assessment-saved' && e.newValue) {
-      localStorage.removeItem('assessment-saved');
-      handleMemberAssessmentSaved(e.newValue);
-    }
-  });
   function saveOutcomeData() {
     var hh = (document.getElementById('capDurationHH').value || '00').padStart(2,'0');
     var mm = (document.getElementById('capDurationMM').value || '00').padStart(2,'0');
@@ -5185,7 +4994,7 @@ window._gcAllAssessmentQA = {
         '<td>N/A</td><td>N/A</td>' +
         '<td>21.72</td>' +
         '<td>Assessments</td>' +
-        '<td><a href="#" style="color:var(--link);">Add</a></td>' +
+        '<td>Successful: Assessment Complete</td>' +
         '<td>00:30:00</td>' +
         '<td><span class="material-icons" style="font-size:16px;color:#388e3c;">check</span></td>' +
         '<td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">description</span><br><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td>';
@@ -5215,12 +5024,17 @@ window._gcAllAssessmentQA = {
         '<td>' + _actName + '</td>' +
         '<td>N/A</td>' +
         '<td>N/A</td>' +
-        '<td><a href="#" style="color:var(--link);">Add</a></td>' +
+        '<td>Successful: Assessment Complete</td>' +
         '<td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">visibility</span></td>' +
         '<td><span style="font-size:10px;color:var(--link);cursor:pointer;">Delete</span></td>';
       genTbody.insertBefore(gtr, genTbody.firstChild);
       setTimeout(function() { gtr.style.transition = 'background 2s'; gtr.style.background = ''; }, 200);
     }
+
+    // Remove the HRA calendar event card
+    document.querySelectorAll('.cal-event-card[data-dynamic="true"]').forEach(function(card) {
+      card.remove();
+    });
 
     // Remove the HRA alert row from My Alerts
     var dashAlerts = document.getElementById('dashAlertsTbody');
@@ -5231,7 +5045,86 @@ window._gcAllAssessmentQA = {
         }
       });
     }
+
+    // Add intervention to Care Plan Overview
+    addCarePlanIntervention();
   };
+
+  var INTERVENTIONS = {
+    'jackson-thomas': {
+      text: 'Case Manager will educate member on diabetes self-management including blood glucose monitoring, medication adherence, dietary modifications, and recognition of hypoglycemic symptoms to reduce emergency visits and improve glycemic control.',
+      scriptName: 'Health Risk Assessment',
+      priority: 'High'
+    },
+    'maria-rivera': {
+      text: 'Case Manager will educate member on CHF self-management including daily weight monitoring, fluid restriction, sodium reduction, medication adherence, and early recognition of worsening symptoms requiring immediate medical attention.',
+      scriptName: 'Health Risk Assessment',
+      priority: 'High'
+    }
+  };
+
+  function addCarePlanIntervention() {
+    var body = document.getElementById('cp-overview-body');
+    if (!body || body.querySelector('[data-dynamic-intervention="true"]')) return;
+
+    var iv = INTERVENTIONS[currentMemberKey] || INTERVENTIONS['jackson-thomas'];
+    var now = new Date();
+    var pad = function(n){ return String(n).padStart(2,'0'); };
+    var startDate = pad(now.getMonth()+1)+'/'+pad(now.getDate())+'/'+now.getFullYear();
+    var target = new Date(now); target.setMonth(target.getMonth()+6);
+    var targetDate = pad(target.getMonth()+1)+'/'+pad(target.getDate())+'/'+target.getFullYear();
+
+    var html =
+      '<div data-dynamic-intervention="true" style="border:1px solid #d0d0d0;margin:12px 16px;border-radius:3px;font-size:12px;font-family:var(--font);background:#fff;">' +
+        // Top bar
+        '<div style="display:flex;align-items:center;gap:10px;padding:7px 12px;border-bottom:1px solid #e0e0e0;flex-wrap:wrap;">' +
+          '<input type="checkbox" style="accent-color:var(--teal);" /> <span style="font-size:12px;">Select</span>' +
+          '<span style="display:inline-flex;align-items:center;gap:4px;font-size:12px;color:#333;"><span style="color:#388e3c;font-size:15px;">&#10003;</span> <strong>Eligibility</strong> <span style="background:#e8f5e9;color:#388e3c;border-radius:10px;padding:1px 8px;font-size:11px;font-weight:600;">Active</span></span>' +
+          '<span style="display:inline-flex;align-items:center;gap:4px;font-size:12px;"><span style="color:#E07820;font-size:16px;">&#9873;</span> <strong>Recommended</strong></span>' +
+          '<span style="margin-left:auto;display:inline-flex;align-items:center;gap:6px;font-size:12px;"><strong>Priority</strong> <select style="height:24px;border:1px solid #ccc;border-radius:3px;padding:0 6px;font-size:11px;font-family:var(--font);"><option>High</option><option>Medium</option><option>Low</option></select></span>' +
+          '<label style="display:inline-flex;align-items:center;gap:4px;font-size:12px;cursor:pointer;"><input type="checkbox" style="accent-color:var(--teal);" /> Sign Off</label>' +
+        '</div>' +
+        // Intervention label + text
+        '<div style="padding:8px 12px 4px;border-bottom:1px solid #e8e8e8;">' +
+          '<div style="font-weight:600;color:#333;margin-bottom:3px;">Intervention</div>' +
+          '<div style="color:#333;line-height:1.5;">' + iv.text + '</div>' +
+        '</div>' +
+        // Row 1: Status, Member Plan, Start Date, Target Date, Sign off Date
+        '<div style="display:grid;grid-template-columns:100px 1fr 110px 110px 110px;border-bottom:1px solid #e8e8e8;">' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Status</div><div style="color:#333;">New</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Member Plan</div><div style="color:#333;line-height:1.4;">' + iv.text + '</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Start Date</div><div style="color:#333;">' + startDate + '</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Target Date</div><div style="color:#333;">' + targetDate + '</div></div>' +
+          '<div style="padding:8px 12px;"><div style="color:#666;margin-bottom:2px;">Sign off Date</div><div style="color:#333;">N/A</div></div>' +
+        '</div>' +
+        // Row 2: Opportunity Resolved Date, Add Appointment, Targeted To, Script Name, Roles, Term
+        '<div style="display:grid;grid-template-columns:140px 120px 110px 1fr 140px 80px;border-bottom:1px solid #e8e8e8;">' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Opportunity Resolved Date</div><div style="color:#333;">N/A</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Add Appointment</div><div><a href="#" style="color:var(--link);">Add</a></div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Targeted To</div><div style="color:#333;">N/A</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Script Name</div><div style="color:#333;">' + iv.scriptName + '</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Roles</div><div style="color:#333;">All Access Admin</div></div>' +
+          '<div style="padding:8px 12px;"><div style="color:#666;margin-bottom:2px;">Term</div><div><a href="#" style="color:var(--link);">Long</a></div></div>' +
+        '</div>' +
+        // Row 3: Assigned Owner, Source, Created On, Created By, Updated On, Updated By
+        '<div style="display:grid;grid-template-columns:140px 120px 110px 1fr 110px 1fr;border-bottom:1px solid #e8e8e8;">' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Assigned Owner</div><div style="color:#333;">N/A</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Source</div><div style="color:#333;">Script</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Created On</div><div style="color:#333;">' + startDate + '</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Created By</div><div style="color:#333;">Beatrice Kanya</div></div>' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Updated On</div><div style="color:#333;">N/A</div></div>' +
+          '<div style="padding:8px 12px;"><div style="color:#666;margin-bottom:2px;">Updated By</div><div style="color:#333;">N/A</div></div>' +
+        '</div>' +
+        // Row 4: Guideline Source, Payor
+        '<div style="display:grid;grid-template-columns:140px 1fr;">' +
+          '<div style="padding:8px 12px;border-right:1px solid #e8e8e8;"><div style="color:#666;margin-bottom:2px;">Guideline Source</div><div style="color:#333;">N/A</div></div>' +
+          '<div style="padding:8px 12px;"><div style="color:#666;margin-bottom:2px;">Payor</div><div style="color:#333;">Program Enrollment &gt;&gt; Enrollment</div></div>' +
+        '</div>' +
+      '</div>';
+
+    body.innerHTML = html;
+    body.style.minHeight = '';
+  }
 
   window.saveAndAddActivity = function() {
     document.getElementById('captureOutcomeModal').classList.remove('open');
@@ -5302,22 +5195,88 @@ window._gcAllAssessmentQA = {
   // Initialize default member profile on page load
   populateProfile('jackson-thomas');
 
-})();
+  // ── Suki: open Add Note modal on the Notes tab ──
+  window._gcOpenSukiNote = function(noteText) {
+    // Activate Activity Record panel
+    document.querySelectorAll('.left-panel').forEach(function(p) { p.style.display = ''; p.classList.remove('active'); });
+    document.querySelectorAll('.gc-left-item').forEach(function(li) { li.classList.remove('active'); });
+    var arNav = document.querySelector('.gc-left-item[data-left="activity-record"]');
+    if (arNav) arNav.classList.add('active');
+    var arPanel = document.getElementById('panel-activity-record');
+    if (arPanel) arPanel.classList.add('active');
 
-function updateWellframeSection() {
-  var actType = document.getElementById('activityTypeSelect');
-  var script = document.getElementById('scriptSelect');
-  var section = document.getElementById('wellframeSection');
-  if (!actType || !script || !section) return;
-  var show = actType.value === 'Assessment' && script.value !== 'Select';
-  section.style.display = show ? 'block' : 'none';
-  if (!show) {
-    var cb = document.getElementById('displayForMemberToggle');
-    var note = document.getElementById('wellframeNote');
-    if (cb) cb.checked = false;
-    if (note) note.style.display = 'none';
-  }
-}
+    // Switch to Notes tab
+    document.querySelectorAll('#activityTabs .gc-tab').forEach(function(t) {
+      t.classList.remove('active'); t.style.color = ''; t.style.borderBottomColor = '';
+    });
+    document.querySelectorAll('.ar-tab-panel').forEach(function(p) { p.style.display = 'none'; p.classList.remove('active'); });
+    var notesTab = document.querySelector('#activityTabs .gc-tab[data-artab="notes"]');
+    if (notesTab) { notesTab.classList.add('active'); notesTab.style.color = 'var(--teal)'; notesTab.style.borderBottomColor = 'var(--teal)'; }
+    var notesPanel = document.getElementById('artab-notes');
+    if (notesPanel) { notesPanel.style.display = ''; notesPanel.classList.add('active'); }
+
+    // Pre-fill modal
+    var now = new Date();
+    var pad = function(n) { return String(n).padStart(2,'0'); };
+    var h = now.getHours(); var ampm = h < 12 ? 'AM' : 'PM';
+    var dateStr = pad(now.getMonth()+1)+'/'+pad(now.getDate())+'/'+now.getFullYear()+' '+pad(h)+':'+pad(now.getMinutes())+':'+pad(now.getSeconds())+' '+ampm;
+    var dateEl = document.getElementById('sukiNoteDate');
+    if (dateEl) dateEl.value = dateStr;
+    var memberEl = document.getElementById('sukiNoteMember');
+    if (memberEl) {
+      var m = memberData[currentMemberKey];
+      if (m) memberEl.textContent = m.name;
+    }
+    var textarea = document.getElementById('sukiNoteText');
+    if (textarea) textarea.value = noteText || '';
+    var consentCheck = document.getElementById('sukiConsentCheck');
+    if (consentCheck) consentCheck.checked = false;
+    var alertCb = document.getElementById('sukiNoteAlert');
+    if (alertCb) { alertCb.checked = false; document.getElementById('sukiNoteAlertTrack').style.background = '#ccc'; document.getElementById('sukiNoteAlertThumb').style.left = '2px'; }
+    var internalRadio = document.querySelector('input[name="sukiNoteVisibility"][value="internal"]');
+    if (internalRadio) internalRadio.checked = true;
+    document.getElementById('addNoteModal').classList.add('open');
+  };
+
+  window.saveSukiNote = function() {
+    var noteType = document.getElementById('sukiNoteType').value;
+    var noteText = document.getElementById('sukiNoteText').value.trim();
+    var dateVal  = document.getElementById('sukiNoteDate').value;
+    var consent = document.getElementById('sukiConsentCheck').checked;
+    if (!noteText || !consent) return;
+    var row = '<tr>' +
+      '<td><input type="checkbox" /></td>' +
+      '<td>' + noteType + ' <span style="display:inline-block;font-size:10px;font-weight:700;color:var(--teal);background:var(--teal-light,rgba(49,94,123,0.1));border:1px solid var(--teal);border-radius:3px;padding:1px 5px;vertical-align:middle;letter-spacing:0.02em;">AI Note</span></td>' +
+      '<td>' + noteText.replace(/</g,'&lt;').replace(/>/g,'&gt;') + '</td>' +
+      '<td><span class="material-icons" style="font-size:14px;color:var(--teal);cursor:pointer;">visibility</span></td>' +
+      '<td>N/A</td><td>N/A</td>' +
+      '<td>Beatrice Kanya : All Access Admin</td>' +
+      '<td>' + dateVal + '</td>' +
+      '<td>N/A</td><td>N/A</td>' +
+      '</tr>';
+    if (!memberTabData[currentMemberKey].notes) memberTabData[currentMemberKey].notes = [];
+    memberTabData[currentMemberKey].notes.unshift(row);
+    var notesTbody = document.querySelector('#artab-notes .gc-table tbody');
+    if (notesTbody) notesTbody.innerHTML = memberTabData[currentMemberKey].notes.join('');
+    document.getElementById('addNoteModal').classList.remove('open');
+  };
+
+  // Listen for Suki note signal via postMessage (primary — from parent Haven React app)
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.type === 'SUKI_NOTE_READY' && window._gcOpenSukiNote) {
+      window._gcOpenSukiNote(e.data.noteText || '');
+    }
+  });
+
+  // Also listen via storage event (fallback for cross-tab on same origin)
+  window.addEventListener('storage', function(e) {
+    if (e.key === 'suki-note-ready' && e.newValue && window._gcOpenSukiNote) {
+      localStorage.removeItem('suki-note-ready');
+      window._gcOpenSukiNote(e.newValue);
+    }
+  });
+
+})();
 </script>
 
 <!-- ══════════════ ADD ACTIVITY MODAL ══════════════ -->
@@ -5368,46 +5327,51 @@ function updateWellframeSection() {
         </div>
       </div>
 
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:14px;">
         <div class="gc-modal-field">
           <label><span class="req">*</span>Activity Type</label>
-          <select id="activityTypeSelect" class="gc-modal-select" onchange="updateWellframeSection()">
+          <select class="gc-modal-select" id="modalActivityType" onchange="updateWellframeSection()">
             <option>Select</option>
-            <option>Assessment</option>
-            <option>Call Member</option>
-            <option>Care Plan Review</option>
-            <option>Follow-up</option>
-            <option>Welcome Call</option>
-            <option>Appointment Reminder</option>
+            <option>Health Risk Assessment</option>
+            <option>Maternal Health Assessment</option>
+            <option>Behavioral Health Assessment</option>
+            <option>Chronic Disease Management Assessment</option>
+            <option>Medication Review Assessment</option>
+            <option>Social Determinants of Health Assessment</option>
+            <option>Functional Status Assessment</option>
+            <option>Care Gaps Assessment</option>
+            <option>Transition of Care Assessment</option>
+            <option>Pediatric Developmental Assessment</option>
           </select>
         </div>
         <div class="gc-modal-field">
           <label>Script</label>
-          <select id="scriptSelect" class="gc-modal-select" onchange="updateWellframeSection()">
+          <select class="gc-modal-select" id="modalScript" onchange="updateWellframeSection()">
             <option>Select</option>
-            <option>Health Risk Assessment</option>
-            <option>Comprehensive Assessment</option>
-            <option>Functional Status Assessment</option>
-            <option>Social Determinants of Health (SDOH) Assessment</option>
-            <option>Pediatric HRA</option>
-            <option>Oncology HRA</option>
-            <option>Fall Risk Assessment</option>
-            <option>Fall Risk Prevention</option>
-            <option>Transitions of Care (TOC) 1 Pre-Discharge</option>
-            <option>Transitions of Care (TOC) 3 Home Visit</option>
+            <option>HRA General Health Outreach</option>
+            <option>Maternal Health Prenatal Check-In</option>
+            <option>Behavioral Health Safety Screening</option>
+            <option>Chronic Disease Self-Management</option>
+            <option>Medication Reconciliation Review</option>
+            <option>SDOH Needs Assessment</option>
+            <option>Functional Status &amp; Fall Risk</option>
+            <option>Care Gaps Preventive Outreach</option>
+            <option>Post-Discharge Follow-Up</option>
+            <option>Pediatric Milestone Screening</option>
           </select>
         </div>
-      </div>
-
-      <div id="wellframeSection" style="display:none;">
-        <label style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;cursor:pointer;user-select:none;">
-          <input type="checkbox" id="displayForMemberToggle" style="accent-color:var(--teal);width:15px;height:15px;" onchange="document.getElementById('wellframeNote').style.display=this.checked?'block':'none';" />
-          Wellframe Assessment
-        </label>
-        <div id="wellframeNote" style="display:none;font-size:12px;color:#555;background:#fff;border-left:3px solid var(--teal);padding:7px 10px;border-radius:2px;margin-top:4px;"><strong>Note:</strong> Checking this will send the assessment to the member's Wellframe account and appear on the member's checklist.</div>
-      </div>
-
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+        <div class="gc-modal-field">
+          <label>Priority</label>
+          <select class="gc-modal-select">
+            <option>Select</option>
+            <option>1st — Urgent</option>
+            <option>2nd — High</option>
+            <option>3rd — Medium</option>
+            <option>4th — Standard</option>
+            <option>5th — Low</option>
+            <option>6th — Routine</option>
+          </select>
+        </div>
         <div class="gc-modal-field">
           <label><span class="req">*</span>Contact Type</label>
           <select class="gc-modal-select">
@@ -5422,6 +5386,7 @@ function updateWellframeSection() {
             <option>Member - Referral</option>
             <option>Phone to Member</option>
             <option>Wellframe Outreach</option>
+            <option>Wellframe Digital Campaign</option>
             <option>Caregiver - Phone</option>
             <option>Caregiver - Face to Face</option>
             <option>Caregiver - Email</option>
@@ -5438,18 +5403,16 @@ function updateWellframeSection() {
             <option>TPA - Mobile</option>
           </select>
         </div>
-        <div class="gc-modal-field">
-          <label>Priority</label>
-          <select class="gc-modal-select">
-            <option>Select</option>
-            <option>1st — Urgent</option>
-            <option>2nd — High</option>
-            <option>3rd — Medium</option>
-            <option>4th — Standard</option>
-            <option>5th — Low</option>
-            <option>6th — Routine</option>
-          </select>
-        </div>
+      </div>
+
+      <div id="wellframeAssessmentSection" style="display:none;">
+        <label style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;cursor:pointer;">
+          <input type="checkbox" id="wellframeAssessmentCheck" style="accent-color:var(--teal);width:15px;height:15px;" />
+          Wellframe Assessment
+        </label>
+        <p style="font-size:11px;color:#666;margin-top:5px;margin-left:23px;line-height:1.5;">
+          Send assessment to member via Wellframe digital platform for self-completion.
+        </p>
       </div>
 
       <div style="display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:end;">
@@ -5503,15 +5466,6 @@ function updateWellframeSection() {
       <div class="gc-modal-field">
         <label>Enter Comments / Reasons</label>
         <textarea style="border:1px solid #BBB;border-radius:3px;padding:6px 8px;font-size:13px;font-family:var(--font);background:#fff;outline:none;min-height:60px;resize:vertical;width:100%;"></textarea>
-      </div>
-
-      <div style="display:flex;gap:36px;">
-        <label style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;cursor:pointer;">
-          <input type="checkbox" style="accent-color:var(--teal);width:15px;height:15px;" /> Member Portal
-        </label>
-        <label style="display:flex;align-items:center;gap:8px;font-size:13px;font-weight:700;cursor:pointer;">
-          <input type="checkbox" style="accent-color:var(--teal);width:15px;height:15px;" /> Performed by Other's Care Staff
-        </label>
       </div>
 
     </div>
@@ -5678,6 +5632,81 @@ function updateWellframeSection() {
   </div>
 </div>
 
+<!-- ══════════════ SUKI ADD NOTE MODAL ══════════════ -->
+<div class="gc-modal-overlay" id="addNoteModal" role="dialog" aria-modal="true" aria-labelledby="addNoteModalTitle">
+  <div class="gc-modal" style="max-width:680px;">
+    <div class="gc-modal-title">
+      <span id="addNoteModalTitle">Add Note</span>
+      <button onclick="document.getElementById('addNoteModal').classList.remove('open')" aria-label="Close">×</button>
+    </div>
+    <div class="gc-modal-accent"></div>
+    <div class="gc-modal-body">
+      <div style="display:flex;gap:16px;flex-wrap:wrap;">
+        <div class="gc-modal-field" style="flex:1;min-width:180px;">
+          <label>Health Note Type <span class="req">*</span></label>
+          <select class="gc-modal-select" id="sukiNoteType">
+            <option>Select</option>
+            <option>Behavioral Clinical History</option>
+            <option>Disaster Planning</option>
+            <option>Durable Medication Equipment (DME)</option>
+            <option>General</option>
+            <option>General Note</option>
+            <option>Grievance</option>
+            <option>HCBS Note</option>
+            <option>Member Note</option>
+            <option>OHCW: Change of Residence</option>
+            <option>Provider Note</option>
+            <option>Rejection</option>
+            <option>Safety Precaution and Test</option>
+          </select>
+        </div>
+        <div class="gc-modal-field" style="flex:1;min-width:180px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:4px;">
+            <label style="margin:0;">Entered Date</label>
+            <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:12px;font-weight:600;color:var(--text-primary);white-space:nowrap;">
+              <span style="position:relative;display:inline-block;width:32px;height:18px;flex-shrink:0;">
+                <input type="checkbox" id="sukiNoteAlert" style="opacity:0;width:0;height:0;position:absolute;" />
+                <span id="sukiNoteAlertTrack" style="position:absolute;inset:0;border-radius:9px;background:#ccc;transition:background 0.2s;cursor:pointer;" onclick="var cb=document.getElementById('sukiNoteAlert');cb.checked=!cb.checked;document.getElementById('sukiNoteAlertTrack').style.background=cb.checked?'var(--teal)':'#ccc';document.getElementById('sukiNoteAlertThumb').style.left=cb.checked?'16px':'2px';"></span>
+                <span id="sukiNoteAlertThumb" style="position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;transition:left 0.2s;pointer-events:none;box-shadow:0 1px 3px rgba(0,0,0,.25);"></span>
+              </span>
+              Note is Alert
+            </label>
+          </div>
+          <input class="gc-modal-input" type="text" id="sukiNoteDate" readonly />
+        </div>
+      </div>
+      <div class="gc-modal-field" style="gap:8px;">
+        <label style="display:flex;align-items:flex-start;gap:8px;cursor:pointer;font-weight:400;">
+          <input type="checkbox" id="sukiConsentCheck" style="margin-top:2px;width:15px;height:15px;accent-color:var(--teal);flex-shrink:0;" />
+          <span style="font-weight:600;color:var(--text-primary);">Consent was provided</span>
+        </label>
+        <p style="margin:4px 0 0 23px;font-size:12px;color:var(--text-secondary);line-height:1.55;">Consent must be obtained before recording; otherwise, notes cannot be saved in GuidingCare. If consent hasn't been obtained, you may copy the notes and add them manually.</p>
+      </div>
+      <div class="gc-modal-field">
+        <label>Note <span class="req">*</span></label>
+        <textarea class="gc-modal-input" id="sukiNoteText" rows="8" style="height:180px;resize:vertical;padding:8px;line-height:1.55;"></textarea>
+      </div>
+      <div class="gc-modal-field" style="gap:6px;">
+        <label>Notes viewable by</label>
+        <div style="display:flex;gap:20px;">
+          <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;font-weight:400;">
+            <input type="radio" name="sukiNoteVisibility" value="all" style="accent-color:var(--teal);width:15px;height:15px;" />
+            All Users
+          </label>
+          <label style="display:flex;align-items:center;gap:6px;cursor:pointer;font-size:13px;font-weight:400;">
+            <input type="radio" name="sukiNoteVisibility" value="internal" checked style="accent-color:var(--teal);width:15px;height:15px;" />
+            Internal Users Only
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="gc-modal-footer">
+      <button class="gc-btn gc-btn-primary" onclick="saveSukiNote()">Save Notes</button>
+      <button class="gc-btn gc-btn-secondary" onclick="document.getElementById('addNoteModal').classList.remove('open')">Cancel</button>
+    </div>
+  </div>
+</div>
+
 <!-- ══════════════ CANCEL SCRIPT CONFIRMATION MODAL ══════════════ -->
 <div class="gc-modal-overlay" id="cancelScriptConfirm">
   <div class="gc-modal" style="max-width:440px;">
@@ -5819,7 +5848,6 @@ function updateWellframeSection() {
           <span style="font-weight:400;">Send to Member for review</span>
         </label>
       </div>
-
 
     </div>
     <div class="gc-modal-footer" style="gap:12px;background:#fff;border-top:1px solid #ddd;">
@@ -5978,148 +6006,6 @@ function updateWellframeSection() {
 </div>
 
 
-<!-- ══════════════ CARE ACTIVITY LOG PAGE ══════════════ -->
-<div id="careActivityLogPage" style="display:none;background:var(--surface-light);min-height:calc(100vh - 90px);">
-
-  <!-- Member banner -->
-  <div style="background:#fff;width:100%;border-bottom:1px solid var(--border);">
-    <div class="gc-member-banner">
-      <div style="position:relative;display:inline-flex;flex-shrink:0;"><span class="material-icons" style="font-size:26px;color:#315E7B;">notifications</span><span style="position:absolute;top:-4px;right:-6px;min-width:18px;height:18px;background:#C62828;color:white;border-radius:50%;font-size:10px;display:flex;align-items:center;justify-content:center;font-weight:700;padding:0 3px;">2</span></div>
-      <span class="gc-banner-check" style="flex-shrink:0;"><span class="material-icons" style="font-size:22px;color:#2E7D32;">check_circle</span></span>
-      <img src="data:image/png;base64,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" alt="Wellframe" style="width:24px;height:24px;flex-shrink:0;display:inline-block;">
-      <span class="gc-banner-name">Jackson Thomas</span>
-      <span class="gc-banner-dob"><strong style="font-size:12px;letter-spacing:0.3px;">DOB</strong> 03/15/1958 67 yr(s)</span>
-      <span class="gc-banner-expand" style="margin-left:16px;flex-shrink:0;"><span class="material-icons" style="font-size:18px;color:var(--teal);">open_in_full</span></span>
-    </div>
-  </div>
-
-  <!-- Page body -->
-  <div style="padding:14px 20px;">
-
-    <!-- Expand All -->
-    <div style="margin-bottom:10px;">
-      <a href="#" style="color:var(--link);font-size:12px;text-decoration:none;" onclick="calExpandAll(event)">&#9650; Expand All</a>
-    </div>
-
-    <!-- Today's Care Activity Log accordion (open by default) -->
-    <div class="gc-accordion open" id="calTodayAccordion">
-      <div class="gc-accordion-header" onclick="this.closest('.gc-accordion').classList.toggle('open')">
-        <span class="material-icons">chevron_right</span>
-        Today's Care Activity Log
-      </div>
-      <div class="gc-accordion-body" style="padding:12px 14px;">
-
-        <!-- Search filters -->
-        <div style="display:flex;align-items:flex-end;flex-wrap:wrap;gap:10px;margin-bottom:12px;background:var(--surface-light);border:1px solid var(--border);border-radius:var(--r-sm);padding:10px 12px;">
-          <div>
-            <div style="font-size:11px;color:var(--text-secondary);margin-bottom:3px;">Module</div>
-            <select class="gc-input" style="height:30px;font-size:12px;padding:0 6px;width:60px;"><option>CM</option><option>HM</option><option>UM</option></select>
-          </div>
-          <div>
-            <div style="font-size:11px;color:var(--text-secondary);margin-bottom:3px;">Care Staff</div>
-            <input class="gc-input" style="height:30px;font-size:12px;padding:0 8px;width:200px;" value="Beatrice Kanya : All Access Admin" readonly>
-          </div>
-          <div>
-            <div style="font-size:11px;color:var(--text-secondary);margin-bottom:3px;">New ID</div>
-            <input class="gc-input" style="height:30px;font-size:12px;padding:0 8px;width:110px;" placeholder="">
-          </div>
-          <div>
-            <div style="font-size:11px;color:var(--text-secondary);margin-bottom:3px;">Member Name</div>
-            <input class="gc-input" style="height:30px;font-size:12px;padding:0 8px;width:130px;" placeholder="">
-          </div>
-          <div>
-            <div style="font-size:11px;color:var(--text-secondary);margin-bottom:3px;">From Date <span style="color:var(--text-muted);">MM/DD/YYYY</span></div>
-            <input type="date" class="gc-input" style="height:30px;font-size:12px;padding:0 6px;width:140px;">
-          </div>
-          <div>
-            <div style="font-size:11px;color:var(--text-secondary);margin-bottom:3px;">To Date <span style="color:var(--text-muted);">MM/DD/YYYY</span></div>
-            <input type="date" class="gc-input" style="height:30px;font-size:12px;padding:0 6px;width:140px;">
-          </div>
-          <button class="gc-btn gc-btn-primary" style="height:30px;"><span class="material-icons" style="font-size:14px;">search</span> Search</button>
-          <a href="#" style="color:var(--link);font-size:12px;text-decoration:none;line-height:30px;">&#10005; Clear</a>
-        </div>
-
-        <!-- Action buttons -->
-        <div style="display:flex;gap:6px;margin-bottom:10px;">
-          <button class="gc-btn gc-btn-tertiary"><span class="material-icons" style="font-size:13px;">event_repeat</span> Reschedule</button>
-          <button class="gc-btn gc-btn-tertiary"><span class="material-icons" style="font-size:13px;">visibility</span> View</button>
-          <button class="gc-btn gc-btn-tertiary"><span class="material-icons" style="font-size:13px;">edit</span> Edit</button>
-          <button class="gc-btn gc-btn-tertiary"><span class="material-icons" style="font-size:13px;">delete</span> Delete</button>
-        </div>
-
-        <!-- Table -->
-        <div style="overflow-x:auto;">
-          <table class="gc-table" style="width:100%;font-size:11px;">
-            <thead>
-              <tr>
-                <th style="width:30px;"><input type="checkbox"></th>
-                <th>Eligibility</th>
-                <th>Last Name</th>
-                <th>First Name</th>
-                <th>New ID</th>
-                <th>Activity Type</th>
-                <th>Contact Method</th>
-                <th>Follow up Date &amp; Time</th>
-                <th>Due Date</th>
-                <th>Assigned By</th>
-                <th>Reassigned By</th>
-                <th>Provider Name</th>
-                <th>Priority</th>
-                <th>Payor</th>
-                <th>Program Name</th>
-                <th>Script/Type</th>
-                <th>Perform Activity</th>
-              </tr>
-            </thead>
-            <tbody id="calTbody"></tbody>
-          </table>
-        </div>
-
-        <!-- Pagination -->
-        <div style="display:flex;align-items:center;justify-content:space-between;margin-top:10px;">
-          <div style="display:flex;align-items:center;gap:4px;">
-            <button class="gc-pager-btn" disabled>&#171;</button>
-            <button class="gc-pager-btn" disabled>&#8249;</button>
-            <button class="gc-pager-btn" style="background:var(--teal);color:#fff;border-color:var(--teal);">1</button>
-            <button class="gc-pager-btn" disabled>&#8250;</button>
-            <button class="gc-pager-btn" disabled>&#187;</button>
-            <select class="gc-input" style="height:26px;font-size:11px;padding:0 4px;width:50px;margin-left:6px;"><option>10</option><option>25</option><option>50</option></select>
-            <span style="font-size:11px;color:var(--text-secondary);">items per page</span>
-          </div>
-          <div style="display:flex;align-items:center;gap:6px;">
-            <span id="calItemCount" style="font-size:11px;color:var(--text-secondary);">0 items</span>
-            <span class="material-icons" style="font-size:14px;color:var(--text-muted);cursor:pointer;">refresh</span>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    <!-- Collapsed sections -->
-    <div class="gc-accordion" id="calOpenAuth">
-      <div class="gc-accordion-header" onclick="this.closest('.gc-accordion').classList.toggle('open')"><span class="material-icons">chevron_right</span>Open Authorizations</div>
-      <div class="gc-accordion-body"><p style="font-size:12px;color:var(--text-muted);margin:0;">No open authorizations.</p></div>
-    </div>
-    <div class="gc-accordion" id="calOpenComplaints">
-      <div class="gc-accordion-header" onclick="this.closest('.gc-accordion').classList.toggle('open')"><span class="material-icons">chevron_right</span>Open Complaints</div>
-      <div class="gc-accordion-body"><p style="font-size:12px;color:var(--text-muted);margin:0;">No open complaints.</p></div>
-    </div>
-    <div class="gc-accordion" id="calReqReceived">
-      <div class="gc-accordion-header" onclick="this.closest('.gc-accordion').classList.toggle('open')"><span class="material-icons">chevron_right</span>Requests Received</div>
-      <div class="gc-accordion-body"><p style="font-size:12px;color:var(--text-muted);margin:0;">No requests received.</p></div>
-    </div>
-    <div class="gc-accordion" id="calReqRejected">
-      <div class="gc-accordion-header" onclick="this.closest('.gc-accordion').classList.toggle('open')"><span class="material-icons">chevron_right</span>Requests Rejected</div>
-      <div class="gc-accordion-body"><p style="font-size:12px;color:var(--text-muted);margin:0;">No rejected requests.</p></div>
-    </div>
-    <div class="gc-accordion" id="calOtherStaff">
-      <div class="gc-accordion-header" onclick="this.closest('.gc-accordion').classList.toggle('open')"><span class="material-icons">chevron_right</span>Activities Performed by Other Care Staff</div>
-      <div class="gc-accordion-body"><p style="font-size:12px;color:var(--text-muted);margin:0;">No activities by other care staff.</p></div>
-    </div>
-
-  </div>
-</div>
-
 <!-- ══════════════ FOOTER ══════════════ -->
 <div class="gc-footer" id="app-footer">
   <span>Powered by HealthEdge&reg;. Best results on latest version of Edge, Chrome&trade;, or Mozilla Firefox</span>
@@ -6174,7 +6060,7 @@ function updateWellframeSection() {
           <th>Sub Option</th>
           <th>Script Score</th>
           <th>Care Notes</th>
-          <th>Answered by</th>
+          <th>Staff Name</th>
           <th>Date Entered</th>
         </tr></thead>
         <tbody id="msriTbody"></tbody>
@@ -6194,6 +6080,7 @@ function updateWellframeSection() {
     </div>
   </div>
 </div>
+
 
 </body>
 </html>
